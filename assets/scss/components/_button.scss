@@ -1,0 +1,74 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.btn{
+    display: inline-block;
+    outline:none;
+    border:none;
+    position: relative;
+    overflow: hidden;
+    font-size:rem(16);
+    line-height: 1.78;
+    font-weight: normal;
+    padding:em(16) em(32);
+    color:$clr-white-1;
+    @include transition(all, 0.25s, ease-out);
+    @include breakpoint-md{
+        font-size: rem(18);
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.btn--primary{
+    background: $clr-secondary;
+    border: 1px solid  $clr-white;
+    &:hover{
+        background: $clr-white;
+        color:$clr-black;
+        border-color: $clr-black;
+    }
+}
+
+.btn--secondary{
+    background: $clr-black;
+    border: 1px solid  $clr-white;
+    &:hover{
+        background: $clr-secondary;
+    }
+}
+
+.btn--outline{
+    background: transparent;
+    color:$clr-primary;
+    border:1px solid $clr-primary;
+    // &:hover{
+    //     border-color: $clr-secondary
+    // }
+}
+
+
+.btn--transparent{
+    background:transparent;
+    color:$clr-secondary;
+    display: inline-flex;
+    align-items: center;
+    gap:rem(16);
+    padding-inline:0;
+    padding-block:em(6);
+    &:hover{
+        padding-inline:em(16);
+        svg{
+            path{
+                fill:$clr-white;
+            }
+        }
+    }
+}
+
+

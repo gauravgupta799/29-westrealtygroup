@@ -1,0 +1,72 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.form{
+    &__group{
+        margin-bottom: rem(20);
+        position: relative;
+        label{
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: 0.3s ease-out;
+            color: $clr-primary;
+            padding-left: em(16);
+            @include border-radius(4px);
+        }
+    }
+    &__control{
+        width: 100%;
+        background: $clr-tertiary;
+        border:none;
+        padding: em(12) em(24);
+        color:$clr-primary;
+        font-size: rem(16);
+        line-height: 2;
+        font-family: $ff-rhd-regular;
+        caret-color: $clr-secondary;
+        @include border-radius(2px);
+        outline: 1px solid $clr-primary;
+        &:focus, &:hover{
+            outline-color: $clr-secondary;  
+            outline-width: 2px;
+        }
+    }
+    &__textarea{
+        min-height: rem(120); 
+    }
+}
+.form__textarea + label{
+    position: absolute;
+    top: 25%;
+}
+
+.form__control:focus + label,
+.form__control:not(:placeholder-shown) + label {
+  font-size: rem(14);
+  top: 0;
+  color: $clr-dark-1;
+  background: $clr-tertiary;
+  padding-inline:6px;
+}
+
+.form-wrapper {
+    padding: em(24) em(16) em(24);
+    @include border-radius(4px);
+    background-color: $clr-white;
+    @include breakpoint-sm{
+        padding: em(24) em(24) em(28);
+    }
+    @include breakpoint-md{
+        padding: em(24) em(32) em(32);
+    }
+    @include breakpoint-lg{
+        padding: em(24) em(42) em(32);
+    }
+}

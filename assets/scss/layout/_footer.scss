@@ -1,0 +1,79 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.footer{
+    background: $clr-black-88;
+    border-top:1px solid $clr-grey;
+    &__link-list{
+        list-style: none;
+        margin-top: rem(24);
+        @include breakpoint-md{
+            margin-top: rem(32);
+        }
+    }
+    &__top{
+        padding-top: em(154);
+        padding-bottom: em(36);
+    }
+    &__bottom{
+        padding-block: em(32);
+        border-top:1px solid $clr-grey;
+        // @include breakpoint-sm{
+        //     padding-block: em(44);
+        // }
+        &-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            p, a{
+                color:$clr-white-1;
+            }
+            ul{
+                display: flex;
+                align-items: center;
+                column-gap: rem(32);
+                margin-top: 16px;
+                @media only screen and (min-width: 380px){
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.footer-link-title{
+    font-weight: 900;
+    color:$clr-white-1;
+    line-height: 1;
+}
+
+.footer-link{
+    color:$clr-white-1;
+    font-size: rem(16);
+    line-height: 2.5;
+}
+
+.footer-description{
+    max-width: 32ch;
+    color: $clr-white;
+}
+
+
+.socials{
+    &__list{
+        @include flex-center-vertical;
+        justify-content: flex-start;
+        gap:em(32);
+        @include breakpoint-sm{
+            justify-content: flex-end;
+        }
+    }
+    &__link{
+        color:$clr-white-1;
+    }
+}

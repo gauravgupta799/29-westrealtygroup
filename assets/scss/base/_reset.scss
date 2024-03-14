@@ -1,0 +1,147 @@
+/*-----------------------------
+  [CAROL]
+  Project:Carol
+  Version:1.0
+  Starting date:12/03/2024
+  Last change: 
+  Developed by: Yourhustler
+  Developer: Gaurav Gupta
+  Primary use: 
+--------------------------------------------------*/
+@use '../abstract/colors' as *; 
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+
+*{
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $clr-white;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: $clr-primary; 
+}
+
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $clr-white;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  font-size: rem(18);
+  line-height: 1.2;
+}
+
+  div,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  form,
+  fieldset,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
+  
+  // ol,
+  // ul, li {
+  //   list-style: none;
+  // }
+  
+a {
+  text-decoration: none;
+  color:$clr-primary;
+}
+
+img{
+  display: block;
+  object-fit: cover;
+}
+
+address{
+  font-style:normal;
+  font-size:100%;
+  color:$clr-primary;
+}
+
+small{
+  display: flex;
+  font-size: rem(16);
+  line-height: 1.75;
+  margin-top: rem(16);
+}
+
+p + p, h1 + p, h2 + p, h3 + p, h4 + p,  h5 + p, h6 + p{
+  margin-top:1rem;
+}
+
+span + span{
+  margin-top: 0.375rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 100%;
+  font-family: $ff-primary;
+  color: $clr-primary;
+}
+
+button{
+  border:none;
+  outline:none;
+  font-family:$ff-secondary;
+  font-weight: bold;
+  line-height: 1.78;
+}
+
+label{
+  color:$clr-primary;
+  font-size: rem(16);
+  font-family: $ff-secondary;
+}
+
+::placeholder{
+  font-size: rem(16) !important;
+  font-family:$ff-secondary !important;
+  color:$clr-primary !important;
+}
+::selection{
+  color:$clr-white;
+  background-color: $clr-primary;
+}

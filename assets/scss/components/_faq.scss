@@ -1,0 +1,97 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.faq{
+  &__section{
+    margin: rem(20) auto;
+    overflow: hidden;
+    position: relative;
+  }
+  &__wrapper{
+    border-bottom: 1px solid $clr-grey-light-6;
+    padding-block: em(32);
+  }
+  &__question{
+    display: flex;
+    justify-content: space-between;
+    h6{
+      display: flex;
+      font-family: $ff-rhd-semibold !important;
+      max-width: rem(740);
+      color:$clr-primary;
+      span + span{
+        margin-top: 0 !important;
+      }
+      &.is-open{
+        color:$clr-secondary;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+      h6{
+        color:$clr-secondary;
+      }
+      .icon__shape{
+        &::before, &::after{
+          background:$clr-secondary;
+        }
+      }
+    }
+  }
+  &__number{
+    margin-right: rem(16);
+    color:$clr-secondary;
+  }
+  &__content{
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height, 0.3s, ease-in-out);
+    p{
+      margin: 0;
+      padding:em(16) rem(28);
+    }
+  }
+}
+
+
+.icon{
+  position: relative; 
+  width: 30px; 
+  height: 30px;
+  &__shape{
+    &::before, &::after{
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      background: $clr-primary;
+      border-radius: 3px;
+      @include transition(all, 0.3s, ease);
+      transform: translate(-50%, -50%);
+    }
+    &::before{
+      width: 20px;
+      height: 3px;
+    }
+    &::after{
+      width: 3px;
+      height: 20px;
+    }
+    &.is-open{
+      &::before, &::after{
+        @include transition(all, 0.3s, ease);
+        background:$clr-secondary;
+      }
+      &::before{
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+      &::after{
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}

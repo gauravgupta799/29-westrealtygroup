@@ -1,0 +1,419 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+//?--------- Hero Styles Start ---------
+
+//========== Hero styles start ============
+.home-banner{
+    &__wrapper{
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000);
+        }
+
+        .banner-content{
+            position: absolute;
+            bottom: 120px;
+            @include breakpoint-sm{
+                width: 100%;        
+            }
+        }
+
+        .banner-title, .banner-subTitle{
+            color:$clr-white;
+        }
+    }
+    &__img{
+        height:580px;
+        @include breakpoint-md{
+            height: auto;
+        }
+    }
+}
+
+.home-banner-img{
+    display: none;
+    @include breakpoint-sm{
+        display: block;
+    }
+    &--mobile{
+        @include breakpoint-sm{
+            display: none;
+        }
+    }
+}
+//========== Hero styles end ==============
+
+.scroll-down-wrapper{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 26px;
+    margin-bottom: 26px;
+    text-align: center;
+    @include transition(transform, 0.35s, ease-in);
+    // @include breakpoint-sm{
+    //     margin-bottom: 46px; 
+    // }
+    // @include breakpoint-md{
+    //     margin-bottom: 66px; 
+    // }
+    // @include breakpoint-lg{
+    //     margin-bottom: 76px; 
+    // }
+    &:hover{
+        cursor: pointer;
+        transform:translateY(10px);
+    }
+}
+.scroll-down-text{
+    color:$clr-white;
+}
+
+//========== Legacy styles start ============
+.legacy{
+    &__figure{
+        position: relative;
+    }
+    &__card{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -150px;
+        padding: em(32) em(16);
+        padding-left: 0;
+        background-color: $clr-white;
+        @include breakpoint-md{
+            padding: em(64);
+            width: rem(480);
+        }
+        h6{
+            line-height: 1.57;
+        }
+    }
+    &__text{
+        text-align: right;
+        font-size: rem(16);
+        line-height: 2; 
+    }
+    h2{
+        max-width: 11ch;
+    }
+}
+//========== Legacy styles end ==============
+
+
+//========== Counter styles start ============
+.counter{
+    font-size: rem(100);
+    line-height: 1.2;
+    font-family: $ff-primary;
+    display: flex;
+    &__wrapper{
+        padding: em(40);
+        padding-inline: 0;
+        position: relative;
+        @include breakpoint-sm{
+            padding-inline: em(20);
+        }
+        @include breakpoint-md{
+            padding-inline: em(30);
+        }
+        @include breakpoint-xxl{
+            padding-inline: em(40);
+        }
+        &::before, 
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background:$clr-grey;
+        }
+        &::before{
+            left: 0;
+            height: 2px;
+            @include breakpoint-sm{
+                max-width: 260px;
+                margin-left: 50px;
+            }
+        }
+        &::after{
+            width: 2px;
+            height: 200px;
+            right: 0;
+            top: 30px;
+            opacity: 0;
+            visibility: hidden;
+            @include breakpoint-sm{
+                opacity: 1;
+                visibility: visible;
+                height: 134px;
+                top: 50px;
+            }
+        }
+    }
+    &__subTitle{
+        margin-top: em(24);
+        @include breakpoint-sm{
+            margin-top: em(32);
+        }
+        @include breakpoint-md{
+            margin-top: em(36);
+        }
+        @include breakpoint-lg{
+            margin-top: em(40);
+        }
+    }
+}
+//========== Counter styles end ==============
+
+
+//========== Featured styles start ============
+.featured{
+    background: $clr-tertiary;
+    &__card-figure{
+        position: relative;
+        .just-listed-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-block: em(4);
+        }
+    }
+    &__card{
+        background:$clr-white;
+    }
+    &__card-body,
+    &__card-footer{
+        padding-inline:em(20);
+        @include breakpoint-md{
+            padding-inline:em(30);
+        }
+        @include breakpoint-lg{
+            padding-inline:em(40);
+        }
+    }
+    &__card-body{
+        padding-block: em(40) em(32);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__card-footer{
+        border-top:2px solid $clr-grey;
+        border-bottom:2px solid $clr-grey;
+        padding-block: em(32);
+        @include breakpoint-md{
+            border-bottom: 0;
+            border-color:$clr-grey-1;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            gap:em(8);
+            @include breakpoint-md{
+                gap:em(16);
+            }
+            li{
+                font-size: rem(14);
+                line-height: 2;
+            }
+        }
+    }
+}
+//========== Featured styles end ==============
+
+
+//========== Communities styles start ============
+
+.grid{
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        @include breakpoint-sm{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-md{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        gap:32px;
+    }
+    &__figure{
+        position: relative;
+        overflow: hidden;
+        &:nth-child(2){
+            margin-top: 28px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000);
+        }
+    }
+    &__content{
+        position: absolute;
+        bottom: 0;
+        padding:em(20);
+        padding-top: 0;
+        @include breakpoint-md{
+            padding:em(20);
+            // padding-top: 0;
+        }
+        @include breakpoint-xl{
+            padding:em(30);
+            // padding-top: 0;
+        }
+        @include breakpoint-xxl{
+            padding-inline: em(64) em(36);
+            padding-bottom: em(36);
+        }
+        h6, p{
+            color:$clr-white;
+        }
+        p{
+            line-height: 1.56;
+        }
+    }
+}
+//========== Communities styles end ==============
+
+
+//========== Testimonials styles start ============
+.testimonials{
+    &__header{
+        @include flex-space-between;
+        .navigation-buttons{
+            button{
+                height: rem(48);
+                padding-block: 0;
+                @include transition(all, 0.35s, ease-out);
+                &:nth-child(2){
+                    margin-left: rem(16);
+                }
+                &:hover{
+                    background-color: $clr-secondary;
+                    border-color:$clr-white;
+                    svg path{
+                        fill:$clr-white;
+                    }
+                }
+            }
+        }
+    }
+    &__content-wrapper{
+        h6{
+            text-align:left;
+            line-height: 1.72;
+            text-transform: lowercase;
+            &::first-letter{
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__footer{
+        @include flex-space-between;
+        flex-wrap: wrap;
+        gap:rem(24);
+        @include breakpoint-lg{
+            gap:rem(36);
+        }
+        @include breakpoint-xl{
+            gap:rem(46);
+        }
+        @include breakpoint-xxl{
+            gap:rem(94);
+        }
+        p{
+            white-space: nowrap;
+        }
+    }
+    &__figure{
+        @include dimensions(rem(160), rem(160));
+        @include border-radius("full-round");
+        flex-shrink: 0;
+        border: 4px solid $clr-secondary;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        @include breakpoint-md{
+            @include dimensions(rem(200), rem(200));
+        }
+        @include breakpoint-lg{
+            @include dimensions(rem(240), rem(240));
+        }
+        @include breakpoint-xxl{
+            @include dimensions(rem(280), rem(280));
+        }
+        img{
+            @include border-radius("full-round");
+           @include full-dimensions;
+        }
+        &--quotes{
+            img{
+                width: rem(96);
+                height: auto;
+                @include breakpoint-sm{
+                    width: rem(120);
+                }
+                @include breakpoint-md{
+                    width: rem(140);
+                }
+                @include breakpoint-lg{
+                   width: auto;
+                }
+            }
+        }
+    }
+}
+//========== Testimonials styles end ==============
+
+.play-btn{
+    @include dimensions(rem(80), rem(80));
+    @include border-radius("full-round");
+    @include flex-center;
+    flex-shrink: 0;
+    background: $clr-secondary;
+    border:1px solid transparent;
+    @include transition(all, 0.35s, ease-out);
+    @include breakpoint-md{
+        @include dimensions(rem(100), rem(100));
+    }
+    @include breakpoint-lg{
+        @include dimensions(rem(100), rem(100));
+    }
+    &:hover{
+        cursor: pointer;
+        background: $clr-white;
+        border-color: $clr-secondary;
+        svg path{
+            fill:$clr-secondary;
+        }
+    }
+}
+
+//========== Follow-us styles start ============
+//========== Follow-us styles end ==============
+
+
+//========== Featured styles start ============
+.follow-us{
+    overflow: hidden;
+}
+//========== Featured styles end ==============
+
+
+//========== CTA styles start ============
+.cta{
+    background: $clr-black-88;
+}
+//========== CTA styles end ==============

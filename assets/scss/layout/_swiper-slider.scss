@@ -1,0 +1,10 @@
+@use "../abstract/breakpoints" as *;
+// @use "../abstract/colors" as *;
+// @use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.swiper-wrapper{
+  padding-block:em(48) !important;
+}
