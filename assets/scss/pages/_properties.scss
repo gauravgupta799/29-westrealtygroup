@@ -1,0 +1,117 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.property{
+    &__details-list{
+        @include flex-center;
+        gap:rem(20);
+        color: $clr-white;
+        @include breakpoint-xxl{
+            gap:rem(32);
+        }
+    }
+    &__meta-data{
+        h6, ul{
+            padding-block:em(16);
+            @include breakpoint-lg{
+                padding-left: em(16);
+            }
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            gap:rem(20);
+            color:$clr-primary;
+            @include breakpoint-sm{
+                gap:rem(32);
+            }
+            li{
+                font-size: rem(22);
+                line-height: 1.15;
+                font-family: $ff-primary;
+                @include breakpoint-lg{
+                    font-size: rem(24);
+                }
+                @include breakpoint-xl{
+                    font-size: rem(28);
+                }
+            }
+        }
+    }
+}
+
+.owner-details{
+    &__container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap:rem(56);
+        @include breakpoint-sm{
+            flex-wrap: nowrap;
+        }
+    }
+    &__footer{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: rem(16);
+        gap:rem(16);
+        @include breakpoint-sm{
+            gap:rem(32);
+        }
+        @include breakpoint-md{
+            gap:rem(48);
+            margin-top: rem(22);
+        }
+        @include breakpoint-lg{
+            flex-wrap: nowrap;
+            gap:rme(16);
+        }
+        @include breakpoint-xxl{
+            gap:rem(128);
+        }
+        h6 { opacity: 0.4; }
+        p { margin-top: rem(12); }
+    }
+}
+
+// Features & Amenities
+.amenities{
+    &__wrapper{
+        h6 { opacity: 0.4; }
+    }
+    &__list{
+        li{
+            line-height: 2.22;
+        }
+    }
+}
+
+
+.gallery-thumbs {
+    padding: em(16) 0;
+}
+
+.gallery-thumbs .swiper-slide {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    opacity: 0.5;
+    img{
+        transition:transform 0.35s ease-out;
+    }
+    &:hover{
+        cursor: pointer;
+        img{          
+            transform:scale(1.1);
+        }
+    }
+}
+  
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}

@@ -108,6 +108,13 @@ small{
   margin-top: rem(16);
 }
 
+input, textarea{
+  outline:none;
+  border:none;
+  font-family: $ff-secondary;
+
+}
+
 p + p, h1 + p, h2 + p, h3 + p, h4 + p,  h5 + p, h6 + p{
   margin-top:1rem;
 }
@@ -126,14 +133,23 @@ button{
   border:none;
   outline:none;
   font-family:$ff-secondary;
-  font-weight: bold;
+  font-weight: 900;
   line-height: 1.78;
+  background:transparent;
 }
 
 label{
   color:$clr-primary;
   font-size: rem(16);
   font-family: $ff-secondary;
+}
+
+sup {
+  vertical-align: super;
+  font-size: rem(16);
+  line-height: 2;
+  font-family: $ff-secondary;
+  color:$clr-black;
 }
 
 ::placeholder{

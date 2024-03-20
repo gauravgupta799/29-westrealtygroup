@@ -20,8 +20,14 @@
     @include breakpoint-md{
         font-size: rem(18);
     }
+    svg path{
+        fill: $clr-secondary;
+    }
     &:hover{
         cursor: pointer;
+        svg path{
+            fill: $clr-white;
+        }
     }
 }
 
@@ -45,11 +51,13 @@
 
 .btn--outline{
     background: transparent;
-    color:$clr-primary;
-    border:1px solid $clr-primary;
-    // &:hover{
-    //     border-color: $clr-secondary
-    // }
+    color:$clr-secondary;
+    border:1px solid $clr-secondary;
+    &:hover{
+        background-color: $clr-secondary;
+        color:$clr-white;
+        border-color:$clr-secondary
+    }
 }
 
 

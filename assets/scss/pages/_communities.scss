@@ -1,0 +1,47 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+.what-to-love{
+    &__list{
+        li{
+            border-bottom: 1px solid $clr-grey;
+            padding-block: em(32);
+            display: flex;
+            gap:rem(16);
+            @include breakpoint-sm{
+                gap:rem(24);
+            }
+            @include breakpoint-md{
+                gap:rem(32);
+                padding-block: em(48);
+            }
+            @include breakpoint-lg{
+                gap:rem(48);
+            }
+            @include breakpoint-xl{
+                gap:rem(56);
+            }
+            h2{
+                line-height: 0.9; 
+                @include breakpoint-lg{
+                }
+            }
+            &:first-child{
+                padding-top: 0;
+            }
+        }
+    }
+    &__content{
+        h6{
+            @include breakpoint-lg{
+                line-height: 1.57;
+            }
+        }
+        p{
+            max-width: 100ch;
+        }
+    }
+}

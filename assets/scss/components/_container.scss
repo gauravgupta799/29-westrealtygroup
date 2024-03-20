@@ -18,16 +18,18 @@ $full-width:100%;
     }
   
     @include breakpoint-lg{
-        max-width:calc($full-width*0.8755);
+        // max-width:calc($full-width*0.8755);
+        max-width:calc($full-width*0.9055);
     }
 
     @include breakpoint-xl{
-        max-width:calc($full-width*0.8755);
+        // max-width:calc($full-width*0.8755);
+        max-width:calc($full-width*0.9055);
     }
 
     @include breakpoint-xxl{
         // max-width:calc($full-width*0.8555);
-        max-width:calc($full-width*0.94375);
+        max-width:calc($full-width*0.92);
     }
 }
 

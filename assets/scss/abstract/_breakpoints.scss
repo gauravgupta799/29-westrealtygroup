@@ -1,10 +1,29 @@
 @use "../abstract/functions" as *;
 
+$xxs:em(348);
+$xs:em(480);
 $sm:em(576);
 $md:em(768);
 $lg:em(992);
 $xl:em(1200);
 $xxl:em(1600);
+
+
+// ======== Extra-2 small device (Extra-small mobile) =============
+@mixin breakpoint-xxs{
+    @media only screen and (min-width: $xxs){
+        @content;
+    }
+}
+
+
+// ======== Extra small device (small mobile) =============
+@mixin breakpoint-xs{
+    @media only screen and (min-width: $xs){
+        @content;
+    }
+}
+
 
 // ======== mobile device =============
 @mixin breakpoint-sm{

@@ -1,0 +1,78 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+
+.grid{
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        @include breakpoint-sm{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-md{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        gap:rem(32);
+        &--team{
+            @extend .grid__container;
+        }
+        &--properties{
+            @extend .grid__container;
+            gap:rem(64);
+        }
+    }
+    &__body{
+        &--team{
+            margin-top: rem(24);
+        }
+    }
+    &__figure{
+        position: relative;
+        overflow: hidden;
+        &:nth-child(2){
+            margin-top: 28px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000);
+        }
+    }
+    &__content{
+        position: absolute;
+        bottom: 0;
+        padding:em(20);
+        padding-top: 0;
+        @include breakpoint-md{
+            padding:em(20);
+        }
+        @include breakpoint-xl{
+            padding:em(30);
+        }
+        @include breakpoint-xxl{
+            padding-inline: em(64) em(36);
+            padding-bottom: em(36);
+        }
+        h6, p{
+            color:$clr-white;
+        }
+        p{
+            line-height: 1.56;
+        }
+    }
+}
+
+.grid__container--properties{
+    .grid-item{
+        display: none;
+        &.show{
+            display: block;
+        }
+    }
+}

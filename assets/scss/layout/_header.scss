@@ -6,58 +6,217 @@
 
 
 .header{
-    position: sticky;
     // position: fixed;
-    top:0;
-    left: 0;
+    position: sticky;
+    top:0; left: 0;
     width: 100%;
     padding-block:em(16);
     background: transparent;
     @include transition(all, 0.35s, ease-in-out);
     z-index: 5;
     background: $clr-white;
-    &.sticky{
-        background-color: $clr-primary;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.35);
-        padding-block:em(10);
-        @include transition(all, 0.35s , ease-out);
-        animation:move-down 0.45s ease-in;
-        @include keyframes(move-down){
-            0%{
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            100%{
-                transform: translateY(0);
-                opacity: 1;
-            }
+    // &.sticky{
+    //     background-color: $clr-primary;
+    //     box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+    //     padding-block:em(10);
+    //     @include transition(all, 0.35s , ease-out);
+    //     animation:move-down 0.45s ease-in;
+    //     @include keyframes(move-down){
+    //         0%{
+    //             transform: translateY(-100%);
+    //             opacity: 0;
+    //         }
+    //         100%{
+    //             transform: translateY(0);
+    //             opacity: 1;
+    //         }
 
-        }
-    }
+    //     }
+    // }
     &__wrapper{
         width: 100%;
         @include flex-center-vertical;
         justify-content: space-between;
     }
+    &--mobile{
+        position: fixed;
+        left: 0; top: 0;
+        z-index: 100000;
+        @include full-dimensions;
+        background-color:$clr-blck-2;
+        padding-block: 2rem;
+        @include breakpoint-xl{
+            padding-block: 4rem 10rem;
+        }
+        .header-wrapper{
+            @include flex-space-between;
+        }
+    }
+    &--properties{
+        background: $clr-tertiary;
+    }
+    &__logo{
+        img{
+            max-width: rem(200);
+            @include breakpoint-lg{
+                max-width: 100%;
+            }
+        }
+        &--mobile{
+            img{
+                max-width: rem(200);
+                height:rem(60);
+                @include breakpoint-sm{
+                    height:rem(70);
+                }
+                @include breakpoint-md{
+                    height:rem(80);
+                }
+            }
+        }
+    }
+    .header-btn{
+        display: flex;
+    }
+}
 
-    // &__navbar{
-    //     width: 100%;
-    //     display: none;
-    //     opacity: 0;
-    //     visibility: hidden;
-    //     gap:rem(32);
-    //     @include breakpoint-lg{
-    //         @include flex-center-vertical;
-    //         justify-content: flex-end;
-    //         gap:rem(38);
-    //         opacity: 1;
-    //         visibility: visible;
-    //     }
-    //     @include breakpoint-xl{
-    //         gap:14rem;
-    //     }
-    // }
-    // &__submenu{
+.header .get-in-touch-btn{
+    display: none;
+    @include breakpoint-lg{
+        display: flex;
+    }
+}
+
+.header .call-btn{
+    display: flex;
+    @include breakpoint-lg{
+        display: none;
+    }
+}
+
+
+//========== Mobile Menu Start ========
+.nav{
+    &__mobile{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include breakpoint-md{
+            gap:rem(192);
+        }
+        @include breakpoint-lg{
+            flex-wrap: nowrap;
+            gap:rem(96);
+        }
+        @include breakpoint-xl{
+        }
+        @include breakpoint-xxl{
+        }
+        
+    }
+    &__item{
+        position: relative;
+        overflow: hidden;
+    }
+    &__link {
+        color:$clr-white;
+        font-family: $ff-primary;
+        font-size: rem(32);
+        line-height: 1.67;
+        @include breakpoint-md{
+            font-size: rem(36);
+        }
+        @include breakpoint-lg{
+            font-size: rem(40);
+        }
+        @include breakpoint-xl{
+            font-size: rem(44);
+        }
+        @include breakpoint-xxl{
+            font-size: rem(48);
+        }
+        &:hover{
+            color:$clr-secondary;
+        }
+    }
+}
+//========== Mobile Menu End ========
+
+.contact-list__link{
+    color:$clr-white;
+    font-weight: 300;
+    line-height: 3;
+    &:hover{
+        color:$clr-secondary;
+    }
+}
+
+//========== Close Menu Button Start ========
+.close-menu-btn{
+    color:$clr-white;
+    font-size: rem(14);
+    border:1px solid transparent;
+    padding: 0.25em 1em;
+    @include border-radius(20px);
+    @include transition(all, 0.2s, ease);
+    span{
+        margin-top: 0;
+        &:nth-child(2){
+            margin-left: rem(16);
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        color:$clr-secondary;
+        border-color:$clr-secondary;
+        transform:scale(1.05);
+    }
+}
+//========== Close Menu Button End ========
+
+.socials{
+    &__list{
+        &--mobile{
+            @include  flex-center-vertical;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            @media (min-width:20em){
+                gap: 2rem;
+            }
+            @include breakpoint-sm{
+                justify-content: flex-end;  
+            }
+        }
+    }
+}
+
+//====== Hamburger Styles Start =======
+.hamburgur{
+    .menu-line{
+        @include dimensions(rem(60),rem(3));
+        background: $clr-primary;
+        display: block;
+        margin-bottom: 5px;
+        &:nth-child(2){
+            width: rem(40);
+        }
+        &:last-child{
+            display: none;
+            width: rem(32);
+        } 
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+//====== Hamburger Styles End =======
+
+
+
+
+
+   // &__submenu{
     //     position: absolute;
     //     left: 0;
     //     top: 103%;
@@ -137,132 +296,3 @@
     //         padding-left:em(10);
     //     }
     // }
-    // &__navLink{
-    //     color:$clr-white;
-    //     font-size: rem(18);
-    //     &:hover{
-    //         color:$clr-secondary;
-    //     }
-    //     &.active{
-    //         color:$clr-secondary;
-    //     }
-    // }
-    // &__mobile{
-    //     position: fixed;
-    //     top: 0;
-    //     z-index: 99;
-    //     @include dimensions(75%, 100vh);
-    //     padding-block:em(16);
-    //     background: $clr-primary;
-    //     color: $clr-white;
-    //     opacity: 0;
-    //     visibility: hidden;
-    //     left: -100%;
-    //     @include transition(left, 0.5s, ease-in-out);
-    //     @include breakpoint-md{
-    //         width: 50%;
-    //     }
-    //     @include breakpoint-lg{
-    //         display: none;
-    //     }
-    //     &.open{
-    //         overflow: hidden;
-    //         opacity: 1;
-    //         visibility: visible;
-    //         @include transition(left, 0.5s, ease-in-out);
-    //         left: 0;
-    //     }
-    //     &-list{
-    //         @include flex-cloumn;
-    //         margin-top:rem(32);
-    //         @include breakpoint-md{
-    //             margin-top:rem(48);
-    //         }
-    //     }
-    //     &-item{
-    //         padding-block: em(20) em(8);
-    //         border-bottom: 1.2px solid $clr-white;
-    //         @include transition(all, 0.35s, ease-out);
-    //         &:hover{
-    //             border-color: $clr-secondary;
-    //             .header__mobile-link{
-    //                 color: $clr-secondary
-    //             }
-    //         }
-    //     }
-    //     &-link{
-    //         color: $clr-white;
-    //         font-size: rem(18);
-    //     }
-    // }
-    &__logo{
-        img{
-            max-width: rem(200);
-            @include breakpoint-lg{
-                max-width: 100%;
-            }
-        }
-    }
-    .header-btn{
-        display: flex;
-    }
-}
-
-.header .get-in-touch-btn{
-    display: none;
-    @include breakpoint-lg{
-        display: flex;
-    }
-}
-
-.header .call-btn{
-    display: flex;
-    @include breakpoint-lg{
-        display: none;
-    }
-}
-
-
-.overlay{
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.6);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    @include breakpoint-lg{
-        display: none;
-    }
-    &.active{
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-.hamburgur{
-    .menu-line{
-        @include dimensions(rem(64),rem(3));
-        background: $clr-primary;
-        display: block;
-        margin-bottom: 5px;
-        &:nth-child(2){
-            width: 3rem;
-        }
-        &:last-child{
-            width: 2rem;
-        } 
-    }
-    // &--mobile{
-    //     display: block;
-    //     @include breakpoint-lg{
-    //         display: none;
-    //     }
-    // }
-    &:hover{
-        cursor: pointer;
-    }
-}

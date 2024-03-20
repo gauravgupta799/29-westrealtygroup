@@ -2,7 +2,7 @@
 @font-face{
     font-family:"Marcellus-Regular";
     src:url("../../../assets/fonts/Marcellus/Marcellus-Regular.eot");
-    src:url("../../../assets/fonts/Marcellus/Marcellus-Regular.woff") format('woff2'),
+    src:url("../../../assets/fonts/Marcellus/Marcellus-Regular.woff2") format('woff2'),
     url("../../../assets/fonts/Marcellus/Marcellus-Regular.woff") format('woff'),
     url("../../../assets/fonts/Marcellus/Marcellus-Regular.ttf") format('truetype'),
     url("../../../assets/fonts/Marcellus/Marcellus-Regular.svg#Marcellus-Regular") format('svg');
@@ -24,5 +24,3 @@
 
 $ff-primary:"Marcellus-Regular",sans-serif;
 $ff-secondary:"Aileron-Regular",sans-serif;
-
-// font-family: "Marcellus", serif;

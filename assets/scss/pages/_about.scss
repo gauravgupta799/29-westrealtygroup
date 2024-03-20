@@ -1,0 +1,97 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.core-values{
+    &__list{
+        li{
+            padding-block:em(12);
+            @include breakpoint-xl{
+                padding-block:em(16);
+            }
+            @include breakpoint-xxl{
+                padding-block:em(24);
+            }
+        }
+    }
+    &__item{
+        display: flex;
+        gap:rem(16);
+        &:not(:last-child){
+            border-bottom: 2px solid $clr-grey-1;     
+        }
+        h6{
+            line-height: 1.57;
+        }
+        @include breakpoint-sm{
+            gap:rem(22);
+        }
+        @include breakpoint-md{
+            gap:rem(28);
+        }
+        @include breakpoint-lg{
+            gap:rem(34);
+        }
+        @include breakpoint-xl{
+            gap:rem(40);
+        }
+        @include breakpoint-xxl{
+            align-items: center;
+        }
+    }
+}
+
+.timeline{
+    &__periods{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: auto;
+        max-width: 100%;
+        padding-block: 2em;
+        @include breakpoint-xl{
+            max-width: 80%;
+        }
+    }
+    &__year-wrapper{
+        display: flex;
+        align-items: center;
+        hr{
+            flex-shrink: 0;
+            border: none;
+            height: 2px;
+            // width: calc(100% - 2px);
+            background-color: #cecece;
+            width: 106px;
+        }
+        .year{
+            padding-right: em(16);
+            opacity: 0.4;
+            transition:transform 0.2s ease-out;
+            &.active{
+                opacity: 1;
+                transform:scale(1.1);
+            }
+            &:hover{
+                cursor: pointer;
+                transform:scale(1.1);
+                opacity: 1;
+                hr{
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    &__content{
+        margin-top: rem(32);
+        @include breakpoint-lg{
+            margin-top: rem(48);
+        }
+        p{
+            max-width: 56ch;
+        }
+    }
+}

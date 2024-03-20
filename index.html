@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/logos/arrowfish-logo-2.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/logos/logo-1.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./dist/bundle.min.css">
     <script src="./dist/bundle.min.js" defer></script>
-    <title>Homepage | Carol</title>
+    <title>Home | 29-West</title>
 </head>
 <body class="body">
     <div class="loader-container">
@@ -16,18 +16,19 @@
         </div>
     </div>
 
+    <!-- ====== Header Start ====== -->
     <header class="header">
         <!-- Dektop Menu start -->
-        <div class="header__desktop">
+        <div class="header--desktop">
             <div class="page-container">
                 <div class="header__wrapper">
-                    <span class="hamburgur hamburgur--mobile">
+                    <span class="hamburgur" id="hamburgur">
                         <span class="menu-line"></span>
                         <span class="menu-line"></span>
                         <span class="menu-line"></span>
                     </span>
                     <div class="header__logo">
-                        <a href="/index.html" class="d-flex">
+                        <a href="index.html" class="d-flex">
                             <img src="./assets/logos/logo-1.svg" alt="carol's logo" class="img-fluid">
                         </a>
                     </div>
@@ -49,30 +50,80 @@
         <!-- Dektop Menu end -->
 
         <!-- Mobile Menu start -->
-            <!-- <div class="header__mobile-wrapper">
-                <div class="page-container">
-                    <nav class="header__mobile-nav">             
-                        <ul class="nav__list header__nav-list">
-                            <li class="nav__item"><a class="nav__link active" href="index.html">Home</a></li>
-                            <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                            <li class="nav__item"><a class="nav__link" href="consortium.html">Our Consortium</a></li>
-                            <li class="nav__item"><a class="nav__link" href="clients.html">Clients</a></li>
-                            <li class="nav__item"><a class="nav__link" href="vision.html">Vision</a></li>
-                            <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
+        <div class="header--mobile hide">
+            <div class="page-container">
+                <div class="row g-lg-0">
+                    <div class="col-1 offset-lg-4 offset-xxl-5"></div>
+                    <div class="col-lg-6 header-wrapper">
+                        <div class="header__logo--mobile">
+                            <a href="index.html" class="d-flex">
+                                <img src="./assets/logos/logo-2.svg" alt="carol's logo" class="img-fluid">
+                            </a>
+                        </div>
+                        <button class="close-menu-btn" id="close-menu-btn">
+                            <span>X</span>
+                            <span>Close</span>
+                        </button>
+                    </div>
                 </div>
-            </div> -->
+                <div class="row pt--3 pt--sm--4 pt--xxl--7 g-lg-0">
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <figure class="overflow-hidden">
+                            <img src="./assets/images/img-header.webp" alt="" class="img-fluid menu-img">
+                        </figure>
+                    </div>
+                    <div class="col-lg-7 offset-lg-1 col-xxl-6 offset-xxl-2">
+                        <nav class="nav__mobile">             
+                            <ul class="nav__list list-none mt--2 mt--sm--0">
+                                <li class="nav__item"><a class="nav__link active" href="index.html">Home</a></li>
+                                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                                <li class="nav__item"><a class="nav__link" href="team.html">Team</a></li>
+                                <li class="nav__item"><a class="nav__link" href="properties.html">Properties</a></li>
+                                <li class="nav__item"><a class="nav__link" href="communities.html">Communities</a></li>
+                                <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
+                            </ul>                     
+                            <ul class="nav__contact-list list-none mt--2 mt--sm--0">
+                                <li><a href="mailto:prestige.ge@gmail.com" class="contact-list__link">prestige.ge@gmail.com</a></li>
+                                <li><a href="tel:+41 22 839 39 60" class="contact-list__link">+41 22 839 39 60</a></li>
+                                <li><address class="contact-list__link">Rte de Florissant 57, 1206 Geneva</address></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="socials-wrapper--mobile py--3 py--sm--2">
+                    <ul class="socials__list--mobile list-none">
+                        <li><a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a></li>
+                        <li><a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a></li>
+                        <li> <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <!-- Mobile Menu end -->
     </header>
+    <!-- ====== Header End ====== -->
 
+    <!-- ====== Modal Video Start ====== -->
+    <div id="modal" class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <button class="close-btn" id="close-btn">&times;</button>
+                <!-- Embedded YouTube Video -->
+                <iframe  src="https://www.youtube.com/embed/0kWG5o7G5HE?si=aGpqv9kaaQliczP7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- Modal content -->
+    </div>
+    <!-- ====== Modal Video End ====== -->
+
+    <!-- ====== Main Start ====== -->
     <main class="main">
         <!-- ======= Banner section start ======= -->
         <section class="home-banner mt--1">
             <div class="page-container">
                 <div class="home-banner__wrapper">
-                    <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid home-banner-img">
-                    <img src="./assets/images/home/banner-mobile-2x.webp" alt="" class="img-fluid home-banner-img--mobile">         
+                    <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid ">
+                    <!-- <img src="./assets/images/home/banner-mobile-2x.webp" alt="" class="img-fluid home-banner-img--mobile">          -->
                     <div class="row banner-content">
                         <div class="col-sm-10 col-md-8 col-xxl-6 section-heading">
                             <h1 class="banner-title">
@@ -158,43 +209,47 @@
                         </p>
                     </div>
                 </div>
-                <div class="row mt--6 mt--xl--12">
+                <div class="row mt--6 mt--xl--12" id="counter-section">
+                    
                     <div class="col-sm-6 col-lg-3">
                         <div class="counter__wrapper">
                             <div class="counter">
-                                <span class="counter__value">3M</span>
-                                <span class="mt--0 counter__postfix">+</span>
+                                <span class="counter__value count-digit" data-target="3">3</span>
+                                <span class="mt--0 counter__postfix">M+</span>
                             </div>
                             <p class="counter__subTitle">Sales In 2024</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6 col-lg-3">
                         <div class="counter__wrapper">
                             <div class="counter">
-                                <span class="counter__value">5</span>
-                                <!-- <span class="mt--0 counter__postfix">+</span> -->
+                                <span class="counter__value count-digit" data-target="8">8</span>
                             </div>
                             <p class="counter__subTitle">Agents</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6 col-lg-3">
                         <div class="counter__wrapper">
                             <div class="counter">
-                                <span class="counter__value">278</span>
+                                <span class="counter__value count-digit" data-target="278">278</span>
                                 <span class="mt--0 counter__postfix">+</span>
                             </div>
                             <p class="counter__subTitle">Transactions</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6 col-lg-3">
                         <div class="counter__wrapper">
                             <div class="counter">
-                                <span class="counter__value">15</span>
+                                <span class="counter__value count-digit" data-target="15">15</span>
                                 <span class="mt--0 counter__postfix">+</span>
                             </div>
                             <p class="counter__subTitle">Years of experience</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -214,7 +269,7 @@
                 <div class="row mt--4 mt--lg--10 mt--xl--15">
                     <div class="col-sm-6 col-lg-4 gx-xl-5">
                         <div class="featured__card">
-                            <figure class="featured__card-figure">
+                            <figure class="featured__card-figure img-hover">
                                 <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
@@ -222,7 +277,7 @@
                             </figure>
                             <div class="featured__card-body">
                                 <h6 class="">$1,130,000</h6>
-                                <p class="mt--1">111 Rock Nettle Pl</p>
+                                <p class="">111 Rock Nettle Pl</p>
                             </div>
                             <div class="featured__card-footer">
                                 <ul class="list-none">
@@ -235,7 +290,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-4 mt--6 mt--sm--0 gx-xl-5">
                         <div class="featured__card">
-                            <figure class="featured__card-figure">
+                            <figure class="featured__card-figure img-hover">
                                 <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
@@ -243,7 +298,7 @@
                             </figure>
                             <div class="featured__card-body">
                                 <h6 class="">$1,130,000</h6>
-                                <p class="mt--1">111 Rock Nettle Pl</p>
+                                <p class="">111 Rock Nettle Pl</p>
                             </div>
                             <div class="featured__card-footer">
                                 <ul class="list-none">
@@ -256,7 +311,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-4 mt--6 mt--lg--0 gx-xl-5">
                         <div class="featured__card">
-                            <figure class="featured__card-figure">
+                            <figure class="featured__card-figure img-hover">
                                 <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
@@ -264,7 +319,7 @@
                             </figure>
                             <div class="featured__card-body">
                                 <h6 class="">$1,130,000</h6>
-                                <p class="mt--1">111 Rock Nettle Pl</p>
+                                <p class="">111 Rock Nettle Pl</p>
                             </div>
                             <div class="featured__card-footer">
                                 <ul class="list-none">
@@ -291,7 +346,7 @@
 
                 <div class="grid__container mt--6 mt--md--10">
                     <div class="grid__item">
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                             <img src="./assets/images/home/grid-images/grid-img-1.webp" alt="Image 1" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">GeorgeTown</h6>
@@ -300,7 +355,7 @@
                                 </p>
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                             <img src="./assets/images/home/grid-images/grid-img-2.webp" alt="Image 2" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">Escalera Ranch</h6>
@@ -312,7 +367,7 @@
                     </div>
         
                     <div class="grid__item">
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                             <img src="./assets/images/home/grid-images/grid-img-3.webp" alt="Image 3" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">Austin</h6>
@@ -321,7 +376,7 @@
                                 </p> -->
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                             <img src="./assets/images/home/grid-images/grid-img-4.webp" alt="Image 4" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">Fredericksburg</h6>
@@ -333,7 +388,7 @@
                     </div>
                     
                     <div class="grid__item">
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                             <img src="./assets/images/home/grid-images/grid-img-5.webp" alt="Image 5" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">Fredericksburg</h6>
@@ -342,7 +397,7 @@
                                 </p> -->
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure">
+                        <figure class="grid__figure img-hover">
                           <img src="./assets/images/home/grid-images/grid-img-6.webp" alt="Image 6" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
                                 <h6 class="">Escalera Ranch</h6>
@@ -361,7 +416,7 @@
         <section class="testimonials mt--10 mt--xl--15">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-10 col-sm-6 col-xl-4 section-heading">
+                    <div class="col-sm-8 col-xl-4 section-heading">
                         <img src="./assets/icons/5-stars-filled.svg" alt="5-stars-icon" class="d-inline">
                      <h2 class="">Client review lorem ipsum dolor</h2>
                    </div>
@@ -389,7 +444,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="swiper">
+                        <div class="swiper swiper-testimonials">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="testimonials__content-wrapper mt--4">
@@ -402,11 +457,11 @@
                                             </figure>
                                             <div class="divider"></div>
                                             <p class="">John Doe</p>
-                                            <div class="play-btn">
+                                            <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
                                                 </svg>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -421,11 +476,11 @@
                                             </figure>
                                             <div class="divider"></div>
                                             <p class="">John Doe</p>
-                                            <div class="play-btn">
+                                            <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
                                                 </svg>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -440,11 +495,11 @@
                                             </figure>
                                             <div class="divider"></div>
                                             <p class="">John Doe</p>
-                                            <div class="play-btn">
+                                            <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
                                                 </svg>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -468,7 +523,7 @@
         <section class="follow-us mt--10 mt--xl--15">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-sm-10 col-md-8 col-xl-6">
+                    <div class="col-sm-10 col-md-8 col-xl-6 col-xxl-5">
                         <h2 class="follow-us__title">
                             <span>Follow us on instagram</span>
                             @<span class="text-secondary mt--0">29westrealty</span>
@@ -476,26 +531,50 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt--5">
-                <div class="col-sm-6 col-lg-3">
-                    <figure class="">
-                        <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                    </figure>
-                </div>
-                <div class="col-sm-6 col-lg-3 mt--3 mt--sm--0">
-                    <figure class="">
-                        <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                    </figure>
-                </div>
-                <div class="col-sm-6 col-lg-3 mt--3 mt--lg--0">
-                    <figure class="">
-                        <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                    </figure>
-                </div>
-                <div class="col-sm-6 col-lg-3 mt--3 mt--lg--0">
-                    <figure class="">
-                        <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                    </figure>
+            <div class="row mt--5 swiper-container-follows">
+                <div class="swiper-wrapper">
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+
+                    <!--  -->
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 swiper-slide">
+                        <figure class="img-hover">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
@@ -520,15 +599,18 @@
         </section>
         <!-- ======= CTA section end ======= -->
     </main>
-    <!-- <div class="divider my--5 my--lg--9"></div> -->
+     <!-- ====== Main End ====== -->
 
+    <!-- ====== Footer Start ====== -->
     <footer class="footer">
         <div class="footer__top">
             <div class="page-container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="footer-logo-wrapper">
-                            <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
+                            <a href="index.html" class="">
+                                <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
+                            </a>
                         </div>
                         <p class="mt--2 footer-description">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -553,6 +635,9 @@
                                     </li>
                                     <li class="footer__link-item">
                                         <a href="./communities.html" class="footer-link">Communities</a>
+                                    </li>
+                                    <li class="footer__link-item">
+                                        <a href="./buy.html" class="footer-link">Buy</a>
                                     </li>
                                     <li class="footer__link-item">
                                         <a href="./contact.html" class="footer-link">Contact</a>
@@ -624,7 +709,7 @@
             </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- ====== Footer End ====== -->
 </body>
 </html>
 
