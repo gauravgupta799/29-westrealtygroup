@@ -55,6 +55,7 @@ body {
   letter-spacing: normal;
   font-size: rem(18);
   line-height: 1.2;
+  // cursor: none;
 }
 
   div,
@@ -125,8 +126,6 @@ span + span{
 
 h1, h2, h3, h4, h5, h6{
   font-size: 100%;
-  font-family: $ff-primary;
-  color: $clr-primary;
 }
 
 button{
@@ -160,4 +159,9 @@ sup {
 ::selection{
   color:$clr-white;
   background-color: $clr-primary;
+}
+
+
+.c-scrollbar_thumb {
+  background-color: $clr-primary !important;
 }

@@ -23,4 +23,10 @@
 4. Thumb Slider on Properties-Inner Page:- Done ✔
 5. Make Follows Us Slider:- Done ✔ 
 
+#21/03/2024
+1, Timeline:- Worked on timeline fnctionality
+2. Fixed the design issues
+
+#22/03/2024
+1. Fixed the design issues
 

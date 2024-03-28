@@ -1,66 +1,179 @@
-// function hideLoader() {
-//   const loader = document.querySelector(".loader-container");
-//   loader.style.transform = "translateY(-100%)";
-// }
-
 const html = document.querySelector("html");
 const hamburgerBtn = document.getElementById("hamburgur");
 const closeMenuBtn = document.getElementById("close-menu-btn");
+const header = document.querySelector(".header");
+const main = document.querySelector(".main");
+
 
 gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 
+//========= Lenis Start =========
+const lenis = new Lenis({
+    duration: 1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: "vertical", // vertical, horizontal
+    gestureOrientation: "vertical", // vertical, horizontal, both
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 1,
+    infinite: false
+});
+  
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+//========= Lenis End =========
+
+
+function hideLoader(){
+    tl.to(".loader-upper",{
+        y:"-100%",
+        duration:1,
+        ease: "sine.inOut",
+    })
+    tl.to(".loader-inner",{
+        x:"100%",
+        duration:1,
+        // delay:0.3,
+        ease: "sine.inOut",
+    }, "-=0.2")
+}
+
+//====== Locomotive  Scroll Start ======
+// const locoScroll = new LocomotiveScroll({
+//     el:main,
+//     smooth:true,
+//     getDirection: true,
+// })
+
+
+// locoScroll.on("scroll", ScrollTrigger.update);
+
+// ScrollTrigger.scrollerProxy(".main",{
+//     scrollTop(value){
+//         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+//     },
+//     getBoundingClientRect(){
+//         return {
+//             left:0, top:0,
+//             width:locoScroll.innerWidth, 
+//             height:locoScroll.innerHeight,
+//         }
+//     },
+//     pinType: main.style.transform ? "transform" : "fixed"
+// });
+
+//====== Locomotive  Scroll End ======
+
+
+//========= Hide the Navbar when scrolling down start =========
+let lastScrollTop = 0;
+const checkScroll = () => {
+    // let scrollTop = locoScroll.scrollY || document.documentElement.scrollTop;
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if(scrollTop > lastScrollTop) {
+        header.classList.remove("sticky");
+        header.classList.add("hidden");
+    }else {
+        scrollTop === 0 ?  header.classList.remove("sticky") : header.classList.add("sticky");
+        header.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}
+
+// window.addEventListener("scroll", checkScroll);
+//========= Hide the Navbar when scrolling down end =========
+
+
+//======  Active Page Link start ======
+const windowPathname = window.location.pathname;
+const navLinks = document.querySelectorAll(".nav__link");
+navLinks.forEach(link =>{
+  const navLinkPathname = new URL(link.href).pathname;
+  if((windowPathname === navLinkPathname) || (windowPathname === "/index.html" && navLinkPathname === "/")){
+    link.classList.add("active");
+  }
+})
+//======  Active Page Link end ======
+
+
 //======= Toggle Menu Start =============
+let isOpened = false;
 function toggleMenu(){
+	isOpened = !isOpened;
     const mobileMenu = document.querySelector('.header--mobile');
     mobileMenu.classList.toggle("hide");
-    html.classList.toggle("overflow-hidden");
+    isOpened ?  lenis.stop() : lenis.start() 
 }
 
 hamburgerBtn.addEventListener('click', () => {
     toggleMenu();
-    tl.from(".header--mobile", 0.5, { 
+    tl.from(".header--mobile", 0.8, { 
         x: "-100%",
-        ease:"power3.easeIn"
+        ease:"power4.easeIn"
     })
-    tl.from(".menu-img", 0.65,{
+    tl.from(".menu-img", 0.9,{
         opacity:0,
         x:-50,
-        ease:"power3.easeIn"
+        ease:"power4.easeIn"
     })
-    tl.from(".nav__link", 0.76,{
+    tl.from(".nav__link", 0.85,{
         opacity:0,
-        y:-60,
+        y:60,
         ease:"power4.easeInOut",
-        stagger:0.1,
+        stagger:0.12,
         delay:-0.65,
     },)
     tl.from(".contact-list__link", 0.86,{
         opacity:0,
-        x:60,
-        stagger:0.1,
+        x:-60,
+        stagger:0.12,
         delay:-1.2,
         ease:"power4.easeInOut",
     },)
-    tl.from(".socials__link", 1,{
+    tl.from(".socials__link", 0.9, {
         opacity:0,
         x:-100,
-        stagger:0.2,
+        stagger:0.15,
         delay:-1.25,
         ease:"power4.easeIn",
     },)
 });
 
 if(closeMenuBtn){
-    closeMenuBtn.addEventListener('click', () => toggleMenu());
+    closeMenuBtn.addEventListener('click', toggleMenu);
 }
 //======= Toggle Menu ENd =============
+
+
+//======= Scroll-Now Start =============
+const scrollButton = document.getElementById('scrollButton');
+const targetSection = document.getElementById('targetSection');
+if(scrollButton &&  targetSection ){
+    scrollButton.addEventListener('click', function(){
+    //   targetSection.scrollIntoView({ behavior: 'smooth', duration: 1000 });
+        gsap.to(window, {
+            duration: 1, 
+            scrollTo: {
+                y: targetSection,
+                offsetY: 0
+            },
+            ease: "sine.inOut",
+        });
+    });
+}
+//======= Scroll-Now End =============
 
 
 //========= Swipers Start =============
 const swiper1 = new Swiper(".swiper-testimonials",{
     direction: "horizontal",
-    spaceBetween: 10,
+    spaceBetween: 30,
     loop:true,
     grabCursor: true,
     navigation:{
@@ -79,13 +192,13 @@ const swiper2 = new Swiper(".swiper-container-follows",{
             slidesPerView: 1.75,
         },
         576:{
-            slidesPerView: 2.5,
+            slidesPerView: 2.25,
         },
         992:{
-           slidesPerView: 3.5,
+        slidesPerView: 3.25,
         },
         1200:{
-           slidesPerView: 4.5,
+        slidesPerView: 4.25,
         },
     }
 });
@@ -115,105 +228,214 @@ var galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
     grabCursor: true,
     thumbs: {
-      swiper: galleryThumbs
+    swiper: galleryThumbs
     }
 });
-//========= Swipers End =============
 
+//========== Timeline animtion start =================
+var mySwiper = new Swiper(".swiper-container--timeline", {
+    autoHeight: true,
+    spaceBetween:20,
+    slidesPerView:1.4,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    speed: 500,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar"
+    },
+    loop: false,
+    effect: "slide",
+    on: {
+      init: function () {
+        $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+        $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+      },
+      slideChangeTransitionStart: function () {
+        // $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+        $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
+      }
+    }
+});
+  
+let mySwiper2 = new Swiper(".swiper-container--content", {
+    slidesPerView: "auto",
+    allowTouchMove: false,
+    grabCursor: true,
+    touchRatio: 0,
+    effect: "slide",
+    speed: 500,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar"
+    },
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false
+    },
+    // on: {
+    //     init: function () {
+    //       $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+    //       $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+    //     },
+    //     slideChangeTransitionStart: function () {
+    //       $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+    //       $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper2.realIndex).addClass("active");
+    //     },
+    // }
+});
+
+$(".swiper-pagination-custom .swiper-pagination-switch").click(function(){
+    mySwiper.slideTo($(this).index());
+    mySwiper2.slideTo($(this).index());
+    $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+    $(this).addClass("active");
+});
+//========== Timeline animtion end =================
+
+//========= Swipers End =============
 
 
 //======= Counter Start =============
 function visible(partial) {
     let $t = partial,
-      $w = jQuery(window),
-      viewTop = $w.scrollTop(),
-      viewBottom = viewTop + $w.height(),
-      _top = $t.offset().top,
-      _bottom = _top + $t.height(),
-      compareTop = partial === true ? _bottom : _top,
-      compareBottom = partial === true ? _top : _bottom;
-  
+    $w = jQuery(window),
+    viewTop = $w.scrollTop(),
+    viewBottom = viewTop + $w.height(),
+    _top = $t.offset().top,
+    _bottom = _top + $t.height(),
+    compareTop = partial === true ? _bottom : _top,
+    compareBottom = partial === true ? _top : _bottom;
+
     return (
-      compareBottom <= viewBottom && compareTop >= viewTop && $t.is(":visible")
+    compareBottom <= viewBottom && compareTop >= viewTop && $t.is(":visible")
     );
 }
-  
-$(window).scroll(function () {
+
+function handleCounter(){
     const myCounter = document.querySelector('.count-digit');
-    if (myCounter) {
-      if (visible($(".count-digit"))) {
-        if ($(".count-digit").hasClass("counter-loaded")) return;
-        $(".count-digit").addClass("counter-loaded");
-  
-        $(".count-digit").each(function () {
-          if ($(this).html() == Math.floor($(this).html())) {
-            var $this = $(this);
-            jQuery({ Counter: 0 }).animate(
-              { Counter: $this.text() },
-              {
-                duration: 1000,
-                easing: "swing",
-                step: function () {
-                  $this.text(Math.trunc(this.Counter) + 1);
-                },
-              }
-            );
-          } else {
-            var $this = $(this);
-            jQuery({ Counter: 0 }).animate(
-              { Counter: $this.text() },
-              {
-                duration: 1000,
-                easing: "swing",
-                step: function () {
-                  $this.text(((this.Counter * 10) / 10).toFixed(1));
-                },
-              }
-            );
-          }
-        });
-      }
+    if(myCounter){
+        if(visible($(".count-digit"))) {
+            if ($(".count-digit").hasClass("counter-loaded")) return;
+            $(".count-digit").addClass("counter-loaded");
+
+            $(".count-digit").each(function () {
+                if ($(this).html() == Math.floor($(this).html())) {
+                    var $this = $(this);
+                    jQuery({ Counter: 0 }).animate(
+                    { Counter: $this.text() },
+                    {
+                        duration: 1000,
+                        easing: "swing",
+                        step: function () {
+                        $this.text(Math.trunc(this.Counter) + 1);
+                        },
+                    }
+                    );
+                } else {
+                    var $this = $(this);
+                    jQuery({ Counter: 0 }).animate(
+                    { Counter: $this.text() },
+                    {
+                        duration: 1000,
+                        easing: "swing",
+                        step: function () {
+                        $this.text(((this.Counter * 10) / 10).toFixed(1));
+                        },
+                    }
+                    );
+                }
+            });
+        }
     }
-});
+} 
 //======= Counter End =============
+
+// locoScroll.on('scroll', ()=>{
+//     checkScroll();
+//     handleCounter();
+// });
+
+
+//====== custome cursor start ======
+// var cursor = document.querySelector('.cursor'),
+// cursorScales = document.querySelectorAll('.cursor-scale')
+// mouseX = 0,
+// mouseY = 0;
+// gsap.to({}, 0.016, {
+//     repeat:-1,
+//     duration:0.75,
+//     ease:"power2.out",
+//     onRepeat:function(){
+//         gsap.set(cursor,{
+//             css:{
+//                 left:mouseX,
+//                 top:mouseY
+//             }
+//         })
+//     }
+// })
+// cursorScales.forEach((cursorScale)=>{
+//     cursorScale.addEventListener("mousemove", ()=>{
+//         cursor.classList.add('grow');
+//         if(cursorScale.classList.contains('small')){
+//             cursor.classList.remove('grow');
+//             cursor.classList.add('grow-small');
+//         }
+//     });
+//     cursorScale.addEventListener("mouseleave", ()=>{
+//         cursor.classList.remove('grow');
+//         cursor.classList.remove('grow-small');
+//     });
+// });
+
+// window.addEventListener("mousemove", (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+// });
+
+//====== custome cursor end ======
 
 
 //========= Open Modal Video Start =============
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close-btn");
 const openVideoBtns = document.querySelectorAll(".open-video");
+const videoIframe = document.getElementById("video-iframe");
+const baseUrl = "https://www.youtube.com/embed";
 
+const testimonersVideoId = [
+    "0kWG5o7G5HE?si=aGpqv9kaaQliczP7", 
+    "o6oqc5XBKQc?si=lhekscWfS2TX8B9S",
+    "50ethB3GQho?si=4Nqjv56m3oaVapOv"
+];
+
+let isModalActive = false;
+function toggleModal(){
+    isModalActive = !isModalActive;
+    modal.style.display = isModalActive ? "grid" : "none"
+    isModalActive ? lenis.stop() : lenis.start();
+}
 
 if(openVideoBtns && modal){
-    openVideoBtns.forEach((playbtn)=>{
-        playbtn.addEventListener("click", ()=> showModal());
+    openVideoBtns.forEach((playbtn, index)=>{
+        playbtn.addEventListener("click", ()=>{
+            videoIframe.src = `${baseUrl}/${testimonersVideoId[index]}`;
+            toggleModal();
+        });
     });
-}
-
-function showModal(){
-    modal.style.display = "grid";
-    html.classList.add("overflow-hidden");
-}
-
-function hideModal(){
-    modal.style.display = "none";
-    html.classList.remove("overflow-hidden");
-}
-
-closeBtn && closeBtn.addEventListener("click",()=> hideModal());
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    closeBtn.addEventListener("click", ()=>{
+        videoIframe.src = "";
+        toggleModal();
+    });
 }
 //========= Open Modal Video End =============
 
 
-
+//========== Filter Cards Start =================
 const tabBtns = document.querySelectorAll(".tabs__item");
-
 if(tabBtns.length > 0){
     tabBtns.forEach(function(tab) {
         tab.addEventListener("click", function(event) {
@@ -240,11 +462,11 @@ function filterCards(categoryType){
         }else{
             card.classList.remove("show");
             gsap.to(card, { 
-              duration: 0.5, 
-              y:0,
-              opacity: 1, 
-              scale: 1, 
-              ease: "power3.easeOut" 
+            duration: 0.5, 
+            y:0,
+            opacity: 1, 
+            scale: 1, 
+            ease: "power3.easeOut" 
             });
         }
     });
@@ -259,7 +481,149 @@ function updateTabStatus(category){
         }
     })
 }
+//========== Filter Cards End =================
 
-window.addEventListener("load", function(e) {
+
+//========== Banner animtion start =================
+function bannerAnimation(){
+    tl.from(".banner-title",{
+        opacity:0,
+        x:-50,
+        duration:1,
+        delay:0.1,
+        ease: "power3.out",
+    })
+    tl.from(".header__wrapper",{
+        opacity:0,
+        opacity:0,
+        duration:1,
+        ease: "power3.out",
+    },"-=1")
+    tl.from(".banner-subTitle",{
+        opacity:0,
+        y:50,
+        duration:1,
+        ease: "power3.out",
+    },"-=0.8");
+    tl.from(".scroll-down-wrapper",{
+        opacity:0,
+        duration:1,
+        ease: "power3.out",
+    }, "-=0.9");
+}
+
+window.addEventListener("load", (e) =>{
     tabBtns && filterCards("all");
+    hideLoader();
+    bannerAnimation();
 });
+//========== Banner animtion end =================
+
+
+//=========== Animation Start ==============
+const fadeUp = gsap.utils.toArray(".fade-up");
+fadeUp.forEach((item, index) => {
+    const anim =  gsap.from(item,
+        { opacity:0,  y:60, duration:1 }
+    );
+    ScrollTrigger.create({
+        trigger:item,
+        animation:anim,
+        toggleActions:"play",
+        // scroller:".main",
+        once:true,
+        stagger:0.2,
+        ease: "power4.out",
+    })
+})
+
+
+const fadeIn = gsap.utils.toArray(".fade-in");
+fadeIn.forEach((item, index) => {
+    const anim =  gsap.from(item,
+        { opacity:0, duration:1 }
+    );
+    ScrollTrigger.create({
+        trigger:item,
+        animation:anim,
+        toggleActions:"play",
+        // scroller:".main",
+        once:true,
+        stagger:0.2,
+        ease: "power4.out",
+    })
+})
+
+
+// animation on image container
+const imagesScale = gsap.utils.toArray(".scale-up");
+imagesScale.forEach((imgContainer, i) => {
+  const anim = gsap.fromTo(imgContainer,
+    { opacity: 0, y: 50, scale:0.95, transformOrigin:"bottom"},
+    { opacity: 1, y: 0, scale:1.0035, duration:1 }
+  );
+  ScrollTrigger.create({
+    trigger:imgContainer,
+    animation: anim,
+    toggleActions: "play",
+    once: true,
+    // scroller:".main",
+    duration: 1,
+    stagger:0.1,
+    ease: "power4.out",
+  });
+});
+
+
+// animation on image container
+const dividers = gsap.utils.toArray(".divider");
+dividers.forEach((divider, i) => {
+  const anim = gsap.fromTo(divider,
+    { 
+        opacity: 0, 
+        width:"0", 
+        scale:0, 
+        transformOrigin:"left"
+    },
+    { 
+        opacity: 1,
+        width: "100%", 
+        scale:1, 
+        duration:1 
+    }
+  );
+  ScrollTrigger.create({
+    trigger:divider,
+    animation: anim,
+    toggleActions: "play",
+    // scroller:".main",
+    once: true,
+    duration:2,
+    stagger:0.25,
+    ease: "power4.out",
+  });
+});
+
+//=========== Animation End ==============
+
+function handleScroll(){
+    checkScroll();
+    handleCounter();
+}
+
+window.addEventListener("scroll", handleScroll);
+
+
+// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+// ScrollTrigger.refresh();
+
+// Update ScrollTrigger when Lenis scroll event occurs
+lenis.on('scroll', () => {
+    ScrollTrigger.update();
+});
+
+// gsap.ticker.add((time)=>{
+//     lenis.raf(time * 1000);
+// });
+  
+gsap.ticker.lagSmoothing(0)

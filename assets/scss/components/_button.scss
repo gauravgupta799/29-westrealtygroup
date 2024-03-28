@@ -11,12 +11,13 @@
     border:none;
     position: relative;
     overflow: hidden;
+    z-index: 1;
     font-size:rem(16);
     line-height: 1.78;
     font-weight: normal;
-    padding:em(16) em(32);
+    padding:em(12) em(34);
     color:$clr-white-1;
-    @include transition(all, 0.25s, ease-out);
+    @include transition(all, 0.2s, ease-out);
     @include breakpoint-md{
         font-size: rem(18);
     }
@@ -34,32 +35,18 @@
 .btn--primary{
     background: $clr-secondary;
     border: 1px solid  $clr-white;
-    &:hover{
-        background: $clr-white;
-        color:$clr-black;
-        border-color: $clr-black;
-    }
 }
 
 .btn--secondary{
     background: $clr-black;
     border: 1px solid  $clr-white;
-    &:hover{
-        background: $clr-secondary;
-    }
 }
 
 .btn--outline{
     background: transparent;
     color:$clr-secondary;
     border:1px solid $clr-secondary;
-    &:hover{
-        background-color: $clr-secondary;
-        color:$clr-white;
-        border-color:$clr-secondary
-    }
 }
-
 
 .btn--transparent{
     background:transparent;
@@ -68,7 +55,6 @@
     align-items: center;
     gap:rem(16);
     padding-inline:0;
-    padding-block:em(6);
     &:hover{
         padding-inline:em(16);
         svg{
@@ -79,4 +65,76 @@
     }
 }
 
+/*
+---------------------------------------
+hover effect
+---------------------------------------
+*/
 
+.btn--primary,
+.btn--secondary,
+.btn--outline{
+    &::before{
+        content: '';
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        position: absolute;
+        opacity: 0;
+        background-color: $clr-primary;
+        z-index: -1;
+        @include transition(all, 0.25s, ease-out);
+    }
+}
+  
+.btn--secondary,
+.btn--primary,
+.btn--outline {
+    &:hover, &:focus{
+        color: $clr-white;
+        &::before{
+            @include transition(all, 0.25s, ease-out);
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+    }
+    &.active{
+        transform: scale(0.9);
+    }
+}
+
+
+.btn--secondary,
+.btn--outline{
+    &::before{
+        background: $clr-secondary;
+    }
+}
+
+
+// ========= Play Button ==========
+.play-btn{
+    @include dimensions(rem(80), rem(80));
+    @include border-radius("full-round");
+    @include flex-center;
+    flex-shrink: 0;
+    background: $clr-secondary;
+    border:1px solid transparent;
+    @include transition(all, 0.35s, ease-out);
+    @include breakpoint-md{
+        @include dimensions(rem(100), rem(100));
+    }
+    @include breakpoint-lg{
+        @include dimensions(rem(100), rem(100));
+    }
+    &:hover{
+        cursor: pointer;
+        background: $clr-white;
+        border-color: $clr-secondary;
+        svg path{
+            fill:$clr-secondary;
+        }
+    }
+}

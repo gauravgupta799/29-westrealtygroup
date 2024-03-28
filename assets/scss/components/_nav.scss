@@ -1,0 +1,108 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+//========== Mobile Menu Start ========
+.nav{
+    &__mobile{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include breakpoint-md{
+            gap:rem(192);
+        }
+        @include breakpoint-lg{
+            flex-wrap: nowrap;
+            gap:rem(96);
+        }
+        @include breakpoint-xl{
+        }
+        @include breakpoint-xxl{
+        }
+        
+    }
+    &__item{
+        position: relative;
+        overflow: hidden;
+    }
+    &__link {
+        color:$clr-white;
+        font-family: $ff-primary;
+        font-size: rem(32);
+        line-height: 1.67;
+        @include breakpoint-md{
+            font-size: rem(36);
+        }
+        @include breakpoint-lg{
+            font-size: rem(40);
+        }
+        @include breakpoint-xl{
+            font-size: rem(44);
+        }
+        @include breakpoint-xxl{
+            font-size: rem(48);
+        }
+        &.active{
+            color:$clr-secondary;
+            &::before {
+                width: 100%;
+                transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            }
+            &::after {
+                width: 100%;
+                background: transparent;
+                transition: 0s;
+            }
+        }
+    }
+}
+//========== Mobile Menu End ========
+
+
+.contact-list__link{
+    color:$clr-white;
+    font-weight: 300;
+    line-height: 3;
+}
+
+
+
+.nav__link,
+.contact-list__link,
+.footer-link,
+.socials__link{
+    position: relative;
+    transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        bottom:-0.1rem;
+        height: 0.1rem;
+        background: $clr-secondary;
+    }
+    &::before {
+        left: 0;
+    }
+    &::after {
+        right: 0;
+        transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    &:hover{
+        cursor: pointer;
+        color:$clr-secondary;
+        &::before {
+            width: 100%;
+            transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        &::after {
+            width: 100%;
+            background: transparent;
+            transition: 0s;
+        }
+    }
+}

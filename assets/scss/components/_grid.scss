@@ -24,6 +24,7 @@
             @extend .grid__container;
             gap:rem(64);
         }
+        
     }
     &__body{
         &--team{
@@ -36,12 +37,21 @@
         &:nth-child(2){
             margin-top: 28px;
         }
-        &::before {
+        &::before{
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000);
+            z-index: 1;
+        }
+        &:hover{
+            .grid__content{
+                transform: translateY(0%);
+                p{
+                    margin-top: rem(16);
+                }
+            }
         }
     }
     &__content{
@@ -49,6 +59,11 @@
         bottom: 0;
         padding:em(20);
         padding-top: 0;
+        transform: translateY(58%);
+        transition: transform 0.35s ease-out;
+        overflow: hidden;
+        z-index: 2;
+
         @include breakpoint-md{
             padding:em(20);
         }
@@ -64,6 +79,14 @@
         }
         p{
             line-height: 1.56;
+            margin-top: rem(40);
+            transition: margin-top 0.32s ease-out;
+            @include breakpoint-xxl{
+                margin-top: rem(48);
+            }
+            @include media-query("min", em(1920)){
+                margin-top: rem(110);
+            }
         }
     }
 }

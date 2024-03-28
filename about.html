@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow"/>
     <link rel="shortcut icon" href="./assets/logos/logo-1.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./dist/bundle.min.css">
     <script src="./dist/bundle.min.js" defer></script>
     <title>About Us | 29-West</title>
 </head>
 <body class="body">
-    <div class="loader-container">
-        <div class="loader">
-            <div class="loader-wrapper">
-            </div>
+    <div class="loader-upper">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
         </div>
     </div>
+    <div class="loader-inner"></div>
 
+    <div class="cursor"></div>
+    
     <!-- ====== Header Start ====== -->
     <header class="header">
         <!-- Dektop Menu start -->
@@ -56,17 +59,16 @@
                     <div class="col-1 offset-lg-4 offset-xxl-5"></div>
                     <div class="col-lg-6 header-wrapper">
                         <div class="header__logo--mobile">
-                            <a href="/index.html" class="d-flex">
+                            <a href="index.html" class="d-flex">
                                 <img src="./assets/logos/logo-2.svg" alt="carol's logo" class="img-fluid">
                             </a>
                         </div>
                         <button class="close-menu-btn" id="close-menu-btn">
-                            <span>X</span>
-                            <span>Close</span>
+                            <span>X</span><span>Close</span>
                         </button>
                     </div>
                 </div>
-                <div class="row pt--3 pt--sm--4 pt--xxl--7 g-lg-0">
+                <div class="row pt--3 pt--sm--4 pt--xxl--5 g-lg-0">
                     <div class="col-lg-4 d-none d-lg-block">
                         <figure class="overflow-hidden">
                             <img src="./assets/images/img-header.webp" alt="" class="img-fluid menu-img">
@@ -74,7 +76,7 @@
                     </div>
                     <div class="col-lg-7 offset-lg-1 col-xxl-6 offset-xxl-2">
                         <nav class="nav__mobile">             
-                            <ul class="nav__list list-none mt--2 mt--sm--0">
+                            <ul class="nav__list list-none">
                                 <li class="nav__item"><a class="nav__link active" href="index.html">Home</a></li>
                                 <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
                                 <li class="nav__item"><a class="nav__link" href="team.html">Team</a></li>
@@ -83,18 +85,18 @@
                                 <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
                             </ul>                     
                             <ul class="nav__contact-list list-none mt--2 mt--sm--0">
-                                <li><a href="mailto:prestige.ge@gmail.com" class="contact-list__link">prestige.ge@gmail.com</a></li>
-                                <li><a href="tel:+41 22 839 39 60" class="contact-list__link">+41 22 839 39 60</a></li>
-                                <li><address class="contact-list__link">Rte de Florissant 57, 1206 Geneva</address></li>
-                            </ul>
+                                <li><a href="mailto:​Carol@29Westrealty.Com" class="contact-list__link"> ​Carol@29Westrealty.Com</a></li>
+                                <li><a href="tel:+1 512-921-1003" class="contact-list__link">+1 512-921-1003</a></li>
+                                <li><address class="contact-list__link">Georgetown, TX, United State, 78628</address></li>
+                            </ul>         
                         </nav>
                     </div>
                 </div>
-                <div class="socials-wrapper--mobile py--3 py--sm--2">
+                <div class="socials-wrapper--mobile py--2">
                     <ul class="socials__list--mobile list-none">
-                        <li><a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a></li>
-                        <li><a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a></li>
-                        <li> <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank"><span>Instagram</span></a></li>
+                        <li><a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank"><span>LinkedIn</span></a></li>
+                        <li> <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank"><span>Facebook</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -103,478 +105,594 @@
     </header>
     <!-- ====== Header End ====== -->
 
-    <!-- ====== Main Start ====== -->
-    <main class="main">
-        <!-- ======= Banner section start ======= -->
-        <section class="home-banner mt--1">
-            <div class="page-container">
-                <div class="home-banner__wrapper">
-                    <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid">
-                    <!-- <img src="./assets/images/home/banner-mobile-2x.webp" alt="" class="img-fluid home-banner-img--mobile">          -->
-                    <div class="row banner-content">
-                        <div class="col-sm-8 col-md-7 col-xl-6 col-xxl-5 section-heading">
-                            <h1 class="banner-title">
-                                About 29 west realty group
-                            </h1>
-                            <p class="banner-subTitle mt--1 mt--lg-2">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            </p>
+    <div class="main">
+        <!-- ====== Main Start ====== -->
+        <main class="main">
+            <!-- ======= Banner section start ======= -->
+            <section class="home-banner about-banner mt--1">
+                <div class="page-container">
+                    <div class="home-banner__wrapper">
+                        <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid">
+                        <div class="row banner-content">
+                            <div class="col-sm-8 col-md-7 col-xl-6 col-xxl-5 section-heading">
+                                <h1 class="banner-title">
+                                    About 29 west realty group
+                                </h1>
+                                <p class="banner-subTitle mt--1 mt--lg-2">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="scroll-down-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
-                            <g data-name="Group 26" transform="translate(-1780 -997)">
-                                <circle data-name="Ellipse 5" cx="14.5" cy="14.5" r="14.5" transform="translate(1780 997)" fill="#10add9"/>
-                                <path data-name="Polygon 2" d="M4.5 0 9 7H0z" transform="rotate(180 899.5 507.5)" fill="#fff"/>
-                            </g>
-                        </svg>
-                        <p class="scroll-down-text">Scroll Now</p>
+                        <div class="scroll-down-wrapper" id="scrollButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+                                <g data-name="Group 26" transform="translate(-1780 -997)">
+                                    <circle data-name="Ellipse 5" cx="14.5" cy="14.5" r="14.5" transform="translate(1780 997)" fill="#10add9"/>
+                                    <path data-name="Polygon 2" d="M4.5 0 9 7H0z" transform="rotate(180 899.5 507.5)" fill="#fff"/>
+                                </g>
+                            </svg>
+                            <p class="scroll-down-text">Scroll Now</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- ======= Banner section end ======= -->
-
-          <!-- ======= Helping section start ======= -->
-        <section class="helping mt--6 mt--md--10">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="">
-                            helping both sellers and buyers
-                            make the right decisions based 
-                            on their individual needs
-                        </h2>
-                        <p class="mt--sm--2 mt--lg--3">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                        </p>
-                        <div class="btn-wrapper mt--2 mt--md--4 mt--lg--6">
-                            <a href="#" class="btn btn--primary">Get In Touch</a>
+            </section>
+            <!-- ======= Banner section end ======= -->
+    
+              <!-- ======= Helping section start ======= -->
+            <section class="helping mt--6 mt--md--10" id="targetSection">
+                <div class="page-container">
+                    <div class="row g-0">
+                        <div class="col-lg-6 col-xl-6">
+                            <h2 class="">helping both sellers and buyers make the right decisions based 
+                                on their individual needs
+                            </h2>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-end">
+                            <div class="divider"></div>
                         </div>
                     </div>
-                    <div class="col-md-5 offset-md-1">
-                        <div class="divider my--2 mt--md--4"></div>
+                    <div class="row g-0">
+                        <div class="col-lg-5 mt--2 mt--xl--3">
+                            <p class="">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                            </p>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1 mt--2 mt--xl--3">
+                            <p class="">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                            </p>
+                        </div>        
+                    </div>
+    
+                    <div class="btn-wrapper mt--2 mt--md--3 mt--lg--5 d-flex">
+                        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+                    </div>
+    
+                    <!-- <div class="col-lg-6 col-xl-5 offset-xl-1">
+                        <div class="divider my--2 mt--lg--4"></div>
                         <p class="">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
                         </p>
-                    </div>
+                    </div> -->
                 </div>
-            </div>
-
-            <figure class="mt--5 mt--lg--10">
-                <img src="./assets/images/home/img-3.webp" alt="" class="img-fluid">
-            </figure>
-        </section>
-        <!-- ======= Helping section end ======= -->
-
-        <!-- ======= Team section start ======= -->
-        <section class="team mt--10 mt--xl--15">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="">
-                            helping both sellers and buyers make the right decisions
-                        </h2>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mt--1 mt--md--0">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, study.
-                        </p>
-                    </div>
-                </div>
-                <div class="grid__container--team mt--5 mt--lg--8">
-                    <div class="grid__item--team">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/home/img-1.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    
+                <figure class="mt--5 mt--lg--10">
+                    <img src="./assets/images/home/img-3.webp" alt="" class="img-fluid">
+                </figure>
+            </section>
+            <!-- ======= Helping section end ======= -->
+    
+            <!-- ======= Team section start ======= -->
+            <section class="team mt--10 mt--xl--15">
+                <div class="page-container">
+                    <div class="row flex-center-v">
+                        <div class="col-md-6 col-xl-5">
+                            <h2 class="">
+                                helping both sellers and buyers make the right decisions
+                            </h2>
+                        </div>
+                        <div class="col-md-6 col-xl-6 offset-xl-1">
+                            <p class="mt--1 mt--md--0">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, study.
                             </p>
                         </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
                     </div>
-
-                    <div class="grid__item--team mt--4 mt--sm--0">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/about/team-member-2.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                            </p>
-                        </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="grid__item--team mt--4 mt--md--0">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/about/team-member-3.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                            </p>
-                        </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/home/img-1.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                            </p>
-                        </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/about/team-member-2.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                            </p>
-                        </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
-                        <figure class="grid__figure--team">
-                            <img src="./assets/images/about/team-member-3.webp" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="grid__body--team">
-                            <h6 class="">Carol Fahnestock</h6>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                            </p>
-                        </div>
-                        <div class="btn-wrapper mt--2">
-                            <a href="#" class="btn btn--outline">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        <!-- ======= Team section end ======= -->
-
-        <!-- ======= Core-Values section start ======= -->
-        <section class="core-values mt--10 mt--xl--15 mt--xxl--20">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="">
-                            Our Core Values and buyers make 
-                            the right decisions
-                        </h2>
-                    </div>
-                    <div class="col-md-6 pl--lg--2 pl--xl--4 pl--xxxl--6">
-                        <p class="mt--1 mt--md--0">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row align-items-center mt--4 mt--lg--8">
-                    <div class="col-lg-6">
-                        <figure class="">
-                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
-                        </figure>
-                    </div>
-                    <div class="col-lg-6 mt--2 mt--lg--0 pl--lg--2 pl--xl--4 pl--xxxl--6">
-                        <ul class="core-values__list list-none counter-list">
-                            <li class="core-values__item">
-                                <h2 class="">01</h2>
-                                <h6 class="">Providing an exceptional customer experience.</h6>
-                            </li>
-                            <li class="core-values__item">
-                                 <h2 class="">02</h2>
-                                <h6 class="">Being the best at what we do.</h6>
-                            </li>
-                            <li class="core-values__item">
-                                 <h2 class="">03</h2>
-                                <h6 class="">Always doing the right thing.</h6>
-                            </li>
-                            <li class="core-values__item">
-                                 <h2 class="">04</h2>
-                                <h6 class="">Always doing the right thing.</h6>
-                            </li>
-                            <li class="core-values__item">
-                                 <h2 class="">05</h2>
-                                <h6 class="">Always doing the right thing.</h6>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ======= Core-Values section end ======= -->
-
-        <!-- ======= Timeline section start ======= -->
-        <section class="timeline mt--10 mt--xl--15 mt--xxl--20">
-            <div class="page-container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 pr--xl--3">
-                        <div class="timeline__wrapper">
-                            <div class="timeline__periods">
-                                <div class="timeline__year-wrapper">
-                                    <p class="year active">2008</p>
-                                    <hr>
-                                </div>
-                                <div class="timeline__year-wrapper">
-                                    <p class="year">2011</p>
-                                     <hr>
-                                </div>
-                                <div class="timeline__year-wrapper">
-                                    <p class="year">2014</p>
-                                     <hr>
-                                </div>
-                                <div class="timeline__year-wrapper">
-                                    <p class="year">2017</p>
-                                    <hr>
-                                </div>
-                                <div class="timeline__year-wrapper">
-                                    <p class="year">2020</p>
-                                    <hr>
-                                </div>
-                                <div class="timeline__year-wrapper">
-                                    <p class="year">2023</p>
-                                </div>
-                            </div>
-
-                            <div class="timeline__content">
-                                <h2 class="">
-                                    With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
-                                </h2>
+                    <div class="grid__container--team mt--5 mt--lg--8">
+                        <div class="grid__item--team">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-1.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
                                 <p class="">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                                 </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
+                            </div>
+                        </div>
+    
+                        <div class="grid__item--team mt--4 mt--sm--0">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-2.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                                </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
+                            </div>
+                        </div>
+    
+                        <div class="grid__item--team mt--4 mt--md--0">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-3.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                                </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
+                            </div>
+                        </div>
+    
+                        <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-1.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                                </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
+                            </div>
+                        </div>
+    
+                        <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-2.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                                </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
+                            </div>
+                        </div>
+    
+                        <div class="grid__item--team mt--4 mt--md--6 mt--lg--8">
+                            <figure class="grid__figure--team">
+                                <img src="./assets/images/about/team-member-3.webp" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="grid__body--team">
+                                <h6 class="">Carol Fahnestock</h6>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                                </p>
+                            </div>
+                            <div class="btn-wrapper mt--2">
+                                <a href="#" class="btn btn--outline">Learn More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 mt--3 mt--lg--5 mt--xl--0">
-                        <figure class="">
-                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
-                            <figcaption>
-                                <p class="mt--1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    
                 </div>
-            </div>
-        </section>
-        <!-- ======= Timeline section end ======= -->
-
-        <!-- ======= Follow-us section start ======= -->
-        <section class="follow-us mt--10 mt--xl--15">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-sm-10 col-md-8 col-xl-6">
-                        <h2 class="follow-us__title">
-                            <span>Follow us on instagram</span>
-                            @<span class="text-secondary mt--0">29westrealty</span>
-                        </h2>
+            </section>
+            <!-- ======= Team section end ======= -->
+    
+            <!-- ======= Core-Values section start ======= -->
+            <section class="core-values mt--10 mt--xl--15 mt--xxl--20">
+                <div class="page-container">
+                    <div class="row flex-center-v">
+                        <div class="col-md-6 col-xl-5">
+                            <h2 class="">
+                                Our Core Values and buyers make 
+                                the right decisions
+                            </h2>
+                        </div>
+                        <div class="col-md-6 col-xl-6 offset-xl-1">
+                            <p class="mt--1 mt--md--0">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt--5 swiper-container-follows">
-                <div class="swiper-wrapper">
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-
-                    <!--  -->
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ======= Follow-us section end ======= -->
-
-        <!-- ======= CTA section start ======= -->
-        <section class="cta pt--8 pt--lg--13 pb--5 pb--lg--9 mt--6">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-sm-8 col-xl-5 section-heading">
-                        <h2 class="text-white">
-                            Ready To Meet Your Real Estate Goals ?
-                        </h2>
-                        <div class="btn-wrapper mt--2 mt--lg--4">
-                            <a href="#" class="btn btn--primary">
-                                Get In Touch
-                            </a>
+    
+                    <div class="row align-items-center mt--4 mt--lg--8">
+                        <div class="col-lg-6">
+                            <figure class="">
+                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                        <div class="col-lg-6 mt--2 mt--lg--0 pl--lg--2 pl--xl--4 pl--xxxl--6">
+                            <ul class="core-values__list list-none counter-list">
+                                <li class="core-values__item">
+                                    <h2 class="">01</h2>
+                                    <h6 class="">Providing an exceptional customer experience.</h6>
+                                </li>
+                                <li class="core-values__item">
+                                     <h2 class="">02</h2>
+                                    <h6 class="">Being the best at what we do.</h6>
+                                </li>
+                                <li class="core-values__item">
+                                     <h2 class="">03</h2>
+                                    <h6 class="">Always doing the right thing.</h6>
+                                </li>
+                                <li class="core-values__item">
+                                     <h2 class="">04</h2>
+                                    <h6 class="">Always doing the right thing.</h6>
+                                </li>
+                                <li class="core-values__item">
+                                     <h2 class="">05</h2>
+                                    <h6 class="">Always doing the right thing.</h6>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- ======= CTA section end ======= -->
-    </main>
-     <!-- ====== Main End ====== -->
-
-    <!-- ====== Footer Start ====== -->
-    <footer class="footer">
-        <div class="footer__top">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="footer-logo-wrapper">
-                            <a href="index.html" class="">
-                                <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
-                            </a>
+            </section>
+            <!-- ======= Core-Values section end ======= -->
+    
+            <!-- ======= Timeline section start ======= -->
+            <section class="timeline mt--10 mt--xl--15 mt--xxl--20">
+                <div class="page-container">
+                    <div class="row d-flex align-items-center">
+                        <!-- <div class="col-xl-6 pr--xl--3">
+                            <div class="timeline__wrapper">
+                                <div class="timeline__periods">
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year active">2008</p>
+                                        <hr>
+                                    </div>
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year">2011</p>
+                                         <hr>
+                                    </div>
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year">2014</p>
+                                         <hr>
+                                    </div>
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year">2017</p>
+                                        <hr>
+                                    </div>
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year">2020</p>
+                                        <hr>
+                                    </div>
+                                    <div class="timeline__year-wrapper">
+                                        <p class="year">2023</p>
+                                    </div>
+                                </div>
+    
+                                <div class="timeline__content">
+                                    <h2 class="">
+                                        With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
+                                    </h2>
+                                    <p class="">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                     
+                        <div class="col-xl-6 pr--xl--3 ">
+                            <div class="swiper-container-wrapper">
+                                <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>                          
+                                <ul class="swiper-pagination-custom list-none">
+                                    <li class='swiper-pagination-switch first active'><span class='switch-title '>2014</span></li>
+                                    <li class='swiper-pagination-switch'><span class='switch-title'>2017</span></li>
+                                    <li class='swiper-pagination-switch'><span class='switch-title'>2021</span></li>
+                                    <li class='swiper-pagination-switch last'><span class='switch-title'>2024</span></li>
+                                </ul>
+                            </div>
+    
+                            <div class="swiper swiper-container swiper-container--content mt--3">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="timeline__content ">
+                                            <h2 class="">
+                                                With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
+                                            </h2>
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="timeline__content ">
+                                            <h2 class="">
+                                                With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
+                                            </h2>
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="timeline__content ">
+                                            <h2 class="">
+                                                With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
+                                            </h2>
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="timeline__content ">
+                                            <h2 class="">
+                                                With 10+ years of experience, Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr
+                                            </h2>
+                                            <p class="">
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
                         </div>
-                        <p class="mt--2 footer-description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                        </p>
+    
+                        <div class="col-xl-6 mt--3 mt--lg--5 mt--xl--0">
+                            <div class="swiper swiper-container swiper-container--timeline">
+                                <div class="swiper-wrapper">
+                                    <!-- slide-1 -->
+                                    <div class="swiper-slide">
+                                        <figure class="">
+                                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                                            <figcaption>
+                                                <p class="mt--1">Lorem ipsum dolor sit amet, consetetur sadipscing</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+    
+                                    <!-- slide-2 -->
+                                    <div class="swiper-slide">
+                                        <figure class="">
+                                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                                            <figcaption>
+                                                <p class="mt--1">Lorem ipsum dolor sit amet, consetetur sadipscing</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+    
+                                    <!-- slide-3 -->
+                                    <div class="swiper-slide">
+                                        <figure class="">
+                                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                                            <figcaption>
+                                                <p class="mt--1">Lorem ipsum dolor sit amet, consetetur sadipscing</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+    
+                                    <!-- slide-4 -->
+                                    <div class="swiper-slide">
+                                        <figure class="">
+                                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                                            <figcaption>
+                                                <p class="mt--1">Lorem ipsum dolor sit amet, consetetur sadipscing</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+                        </div>
                     </div>
-                    <div class="col-xl-8 mt--5 mt--xl--0">
+                </div>
+            </section>
+            <!-- ======= Timeline section end ======= -->
+    
+            <!-- ======= Follow-us section start ======= -->
+            <section class="follow-us mt--10 mt--xl--15">
+                <div class="page-container">
+                    <div class="row">
+                        <div class="col-sm-10 col-md-8 col-xl-6 col-xxl-5">
+                            <h2 class="follow-us__title">
+                                <span>Follow us on instagram</span>
+                                <a href="https://www.instagram/29westrealty" class="follow-us-link" target="_blank">
+                                    @<span class="text-secondary mt--0">29westrealty</span>
+                                </a>                  
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt--5 swiper-container-follows">
+                    <div class="swiper-wrapper">
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+    
+                        <!--  -->
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 swiper-slide">
+                            <figure class="img-hover">
+                                <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ======= Follow-us section end ======= -->
+    
+            <!-- ======= CTA section start ======= -->
+            <section class="cta mt--6">
+                <div class="page-container">
+                    <div class="cta__container pt--8 pt--lg--13 pb--5 pb--lg--9">
                         <div class="row">
-                            <div class="col-sm-6 col-lg-4">
-                                <p class="footer-link-title">Links</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">
-                                        <a href="#" class="footer-link">Home</a>
+                            <div class="col-sm-8 col-xl-5 section-heading">
+                                <h2 class="text-white">Ready To Meet Your Real Estate Goals ?</h2>
+                                <div class="btn-wrapper mt--2 mt--lg--4">
+                                    <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ======= CTA section end ======= -->
+        </main>
+         <!-- ====== Main End ====== -->
+    
+        <!-- ====== Footer Start ====== -->
+        <footer class="footer">
+            <div class="page-container">
+                <div class="footer__container">
+                    <div class="footer__top">
+                        <div class="page-container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="footer-logo-wrapper">
+                                        <a href="index.html" class="">
+                                            <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <p class="mt--2 footer-description">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    </p>
+                                </div>
+                                <div class="col-xl-8 mt--5 mt--xl--0">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-4">
+                                            <p class="footer-link-title">Links</p>
+                                            <ul class="footer__link-list">
+                                                <li class="footer__link-item">
+                                                    <a href="index.html" class="footer-link">Home</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./about.html" class="footer-link">About</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./team.html" class="footer-link">Team</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./properties.html" class="footer-link">Property</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./communities.html" class="footer-link">Communities</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./buy.html" class="footer-link">Buy</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="./contact.html" class="footer-link">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
+                                            <p class="footer-link-title">Contact Us</p>
+                                            <ul class="footer__link-list">
+                                                <li class="footer__link-item">                            
+                                                    <a href="mailto:​Carol@29Westrealty.com" class="footer-link" target="_blank">​Carol@29Westrealty.com</a>
+                                                </li>
+                                                <li class="footer__link-item">
+                                                    <a href="tel:512-921-1003" class="footer-link" target="_blank">512-921-1003</a>
+                                                </li>
+                                                <li class="footer__link-item mt--2 mt--lg--4">
+                                                    <div class="btn-wrapper">
+                                                        <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                            <span>Find On Map +</span>
+                                                        </a>
+                                                    </div>
+                                                </li>           
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
+                                            <p class="footer-link-title">Address</p>
+                                            <ul class="footer__link-list">
+                                                <li class="footer__link-item">                            
+                                                    <address class="footer-link">
+                                                        Georgetown, TX 78628
+                                                    </address>
+                                                </li>
+                                                <li class="footer__link-item mt--2 mt--lg--3">
+                                                    <div class="btn-wrapper">
+                                                        <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                            <span>Find On Map +</span>
+                                                        </a>
+                                                    </div>
+                                                </li>           
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="socials-wrapper pt--5 pt--lg--11">
+                                <ul class="socials__list list-none">
+                                    <li class="">
+                                        <a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank"><span>Instagram</span></a>
                                     </li>
-                                    <li class="footer__link-item">
-                                        <a href="./about.html" class="footer-link">About</a>
+                                    <li class="">
+                                        <a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank"><span>LinkedIn</span></a>
                                     </li>
-                                    <li class="footer__link-item">
-                                        <a href="./team.html" class="footer-link">Team</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./property.html" class="footer-link">Property</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./communities.html" class="footer-link">Communities</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./contact.html" class="footer-link">Contact</a>
+                                    <li class="">
+                                        <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank"><span>Facebook</span></a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
-                                <p class="footer-link-title">Contact Us</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <a href="mailto:​Carol@29Westrealty.com" class="footer-link">​Carol@29Westrealty.com</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="tel:512-921-1003" class="footer-link">512-921-1003</a>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--4">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
-                                </ul>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
-                                <p class="footer-link-title">Address</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <address class="footer-link">
-                                            Georgetown, TX 78628
-                                        </address>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--3">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
+                           </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="page-container">
+                            <div class="footer__bottom-wrapper">
+                                <p class="">Website by your Hustler</p>
+                                <ul class="list-none">
+                                    <li class=""><a href="#" class="">Sitemap</a></li>
+                                    <li class=""><a href="#" class="">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-               <div class="socials-wrapper pt--5 pt--lg--11">
-                    <ul class="socials__list list-none">
-                        <li class="">
-                            <a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a>
-                        </li>
-                    </ul>
-               </div>
             </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="page-container">
-                <div class="footer__bottom-wrapper">
-                    <p class="">Website by your Hustler</p>
-                    <ul class="list-none">
-                        <li class=""><a href="#" class="">Sitemap</a></li>
-                        <li class=""><a href="#" class="">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ====== Footer End ====== -->
+        </footer>
+        <!-- ====== Footer End ====== -->
+    </div>
 </body>
 </html>
 

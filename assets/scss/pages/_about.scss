@@ -5,6 +5,20 @@
 @use "../abstract/mixins" as *;
 
 
+.about-banner{
+    h1{
+        @include breakpoint-lg{
+            max-width: 12ch;
+        }
+    }
+}
+.helping{
+    h2{
+        @include breakpoint-lg{
+            max-width: 20ch;
+        }
+    }
+}
 .core-values{
     &__list{
         li{
@@ -95,3 +109,73 @@
         }
     }
 }
+
+
+
+.swiper-container-wrapper{
+    position: relative;
+}
+
+.swiper-pagination-progressbar.swiper-pagination-horizontal{
+    width: 80%;
+    top: 14px;
+}
+
+.swiper-pagination-custom {
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    .swiper-pagination-switch {
+      width: 100%;
+        .switch-title{
+            display: inline-block;
+            background: white;
+            padding-inline: 10px;
+            transition:transform 0.2s ease-out;
+            color:$clr-grey-2;
+        }
+        &:first-child{
+            .switch-title{
+                padding-left: 0;
+            }
+        }
+        &:last-child{
+            .switch-title{
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.swiper-pagination-progressbar {
+    position: absolute;
+    border-bottom: 2px solid #cecece;
+    background-color: transparent;
+    width: 80%;
+    left: 0;
+    z-index: 1;
+    &-fill {
+        background-color:$clr-primary !important;
+        height: 3px;
+        top: 2px !important;
+    }
+}
+
+.swiper-pagination-switch{
+    &.active{
+        .switch-title{
+            color:$clr-primary;
+            transform:scale(1.1);
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        .switch-title{
+            color:$clr-primary;
+            transform:scale(1.1);
+        }
+    } 
+}
+
+

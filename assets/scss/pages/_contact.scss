@@ -48,6 +48,9 @@
     &__link{
         font-size: rem(16);
         line-height: 2.5;
+        &:hover{
+            color:$clr-secondary;
+        }
     }
 }
 
@@ -105,8 +108,6 @@
     background-color:$clr-tertiary;
     padding-inline:8px;
     line-height: 1.67;
-    // border-bottom-left-radius: 16px;
-    // border-bottom-right-radius: 16px;
     border-radius:0 0 16px 16px;
     left: rem(12);
     letter-spacing: 0.8px;

@@ -6,14 +6,21 @@
 
 
 .footer{
-    background: $clr-black-88;
-    border-top:1px solid $clr-grey;
+    &__container{
+        background: $clr-black-88;
+        border-top:1px solid $clr-grey;
+    }
     &__link-list{
         list-style: none;
         margin-top: rem(24);
         @include breakpoint-md{
             margin-top: rem(32);
         }
+    }
+    &__link-item{
+        display: flex;
+        // position: relative;
+        // overflow: hidden;
     }
     &__top{
         padding-top: em(154);
@@ -50,9 +57,6 @@
     color:$clr-white-1;
     font-size: rem(16);
     line-height: 2.5;
-    &:hover{
-        color:$clr-secondary;
-    }
 }
 
 .footer-description{
@@ -79,9 +83,6 @@
         &--contact{
             font-size: rem(16);
             line-height: 2.5;
-        }
-        &:hover{
-            color:$clr-secondary;
         }
     }
 }

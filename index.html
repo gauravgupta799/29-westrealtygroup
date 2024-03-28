@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow"/>
     <link rel="shortcut icon" href="./assets/logos/logo-1.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./dist/bundle.min.css">
     <script src="./dist/bundle.min.js" defer></script>
     <title>Home | 29-West</title>
 </head>
 <body class="body">
-    <div class="loader-container">
-        <div class="loader">
-            <div class="loader-wrapper">
-            </div>
+    <!-- ====== Loader Start ====== -->
+    <div class="loader-upper">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
         </div>
     </div>
+    <div class="loader-inner"></div>
+    <!-- ====== Loader End ====== -->
 
     <!-- ====== Header Start ====== -->
     <header class="header">
@@ -22,17 +25,17 @@
         <div class="header--desktop">
             <div class="page-container">
                 <div class="header__wrapper">
-                    <span class="hamburgur" id="hamburgur">
+                    <span class="hamburgur cursor-scale" id="hamburgur">
                         <span class="menu-line"></span>
                         <span class="menu-line"></span>
                         <span class="menu-line"></span>
                     </span>
-                    <div class="header__logo">
+                    <div class="header__logo cursor-scale">
                         <a href="index.html" class="d-flex">
-                            <img src="./assets/logos/logo-1.svg" alt="carol's logo" class="img-fluid">
+                            <img src="./assets/logos/logo-1.svg" alt="carol's logo" class="img-fluid" loading="lazy">
                         </a>
                     </div>
-                    <div class="header-btn">
+                    <div class="header-btn cursor-scale">
                         <a href="contact.html" class="btn btn--primary get-in-touch-btn">
                             <span>Get in touch</span>
                         </a>
@@ -55,46 +58,45 @@
                 <div class="row g-lg-0">
                     <div class="col-1 offset-lg-4 offset-xxl-5"></div>
                     <div class="col-lg-6 header-wrapper">
-                        <div class="header__logo--mobile">
+                        <div class="header__logo--mobile cursor-scale">
                             <a href="index.html" class="d-flex">
-                                <img src="./assets/logos/logo-2.svg" alt="carol's logo" class="img-fluid">
+                                <img src="./assets/logos/logo-2.svg" alt="carol's logo" class="img-fluid" loading="lazy">
                             </a>
                         </div>
-                        <button class="close-menu-btn" id="close-menu-btn">
-                            <span>X</span>
-                            <span>Close</span>
+                        <button class="close-menu-btn cursor-scale" id="close-menu-btn">
+                            <span>X</span><span>Close</span>
                         </button>
                     </div>
                 </div>
-                <div class="row pt--3 pt--sm--4 pt--xxl--7 g-lg-0">
+                <div class="row pt--3 pt--sm--4 pt--xxl--5 g-lg-0">
                     <div class="col-lg-4 d-none d-lg-block">
                         <figure class="overflow-hidden">
-                            <img src="./assets/images/img-header.webp" alt="" class="img-fluid menu-img">
+                            <img src="./assets/images/img-header.webp" alt="" class="img-fluid menu-img" loading="lazy">
                         </figure>
                     </div>
                     <div class="col-lg-7 offset-lg-1 col-xxl-6 offset-xxl-2">
                         <nav class="nav__mobile">             
-                            <ul class="nav__list list-none mt--2 mt--sm--0">
-                                <li class="nav__item"><a class="nav__link active" href="index.html">Home</a></li>
-                                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                                <li class="nav__item"><a class="nav__link" href="team.html">Team</a></li>
-                                <li class="nav__item"><a class="nav__link" href="properties.html">Properties</a></li>
-                                <li class="nav__item"><a class="nav__link" href="communities.html">Communities</a></li>
-                                <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
+                            <ul class="nav__list list-none">
+                                <li class="nav__item cursor-scale"><a class="nav__link active" href="index.html">Home</a></li>
+                                <li class="nav__item cursor-scale"><a class="nav__link" href="about.html">About</a></li>
+                                <li class="nav__item cursor-scale"><a class="nav__link" href="team.html">Team</a></li>
+                                <li class="nav__item cursor-scale"><a class="nav__link" href="properties.html">Properties</a></li>
+                                <li class="nav__item cursor-scale"><a class="nav__link" href="communities.html">Communities</a></li>
+                                <li class="nav__item cursor-scale"><a class="nav__link" href="contact.html">Contact</a></li>
                             </ul>                     
                             <ul class="nav__contact-list list-none mt--2 mt--sm--0">
-                                <li><a href="mailto:prestige.ge@gmail.com" class="contact-list__link">prestige.ge@gmail.com</a></li>
-                                <li><a href="tel:+41 22 839 39 60" class="contact-list__link">+41 22 839 39 60</a></li>
-                                <li><address class="contact-list__link">Rte de Florissant 57, 1206 Geneva</address></li>
-                            </ul>
+                                <li class="cursor-scale"><a href="mailto:​Carol@29Westrealty.Com" class="contact-list__link"> ​Carol@29Westrealty.com</a></li>
+                                <li class="cursor-scale"><a href="tel:+1 512-921-1003" class="contact-list__link">+1 512-921-1003</a></li>
+                                <li class="cursor-scale"><address class="contact-list__link">Georgetown, TX, United State, 78628</address></li>
+                            </ul>         
                         </nav>
                     </div>
                 </div>
-                <div class="socials-wrapper--mobile py--3 py--sm--2">
+                <div class="socials-wrapper--mobile py--2">
                     <ul class="socials__list--mobile list-none">
-                        <li><a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a></li>
-                        <li><a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a></li>
-                        <li> <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a></li>
+                        <li class="cursor-scale"><a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank"><span>Instagram</span></a></li>
+                        <li class="cursor-scale"><a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank"><span>LinkedIn</span></a></li>
+                        <li class="cursor-scale"> <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank"><span>Facebook</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +111,7 @@
             <div class="modal-content">
                 <button class="close-btn" id="close-btn">&times;</button>
                 <!-- Embedded YouTube Video -->
-                <iframe  src="https://www.youtube.com/embed/0kWG5o7G5HE?si=aGpqv9kaaQliczP7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe  src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen id="video-iframe"></iframe>
             </div>
         </div>
         <!-- Modal content -->
@@ -117,24 +119,27 @@
     <!-- ====== Modal Video End ====== -->
 
     <!-- ====== Main Start ====== -->
-    <main class="main">
+    <main >
         <!-- ======= Banner section start ======= -->
-        <section class="home-banner mt--1">
+        <section class="home-banner mt--1 cursor-scale">
             <div class="page-container">
-                <div class="home-banner__wrapper">
-                    <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid ">
-                    <!-- <img src="./assets/images/home/banner-mobile-2x.webp" alt="" class="img-fluid home-banner-img--mobile">          -->
+                <div class="home-banner__wrapper ">
+                    <img src="./assets/images/home/banner-img.webp" alt="" class="img-fluid " loading="lazy">
                     <div class="row banner-content">
                         <div class="col-sm-10 col-md-8 col-xxl-6 section-heading">
-                            <h1 class="banner-title">
-                                Exclusive Listings, Exceptional Service
-                            </h1>
-                            <p class="banner-subTitle mt--1 mt--lg-2">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            </p>
+                            <div class="overflow-wrapper">
+                                <h1 class="banner-title cursor-scale small">
+                                    Exclusive Listings, Exceptional Service
+                                </h1>
+                            </div>
+                            <div class="overflow-wrapper">
+                                <p class="banner-subTitle mt--1 mt--lg-2 cursor-scale small">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="scroll-down-wrapper">
+                    <div class="scroll-down-wrapper" id="scrollButton">
                         <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
                             <g data-name="Group 26" transform="translate(-1780 -997)">
                                 <circle data-name="Ellipse 5" cx="14.5" cy="14.5" r="14.5" transform="translate(1780 997)" fill="#10add9"/>
@@ -149,49 +154,53 @@
         <!-- ======= Banner section end ======= -->
 
         <!-- ======= legacy section start ======= -->
-        <section class="legacy mt--8 mt--lg--11">
+        <section class="legacy mt--8 mt--lg--11" id="targetSection">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <h2 class="">A Legacy of Trust in Real Estate</h2>
+                    <div class="col-lg-5">
+                        <h2 class="fade-in cursor-scale small">A Legacy of Trust in Real Estate</h2>
                     </div>
-                    <div class="col-lg-7 offset-lg-1">
-                        <p class="mt--1 mt--md--0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor</p>
+                    <div class="col-lg-7">
+                        <div class="overflow-wrapper">
+                            <p class="mt--1 mt--lg--0 fade-up cursor-scale small">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt--5">
-                    <div class="col-md-4 mt--md--8 mt--lg--14">
-                        <figure class="">
-                            <img src="./assets/images/home/img-1.webp" alt="" class="img-fluid">
-                            <figcaption>
-                                <p class="mt--1">
+                    <div class="col-md-4 mt--md--8 mt--lg--14 ">
+                        <figure class="cursor-scale">
+                            <img src="./assets/images/home/img-1.webp" alt="" class="img-fluid scale-up" loading="lazy">
+                            <figcaption class="overflow-wrapper">
+                                <p class="mt--1 fade-up cursor-scale small">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing
                                 </p>
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="col-md-7 offset-md-1 mt--8 mt--md--0">
-                        <figure class="legacy__figure">
-                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
-                            <figcaption class="legacy__card">
-                                <h6 class="">
+                    <div class="col-md-7 offset-md-1 mt--8 mt--md--0 ">
+                        <figure class="legacy__figure cursor-scale">
+                            <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid scale-up" loading="lazy">
+                            <figcaption class="legacy__card fade-up">
+                                <h6 class="fade-in cursor-scale small">
                                     Our mission goes beyond real estate, 
                                     it's about building lasting relationships.
                                 </h6>
-                                <p class="mt--1 mt--md--2">
-                                    - Austin Business Journal
-                                </p>
+                                <p class="mt--1 mt--md--2 cursor-scale small fade-up">- Austin Business Journal </p>
                             </figcaption>
-                            <p class="legacy__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing
-                            </p>
+                            <div class="overflow-wrapper">
+                                <p class="legacy__text fade-up cursor-scale small">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing
+                                </p>
+                            </div>
                         </figure>
                     </div>
                 </div>
             </div>
-            
-            <figure class="mt--15">
-                <img src="./assets/images/home/img-3.webp" alt="" class="img-fluid">
+        
+            <figure class="mt--15 img-hover cursor-scale">
+                <img src="./assets/images/home/img-3.webp" alt="" class="img-fluid scale-up" loading="lazy">
             </figure>
         </section>
         <!-- ======= legacy section end ======= -->
@@ -200,53 +209,55 @@
         <section class="counter-section mt--10 mt--xl--15 mt--xxl--20">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="">Counting milestones</h2>
+                    <div class="col-md-6 col-lg-6">
+                        <h2 class="fade-in cursor-scale small">Counting milestones</h2>
                     </div>
-                    <div class="col-md-6">
-                        <p class="mt--1 mt--md--0">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s
-                        </p>
+                    <div class="col-md-6 col-lg-5 offset-lg-1 ">
+                        <div class="overflow-wrapper">
+                            <p class="mt--1 mt--md--0 fade-up cursor-scale small">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt--6 mt--xl--12" id="counter-section">
                     
                     <div class="col-sm-6 col-lg-3">
-                        <div class="counter__wrapper">
-                            <div class="counter">
+                        <div class="counter__wrapper cursor-scale small">
+                            <div class="counter fade-up">
                                 <span class="counter__value count-digit" data-target="3">3</span>
                                 <span class="mt--0 counter__postfix">M+</span>
                             </div>
-                            <p class="counter__subTitle">Sales In 2024</p>
+                            <p class="counter__subTitle fade-up">Sales In 2024</p>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
-                        <div class="counter__wrapper">
-                            <div class="counter">
+                        <div class="counter__wrapper cursor-scale small">
+                            <div class="counter fade-up ">
                                 <span class="counter__value count-digit" data-target="8">8</span>
                             </div>
-                            <p class="counter__subTitle">Agents</p>
+                            <p class="counter__subTitle fade-up">Agents</p>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
-                        <div class="counter__wrapper">
-                            <div class="counter">
+                        <div class="counter__wrapper cursor-scale small">
+                            <div class="counter fade-up">
                                 <span class="counter__value count-digit" data-target="278">278</span>
                                 <span class="mt--0 counter__postfix">+</span>
                             </div>
-                            <p class="counter__subTitle">Transactions</p>
+                            <p class="counter__subTitle fade-up">Transactions</p>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
-                        <div class="counter__wrapper">
-                            <div class="counter">
+                        <div class="counter__wrapper cursor-scale small">
+                            <div class="counter fade-up">
                                 <span class="counter__value count-digit" data-target="15">15</span>
                                 <span class="mt--0 counter__postfix">+</span>
                             </div>
-                            <p class="counter__subTitle">Years of experience</p>
+                            <p class="counter__subTitle fade-up">Years of experience</p>
                         </div>
                     </div>
 
@@ -259,28 +270,30 @@
         <section class="featured mt--10 mt--xl--15 py--6 py--lg--12">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <h2 class="">Featured Lisitngs</h2>
+                    <div class="col-md-6 col-lg-6">
+                        <h2 class="fade-in cursor-scale small">Featured Lisitngs</h2>
                     </div>
-                    <div class="col-sm-6">
-                        <p class="mt--1 mt--sm--0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s</p>
+                    <div class="col-md-6 col-lg-5 offset-lg-1">
+                        <div class="overflow-wrapper">
+                            <p class="mt--1 mt--sm--0 fade-up cursor-scale small">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, s</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt--4 mt--lg--10 mt--xl--15">
                     <div class="col-sm-6 col-lg-4 gx-xl-5">
-                        <div class="featured__card">
-                            <figure class="featured__card-figure img-hover">
-                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                        <div class="featured__card fade-up">
+                            <figure class="featured__card-figure img-hover cursor-scale">
+                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid" loading="lazy">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
                                 </a>
                             </figure>
-                            <div class="featured__card-body">
+                            <div class="featured__card-body fade-up cursor-scale small">
                                 <h6 class="">$1,130,000</h6>
                                 <p class="">111 Rock Nettle Pl</p>
                             </div>
-                            <div class="featured__card-footer">
-                                <ul class="list-none">
+                            <div class="featured__card-footer fade-up">
+                                <ul class="list-none cursor-scale small">
                                     <li class="">4 bedrooms </li>
                                     <li class="">3 baths </li>
                                     <li class="">2,957SqFt</li>
@@ -289,19 +302,19 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4 mt--6 mt--sm--0 gx-xl-5">
-                        <div class="featured__card">
-                            <figure class="featured__card-figure img-hover">
-                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                        <div class="featured__card fade-up">
+                            <figure class="featured__card-figure img-hover cursor-scale">
+                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid" loading="lazy">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
                                 </a>
                             </figure>
-                            <div class="featured__card-body">
+                            <div class="featured__card-body fade-up cursor-scale small">
                                 <h6 class="">$1,130,000</h6>
                                 <p class="">111 Rock Nettle Pl</p>
                             </div>
-                            <div class="featured__card-footer">
-                                <ul class="list-none">
+                            <div class="featured__card-footer fade-up ">
+                                <ul class="list-none cursor-scale small">
                                     <li class="">4 bedrooms </li>
                                     <li class="">3 baths </li>
                                     <li class="">2,957SqFt</li>
@@ -310,19 +323,19 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4 mt--6 mt--lg--0 gx-xl-5">
-                        <div class="featured__card">
+                        <div class="featured__card fade-up">
                             <figure class="featured__card-figure img-hover">
-                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid">
+                                <img src="./assets/images/home/img-2-2x.webp" alt="" class="img-fluid" loading="lazy">
                                 <a href="#" class="btn btn--primary just-listed-btn">
                                     Just Listed
                                 </a>
                             </figure>
-                            <div class="featured__card-body">
+                            <div class="featured__card-body fade-up cursor-scale small">
                                 <h6 class="">$1,130,000</h6>
                                 <p class="">111 Rock Nettle Pl</p>
                             </div>
-                            <div class="featured__card-footer">
-                                <ul class="list-none">
+                            <div class="featured__card-footer fade-up">
+                                <ul class="list-none cursor-scale small">
                                     <li class="">4 bedrooms </li>
                                     <li class="">3 baths </li>
                                     <li class="">2,957SqFt</li>
@@ -334,76 +347,75 @@
             </div>
         </section>
         <!-- ======= Featured-Listting section end ======= -->
-
         <!-- ======= Communities section start ======= -->
         <section class="communities mt--8 mt--xl--15">
             <div class="page-container">
                 <div class="row">
                     <div class="col-md-8 section-heading">
-                        <h2 class="">Explore Our Communities</h2>
+                        <h2 class="fade-in cursor-scale small">Explore Our Communities</h2>
                     </div>
                 </div>
 
                 <div class="grid__container mt--6 mt--md--10">
-                    <div class="grid__item">
-                        <figure class="grid__figure img-hover">
-                            <img src="./assets/images/home/grid-images/grid-img-1.webp" alt="Image 1" class="img-fluid" loading="lazy">
+                    <div class="grid__item overflow-wrapper cursor-scale">
+                        <figure class="grid__figure img-hover scale-up">
+                            <img src="./assets/images/home/grid-images/grid-img-1.webp" alt="Image-1" class="img-fluid " loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">GeorgeTown</h6>
+                                <h6 class="fdae-up">GeorgeTown</h6>
                                 <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
                                 </p>
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure img-hover">
-                            <img src="./assets/images/home/grid-images/grid-img-2.webp" alt="Image 2" class="img-fluid" loading="lazy">
+                        <figure class="grid__figure img-hover scale-up">
+                            <img src="./assets/images/home/grid-images/grid-img-2.webp" alt="Image-2" class="img-fluid " loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">Escalera Ranch</h6>
-                                <!-- <p class="">
+                                <h6 class="fade-up">Escalera Ranch</h6>
+                                <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
-                                </p> -->
+                                </p>
                             </figcaption>
                         </figure>
                     </div>
         
-                    <div class="grid__item">
-                        <figure class="grid__figure img-hover">
+                    <div class="grid__item overflow-wrapper cursor-scale">
+                        <figure class="grid__figure img-hover scale-up">
                             <img src="./assets/images/home/grid-images/grid-img-3.webp" alt="Image 3" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">Austin</h6>
-                                <!-- <p class="">
+                                <h6 class="fade-up">Austin</h6>
+                                <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
-                                </p> -->
+                                </p>
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure img-hover">
+                        <figure class="grid__figure img-hover scale-up">
                             <img src="./assets/images/home/grid-images/grid-img-4.webp" alt="Image 4" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">Fredericksburg</h6>
-                                <!-- <p class="">
+                                <h6 class="fade-up">Fredericksburg</h6>
+                                <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
-                                </p> -->
+                                </p>
                             </figcaption>
                         </figure>
                     </div>
                     
-                    <div class="grid__item">
-                        <figure class="grid__figure img-hover">
+                    <div class="grid__item overflow-wrapper cursor-scale">
+                        <figure class="grid__figure img-hover scale-up">
                             <img src="./assets/images/home/grid-images/grid-img-5.webp" alt="Image 5" class="img-fluid" loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">Fredericksburg</h6>
-                                <!-- <p class="">
+                                <h6 class="fade-up">Fredericksburg</h6>
+                                <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
-                                </p> -->
+                                </p>
                             </figcaption>
                         </figure>
-                        <figure class="grid__figure img-hover">
-                          <img src="./assets/images/home/grid-images/grid-img-6.webp" alt="Image 6" class="img-fluid" loading="lazy">
+                        <figure class="grid__figure img-hover scale-up">
+                          <img src="./assets/images/home/grid-images/grid-img-6.webp" alt="Image 6" class="img-fluid " loading="lazy">
                             <figcaption class="grid__content">
-                                <h6 class="">Escalera Ranch</h6>
-                                <!-- <p class="">
+                                <h6 class="fade-up">Escalera Ranch</h6>
+                                <p class="">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et d
-                                </p> -->
+                                </p>
                             </figcaption>
                         </figure>
                     </div>
@@ -416,26 +428,26 @@
         <section class="testimonials mt--10 mt--xl--15">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-sm-8 col-xl-4 section-heading">
-                        <img src="./assets/icons/5-stars-filled.svg" alt="5-stars-icon" class="d-inline">
-                     <h2 class="">Client review lorem ipsum dolor</h2>
+                    <div class="col-sm-8 col-xl-4 section-heading fade-in">
+                        <img src="./assets/icons/5-stars-filled.svg" alt="5-stars-icon" class="d-inline cursor-scale" loading="lazy">
+                        <h2 class="cursor-scale">Client review lorem ipsum dolor</h2>
                    </div>
                 </div>
                 <div class="row mt--5 mt--md-10">
                     <div class="col-xl-10 col-xxl-8 section-heading">
-                        <div class="testimonials__header">
-                            <figure class="testimonials__figure--quotes">
-                                <img src="./assets/icons/double-quote--big.svg" alt="double-quotes-icon" class="img-fluid">
+                        <div class="testimonials__header overflow-wrapper">
+                            <figure class="testimonials__figure--quotes fade-in cursor-scale">
+                                <img src="./assets/icons/double-quote--big.svg" alt="double-quotes-icon" class="img-fluid" loading="lazy">
                             </figure>
-                            <div class="navigation-buttons">
-                                <button class="btn btn--outline backward-button">
+                            <div class="navigation-buttons fade-up">
+                                <button class="btn btn--outline backward-button cursor-scale">
                                     <span class="d-flex">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 11.115 18">
                                             <path data-name="navigate-previous" d="m9 0 2.115 2.115L4.245 9l6.87 6.885L9 18 0 9z" fill="#1a232a"/>
                                         </svg>
                                     </span>
                                 </button>
-                                <button class="btn btn--outline forward-button">
+                                <button class="btn btn--outline forward-button cursor-scale">
                                     <span class="d-flex">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 11.115 18" style="transform: rotate(-180deg);">
                                             <path data-name="navigate-next" d="m9 0 2.115 2.115L4.245 9l6.87 6.885L9 18 0 9z"  fill="#1a232a"/>
@@ -446,17 +458,17 @@
                         </div>
                         <div class="swiper swiper-testimonials">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonials__content-wrapper mt--4">
-                                        <h6>
+                                <div class="swiper-slide overflow-wrapper">
+                                    <div class="testimonials__content-wrapper mt--4 fade-up">
+                                        <h6 class="cursor-scale small">
                                             We just sold our home with Carol, and the experience was nothing short of exceptional. From the initial consultation to the closing day, her professionalism, market knowledge, and communication were outstanding.
                                         </h6>
-                                        <div class="testimonials__footer mt--4">
+                                        <div class="testimonials__footer mt--4 cursor-scale">
                                             <figure class="testimonials__figure">
-                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid">
+                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid" loading="lazy">
                                             </figure>
                                             <div class="divider"></div>
-                                            <p class="">John Doe</p>
+                                            <p class="cursor-scale small">John Doe</p>
                                             <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
@@ -465,17 +477,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonials__content-wrapper mt--4">
-                                        <h6>
+                                <div class="swiper-slide overflow-wrapper">
+                                    <div class="testimonials__content-wrapper mt--4 fade-up">
+                                        <h6 class="cursor-scale small">
                                             We just sold our home with Carol, and the experience was nothing short of exceptional. From the initial consultation to the closing day, her professionalism, market knowledge, and communication were outstanding.
                                         </h6>
-                                        <div class="testimonials__footer mt--4">
+                                        <div class="testimonials__footer mt--4 cursor-scale">
                                             <figure class="testimonials__figure">
-                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid">
+                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid" loading="lazy">
                                             </figure>
                                             <div class="divider"></div>
-                                            <p class="">John Doe</p>
+                                            <p class=" cursor-scale small">John Doe</p>
                                             <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
@@ -484,17 +496,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonials__content-wrapper mt--4">
-                                        <h6>
+                                <div class="swiper-slide overflow-wrapper">
+                                    <div class="testimonials__content-wrapper mt--4 fade-up">
+                                        <h6 class="cursor-scale small">
                                             We just sold our home with Carol, and the experience was nothing short of exceptional. From the initial consultation to the closing day, her professionalism, market knowledge, and communication were outstanding.
                                         </h6>
-                                        <div class="testimonials__footer mt--4">
+                                        <div class="testimonials__footer mt--4 cursor-scale">
                                             <figure class="testimonials__figure">
-                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid">
+                                                <img src="./assets/images/home/follow-us-img-2.webp" alt="testimoner-img" class="img-fluid" loading="lazy">
                                             </figure>
                                             <div class="divider"></div>
-                                            <p class="">John Doe</p>
+                                            <p class="cursor-scale small">John Doe</p>
                                             <button class="play-btn open-video">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
                                                     <path data-name="Polygon 5" d="m13 0 13 22H0z" transform="rotate(90 11 11)" fill="#fff"/>
@@ -512,9 +524,9 @@
         <!-- ======= Testimonials section end ======= -->
 
         <!-- ======= Anonymous section start ======= -->
-        <section class="anonymous mt--10 mt--xl--15">
-            <figure>
-                <img src="./assets/images/home/section-img-2.webp" alt="" class="img-fluid" lazy="loading">
+        <section class="anonymous mt--10 mt--xl--15 cursor-scale">
+            <figure class="img-hover">
+                <img src="./assets/images/home/section-img-2.webp" alt="" class="img-fluid scale-up" loading="lazy">
             </figure>
         </section>
         <!-- ======= Anonymous section end ======= -->
@@ -524,55 +536,57 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-sm-10 col-md-8 col-xl-6 col-xxl-5">
-                        <h2 class="follow-us__title">
-                            <span>Follow us on instagram</span>
-                            @<span class="text-secondary mt--0">29westrealty</span>
+                        <h2 class="follow-us__title fade-in cursor-scale">
+                            <span class="">Follow us on instagram</span>
+                            <a href="https://www.instagram/29westrealty" class="follow-us-link" target="_blank">
+                                @<span class="text-secondary mt--0">29westrealty</span>
+                            </a>                   
                         </h2>
                     </div>
                 </div>
             </div>
             <div class="row mt--5 swiper-container-follows">
                 <div class="swiper-wrapper">
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
                             <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
                         </figure>
                     </div>
 
                     <!--  -->
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
-                    <div class="col-sm-6 col-lg-3 swiper-slide">
-                        <figure class="img-hover">
-                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" lazy="loading">
+                    <div class="col-sm-6 col-lg-3 swiper-slide scale-up">
+                        <figure class="img-hover cursor-scale">
+                            <img src="./assets/images/home/follow-us-img-1-2x.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
                 </div>
@@ -581,130 +595,133 @@
         <!-- ======= Follow-us section end ======= -->
 
         <!-- ======= CTA section start ======= -->
-        <section class="cta pt--8 pt--lg--13 pb--5 pb--lg--9 mt--6">
+        <section class="cta mt--6">
             <div class="page-container">
-                <div class="row">
-                    <div class="col-sm-8 col-xl-5 section-heading">
-                        <h2 class="text-white">
-                            Ready To Meet Your Real Estate Goals ?
-                        </h2>
-                        <div class="btn-wrapper mt--2 mt--lg--4">
-                            <a href="#" class="btn btn--primary">
-                                Get In Touch
-                            </a>
+                <div class="cta__container pt--8 pt--lg--13 pb--5 pb--lg--9">
+                    <div class="row">
+                        <div class="col-sm-8 col-xl-5 section-heading">
+                            <h2 class="text-white fade-in cursor-scale small">Ready To Meet Your Real Estate Goals ?</h2>
+                            <div class="btn-wrapper mt--2 mt--lg--4 overflow-wrapper cursor-scale">
+                                <a href="contact.html" class="btn btn--primary fade-up">
+                                    Get In Touch
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- ======= CTA section end ======= -->
+
+        <!-- <div class="cursor"></div> -->
     </main>
      <!-- ====== Main End ====== -->
-
     <!-- ====== Footer Start ====== -->
     <footer class="footer">
-        <div class="footer__top">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="footer-logo-wrapper">
-                            <a href="index.html" class="">
-                                <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
-                            </a>
-                        </div>
-                        <p class="mt--2 footer-description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                        </p>
-                    </div>
-                    <div class="col-xl-8 mt--5 mt--xl--0">
+        <div class="page-container">
+            <div class="footer__container">
+                <div class="footer__top">
+                    <div class="page-container">
                         <div class="row">
-                            <div class="col-sm-6 col-lg-4">
-                                <p class="footer-link-title">Links</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">
-                                        <a href="#" class="footer-link">Home</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./about.html" class="footer-link">About</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./team.html" class="footer-link">Team</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./property.html" class="footer-link">Property</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./communities.html" class="footer-link">Communities</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./buy.html" class="footer-link">Buy</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="./contact.html" class="footer-link">Contact</a>
-                                    </li>
-                                </ul>
+                            <div class="col-lg-4 overflow-wrapper">
+                                <div class="footer-logo-wrapper cursor-scale">
+                                    <a href="index.html" class="fade-in">
+                                        <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid" loading="lazy">
+                                    </a>
+                                </div>
+                                <p class="mt--2 footer-description fade-up cursor-scale small">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                </p>
                             </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
-                                <p class="footer-link-title">Contact Us</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <a href="mailto:​Carol@29Westrealty.com" class="footer-link">​Carol@29Westrealty.com</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="tel:512-921-1003" class="footer-link">512-921-1003</a>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--4">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
-                                </ul>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
-                                <p class="footer-link-title">Address</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <address class="footer-link">
-                                            Georgetown, TX 78628
-                                        </address>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--3">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
-                                </ul>
+                            <div class="col-xl-8 mt--5 mt--xl--0">
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-4">
+                                        <p class="footer-link-title fade-in cursor-scale small">Links</p>
+                                        <ul class="footer__link-list cursor-scale">
+                                            <li class="footer__link-item">
+                                                <a href="index.html" class="footer-link fade-up">Home</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./about.html" class="footer-link fade-up">About</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./team.html" class="footer-link fade-up">Team</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./properties.html" class="footer-link fade-up">Property</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./communities.html" class="footer-link fade-up">Communities</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./buy.html" class="footer-link fade-up">Buy</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="./contact.html" class="footer-link fade-up">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
+                                        <p class="footer-link-title fade-in cursor-scale small">Contact Us</p>
+                                        <ul class="footer__link-list cursor-scale">
+                                            <li class="footer__link-item">                            
+                                                <a href="mailto:​Carol@29Westrealty.com" class="footer-link fade-up" target="_blank">​Carol@29Westrealty.com</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="tel:512-921-1003" class="footer-link fade-up" target="_blank">512-921-1003</a>
+                                            </li>
+                                            <li class="footer__link-item mt--2 mt--lg--4">
+                                                <div class="btn-wrapper fade-up">
+                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                        <span>Find On Map +</span>
+                                                    </a>
+                                                </div>
+                                            </li>           
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
+                                        <p class="footer-link-title cursor-scale small">Address</p>
+                                        <ul class="footer__link-list cursor-scale">
+                                            <li class="footer__link-item">                            
+                                                <address class="footer-link fade-up">Georgetown, TX 78628</address>
+                                            </li>
+                                            <li class="footer__link-item mt--2 mt--lg--3">
+                                                <div class="btn-wrapper fade-up">
+                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                        <span>Find On Map +</span>
+                                                    </a>
+                                                </div>
+                                            </li>           
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                       <div class="socials-wrapper pt--5 pt--lg--11">
+                            <ul class="socials__list list-none cursor-scale">
+                                <li class="">
+                                    <a href="https://www.instagram.com/29westrealty" class="socials__link fade-up" target="_blank"><span>Instagram</span></a>
+                                </li>
+                                <li class="">
+                                    <a href="https://www.linkedin.com/29westrealty" class="socials__link fade-up" target="_blank"><span>LinkedIn</span></a>
+                                </li>
+                                <li class="">
+                                    <a href="https://www.facebook.com/29westrealty" class="socials__link fade-up" target="_blank"><span>Facebook</span></a>
+                                </li>
+                            </ul>
+                       </div>
                     </div>
                 </div>
-               <div class="socials-wrapper pt--5 pt--lg--11">
-                    <ul class="socials__list list-none">
-                        <li class="">
-                            <a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a>
-                        </li>
-                    </ul>
-               </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="page-container">
-                <div class="footer__bottom-wrapper">
-                    <p class="">Website by your Hustler</p>
-                    <ul class="list-none">
-                        <li class=""><a href="#" class="">Sitemap</a></li>
-                        <li class=""><a href="#" class="">Privacy Policy</a></li>
-                    </ul>
+                <div class="footer__bottom">
+                    <div class="page-container">
+                        <div class="footer__bottom-wrapper cursor-scale">
+                            <p class="fade-in">Website by your Hustler</p>
+                            <ul class="list-none">
+                                <li class=""><a href="#" class="fade-in">Sitemap</a></li>
+                                <li class=""><a href="#" class="fade-in">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

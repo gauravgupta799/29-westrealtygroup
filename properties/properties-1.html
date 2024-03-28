@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow"/>
     <link rel="shortcut icon" href="../assets/logos/logo-1.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../dist/bundle.min.css">
     <script src="../dist/bundle.min.js" defer></script>
     <title>111 Rock Nettle Pl | 29-West</title>
 </head>
 <body class="body">
-    <div class="loader-container">
-        <div class="loader">
-            <div class="loader-wrapper">
-            </div>
+    <div class="loader-upper">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
         </div>
     </div>
+    <div class="loader-inner"></div>
+
+    <div class="cursor"></div>
 
     <!-- ====== Header Start ====== -->
     <header class="header">
@@ -61,12 +64,11 @@
                             </a>
                         </div>
                         <button class="close-menu-btn" id="close-menu-btn">
-                            <span>X</span>
-                            <span>Close</span>
+                            <span>X</span><span>Close</span>
                         </button>
                     </div>
                 </div>
-                <div class="row pt--3 pt--sm--4 pt--xxl--7 g-lg-0">
+                <div class="row pt--3 pt--sm--4 pt--xxl--5 g-lg-0">
                     <div class="col-lg-4 d-none d-lg-block">
                         <figure class="overflow-hidden">
                             <img src="../assets/images/img-header.webp" alt="" class="img-fluid menu-img">
@@ -74,7 +76,7 @@
                     </div>
                     <div class="col-lg-7 offset-lg-1 col-xxl-6 offset-xxl-2">
                         <nav class="nav__mobile">             
-                            <ul class="nav__list list-none mt--2 mt--sm--0">
+                            <ul class="nav__list list-none">
                                 <li class="nav__item"><a class="nav__link active" href="../index.html">Home</a></li>
                                 <li class="nav__item"><a class="nav__link" href="../about.html">About</a></li>
                                 <li class="nav__item"><a class="nav__link" href="../team.html">Team</a></li>
@@ -83,18 +85,18 @@
                                 <li class="nav__item"><a class="nav__link" href="../contact.html">Contact</a></li>
                             </ul>                     
                             <ul class="nav__contact-list list-none mt--2 mt--sm--0">
-                                <li><a href="mailto:prestige.ge@gmail.com" class="contact-list__link">prestige.ge@gmail.com</a></li>
-                                <li><a href="tel:+41 22 839 39 60" class="contact-list__link">+41 22 839 39 60</a></li>
-                                <li><address class="contact-list__link">Rte de Florissant 57, 1206 Geneva</address></li>
-                            </ul>
+                                <li><a href="mailto:​Carol@29Westrealty.Com" class="contact-list__link"> ​Carol@29Westrealty.com</a></li>
+                                <li><a href="tel:+1 512-921-1003" class="contact-list__link">+1 512-921-1003</a></li>
+                                <li><address class="contact-list__link">Georgetown, TX, United State, 78628</address></li>
+                            </ul>         
                         </nav>
                     </div>
                 </div>
-                <div class="socials-wrapper--mobile py--3 py--sm--2">
+                <div class="socials-wrapper--mobile py--2">
                     <ul class="socials__list--mobile list-none">
-                        <li><a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a></li>
-                        <li><a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a></li>
-                        <li> <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank"><span>Instagram</span></a></li>
+                        <li><a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank"><span>LinkedIn</span></a></li>
+                        <li> <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank"><span>Facebook</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -458,17 +460,17 @@
         <!-- ======= Features & Amenities section end ======= -->
 
         <!-- ======= CTA section start ======= -->
-        <section class="cta pt--8 pt--lg--13 pb--5 pb--lg--9 mt--5 mt--md--10 mt--xxl--15">
+        <section class="cta mt--6 mt--md--10 mt--xxl--15">
             <div class="page-container">
-                <div class="row">
-                    <div class="col-sm-8 col-xl-5 section-heading">
-                        <h2 class="text-white">
-                            Ready To Meet Your Real Estate Goals ?
-                        </h2>
-                        <div class="btn-wrapper mt--2 mt--lg--4">
-                            <a href="#" class="btn btn--primary">
-                                Get In Touch
-                            </a>
+                <div class="cta__container pt--8 pt--lg--13 pb--5 pb--lg--9">
+                    <div class="row">
+                        <div class="col-sm-8 col-xl-5 section-heading">
+                            <h2 class="text-white">Ready To Meet Your Real Estate Goals ?</h2>
+                            <div class="btn-wrapper mt--2 mt--lg--4">
+                                <a href="../contact.html" class="btn btn--primary">
+                                    Get In Touch
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -480,105 +482,109 @@
 
     <!-- ====== Footer Start ====== -->
     <footer class="footer">
-        <div class="footer__top">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="footer-logo-wrapper">
-                            <a href="../index.html" class="">
-                                <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
-                            </a>
-                        </div>
-                        <p class="mt--2 footer-description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                        </p>
-                    </div>
-                    <div class="col-xl-8 mt--5 mt--xl--0">
+        <div class="page-container">
+            <div class="footer__container">
+                <div class="footer__top">
+                    <div class="page-container">
                         <div class="row">
-                            <div class="col-sm-6 col-lg-4">
-                                <p class="footer-link-title">Links</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">
-                                        <a href="../index.html" class="footer-link">Home</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="../about.html" class="footer-link">About</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="../team.html" class="footer-link">Team</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="../property.html" class="footer-link">Property</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="../communities.html" class="footer-link">Communities</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="../contact.html" class="footer-link">Contact</a>
-                                    </li>
-                                </ul>
+                            <div class="col-lg-4">
+                                <div class="footer-logo-wrapper">
+                                    <a href="../index.html" class="">
+                                        <img src="../assets/logos/logo-2.svg" alt="company's logo" class="img-fluid">
+                                    </a>
+                                </div>
+                                <p class="mt--2 footer-description">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                </p>
                             </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
-                                <p class="footer-link-title">Contact Us</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <a href="mailto:​Carol@29Westrealty.com" class="footer-link">​Carol@29Westrealty.com</a>
-                                    </li>
-                                    <li class="footer__link-item">
-                                        <a href="tel:512-921-1003" class="footer-link">512-921-1003</a>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--4">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
-                                </ul>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
-                                <p class="footer-link-title">Address</p>
-                                <ul class="footer__link-list">
-                                    <li class="footer__link-item">                            
-                                        <address class="footer-link">
-                                            Georgetown, TX 78628
-                                        </address>
-                                    </li>
-                                    <li class="footer__link-item mt--2 mt--lg--3">
-                                        <div class="btn-wrapper">
-                                            <a href="#" class="btn btn--secondary">
-                                                <span>Find On Map +</span>
-                                            </a>
-                                        </div>
-                                    </li>           
-                                </ul>
+                            <div class="col-xl-8 mt--5 mt--xl--0">
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-4">
+                                        <p class="footer-link-title">Links</p>
+                                        <ul class="footer__link-list">
+                                            <li class="footer__link-item">
+                                                <a href="../index.html" class="footer-link">Home</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="../about.html" class="footer-link">About</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="../team.html" class="footer-link">Team</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="../property.html" class="footer-link">Property</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="../communities.html" class="footer-link">Communities</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="../contact.html" class="footer-link">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
+                                        <p class="footer-link-title">Contact Us</p>
+                                        <ul class="footer__link-list">
+                                            <li class="footer__link-item">                            
+                                                <a href="mailto:​Carol@29Westrealty.com" class="footer-link">​Carol@29Westrealty.com</a>
+                                            </li>
+                                            <li class="footer__link-item">
+                                                <a href="tel:512-921-1003" class="footer-link">512-921-1003</a>
+                                            </li>
+                                            <li class="footer__link-item mt--2 mt--lg--4">
+                                                <div class="btn-wrapper">
+                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                        <span>Find On Map +</span>
+                                                    </a>
+                                                </div>
+                                            </li>           
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
+                                        <p class="footer-link-title">Address</p>
+                                        <ul class="footer__link-list">
+                                            <li class="footer__link-item">                            
+                                                <address class="footer-link">
+                                                    Georgetown, TX 78628
+                                                </address>
+                                            </li>
+                                            <li class="footer__link-item mt--2 mt--lg--3">
+                                                <div class="btn-wrapper">
+                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank">
+                                                        <span>Find On Map +</span>
+                                                    </a>
+                                                </div>
+                                            </li>           
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                       <div class="socials-wrapper pt--5 pt--lg--11">
+                            <ul class="socials__list list-none">
+                                <li class="">
+                                    <a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a>
+                                </li>
+                                <li class="">
+                                    <a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a>
+                                </li>
+                                <li class="">
+                                    <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a>
+                                </li>
+                            </ul>
+                       </div>
                     </div>
                 </div>
-               <div class="socials-wrapper pt--5 pt--lg--11">
-                    <ul class="socials__list list-none">
-                        <li class="">
-                            <a href="https://www.instagram.com/coral" class="socials__link"><span>Instagram</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.linkedin.com/" class="socials__link"><span>LinkedIn</span></a>
-                        </li>
-                        <li class="">
-                            <a href="https://www.facebook.com/" class="socials__link"><span>Facebook</span></a>
-                        </li>
-                    </ul>
-               </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="page-container">
-                <div class="footer__bottom-wrapper">
-                    <p class="">Website by your Hustler</p>
-                    <ul class="list-none">
-                        <li class=""><a href="#" class="">Sitemap</a></li>
-                        <li class=""><a href="#" class="">Privacy Policy</a></li>
-                    </ul>
+                <div class="footer__bottom">
+                    <div class="page-container">
+                        <div class="footer__bottom-wrapper">
+                            <p class="">Website by your Hustler</p>
+                            <ul class="list-none">
+                                <li class=""><a href="#" class="">Sitemap</a></li>
+                                <li class=""><a href="#" class="">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

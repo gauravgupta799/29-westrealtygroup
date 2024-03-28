@@ -10,6 +10,8 @@ const browserSync = require('browser-sync').create();
 
 
 const cssFilesArray = [
+    // "assets/venders/locomotive/locomotive-scroll.css",
+    "assets/venders/lenis/lenis.css",
     "assets/venders/swiper/css/swiper.css",
     "assets/scss/main.scss",
 ];
@@ -33,14 +35,15 @@ function scssTaskMinified(){
     .pipe(dest('dist', {sourcemaps:'.'}))
 }
 
-// "app/venders/gsap/ScrollTrigger.min.js",
-
 // Array of javaScript files
 const jsFilesArray = [
     'assets/venders/jquery/jquery-3-6-1.min.js',
     "assets/venders/gsap/gsap.min.js",
     "assets/venders/gsap/ScrollTrigger-3.6.1.min.js",
+    "assets/venders/gsap/ScrollToPlugin.min.js",
     "assets/venders/swiper/js/swiper-bundle.min.js",
+    // 'assets/venders/locomotive/locomotive-scroll.min.js',
+    'assets/venders/lenis/lenis.min.js',
     "assets/js/main.js",
 ];
 

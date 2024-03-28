@@ -92,6 +92,7 @@
         position: absolute;
         bottom: 0;
         margin-bottom: -150px;
+        margin-left: -6px;
         padding: em(32) em(16);
         padding-left: 0;
         background-color: $clr-white;
@@ -125,6 +126,7 @@
         padding: em(40);
         padding-inline: 0;
         position: relative;
+        overflow: hidden;
         @include breakpoint-sm{
             padding-inline: em(20);
         }
@@ -145,22 +147,22 @@
         }
         &::before{
             left: 0;
-            height: 2px;
+            height: 1px;
             @include breakpoint-sm{
-                max-width: 260px;
-                margin-left: 50px;
+                max-width: rem(260);
+                margin-left: rem(50);
             }
             @include breakpoint-xl{
-                margin-left: 36px;
-                max-width: 190px;
+                margin-left: rem(36);
+                max-width: rem(190);
             }
             @include breakpoint-xxl{
-                margin-left: 50px;
+                margin-left: rem(50);
             }
         }
         &::after{
-            width: 2px;
-            height: 200px;
+            width: 1px;
+            height: rem(200);
             right: 0;
             top: 30px;
             opacity: 0;
@@ -168,21 +170,18 @@
             @include breakpoint-sm{
                 opacity: 1;
                 visibility: visible;
-                height: 134px;
+                height: rem(126);
                 top: 50px;
             }
         }
     }
     &__subTitle{
-        margin-top: em(24);
+        margin-top: rem(24);
         @include breakpoint-sm{
-            margin-top: em(32);
+            margin-top: rem(32);
         }
         @include breakpoint-md{
-            margin-top: em(36);
-        }
-        @include breakpoint-lg{
-            margin-top: em(40);
+            margin-top: rem(36);
         }
     }
 }
@@ -295,13 +294,6 @@
                 &:nth-child(2){
                     margin-left: rem(16);
                 }
-                &:hover{
-                    background-color: $clr-secondary;
-                    border-color:$clr-white;
-                    svg path{
-                        fill:$clr-white;
-                    }
-                }
             }
         }
     }
@@ -316,9 +308,7 @@
         }
     }
     &__footer{
-        // @include flex-space-between;
-        display: flex;
-        align-items: center;
+        @include flex-center-vertical;
         flex-wrap: wrap;
         gap:rem(24);
         @include breakpoint-sm{
@@ -343,8 +333,6 @@
         @include dimensions(rem(160), rem(160));
         @include border-radius("full-round");
         flex-shrink: 0;
-        border: 4px solid $clr-secondary;
-        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         @include breakpoint-md{
             @include dimensions(rem(200), rem(200));
         }
@@ -393,45 +381,26 @@
 .follow-us{
     overflow: hidden;
 }
+.follow-us-link:hover{
+    text-decoration: underline;
+    text-underline-offset:10px;
+    text-decoration-color: $clr-secondary;
+    -moz-text-decoration-color: $clr-secondary;
+}
 //========== Featured styles end ==============
 
 
 //========== CTA styles start ============
 .cta{
-    background: $clr-black-88;
+    &__container{
+        background: $clr-black-88;
+    }
 }
 //========== CTA styles end ==============
 
-
-.play-btn{
-    @include dimensions(rem(80), rem(80));
-    @include border-radius("full-round");
-    @include flex-center;
-    flex-shrink: 0;
-    background: $clr-secondary;
-    border:1px solid transparent;
-    @include transition(all, 0.35s, ease-out);
-    @include breakpoint-md{
-        @include dimensions(rem(100), rem(100));
-    }
-    @include breakpoint-lg{
-        @include dimensions(rem(100), rem(100));
-    }
-    &:hover{
-        cursor: pointer;
-        background: $clr-white;
-        border-color: $clr-secondary;
-        svg path{
-            fill:$clr-secondary;
-        }
-    }
-}
-
-
 .tabs{
     &__container{
-        display: flex;
-        align-items: center;
+        @include flex-center-vertical;
         flex-wrap: wrap;
         gap:rem(16);
         border-bottom:1px solid $clr-grey-1;
@@ -447,7 +416,7 @@
         }
     }
     &__item{
-        border: 1.8px solid $clr-grey;
+        border: 1.5px solid $clr-grey;
         padding: em(8) em(20);
         opacity: 0.67;
         transition:opacity 0.35s ease-in , border 0.35s ease-in;
@@ -479,7 +448,6 @@
                 background: transparent; 
             }
             h6, sup{
-                font-weight: 900;
                 color:$clr-white;
                 @include breakpoint-md{
                     color:$clr-primary;
@@ -488,8 +456,6 @@
         }
     }
 }
-
-
 
 .content-wrapper {
     max-width: 57ch;
