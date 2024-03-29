@@ -100,6 +100,7 @@ address{
   font-style:normal;
   font-size:100%;
   color:$clr-primary;
+  display: inline;
 }
 
 small{
@@ -114,6 +115,10 @@ input, textarea{
   border:none;
   font-family: $ff-secondary;
 
+}
+
+textarea{
+  resize: none;
 }
 
 p + p, h1 + p, h2 + p, h3 + p, h4 + p,  h5 + p, h6 + p{

@@ -11,6 +11,8 @@
         border-top:1px solid $clr-grey;
     }
     &__link-list{
+        position: relative;
+        overflow: hidden;
         list-style: none;
         margin-top: rem(24);
         @include breakpoint-md{
@@ -18,7 +20,7 @@
         }
     }
     &__link-item{
-        display: flex;
+        // display:flex;
         // position: relative;
         // overflow: hidden;
     }
@@ -67,6 +69,8 @@
 
 .socials{
     &__list{
+        position: relative;
+        overflow: hidden;
         @include flex-center-vertical;
         justify-content: flex-start;
         flex-wrap: wrap;

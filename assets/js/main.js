@@ -33,43 +33,15 @@ requestAnimationFrame(raf);
 function hideLoader(){
     tl.to(".loader-upper",{
         y:"-100%",
-        duration:1,
+        duration:0.8,
         ease: "sine.inOut",
     })
     tl.to(".loader-inner",{
         x:"100%",
-        duration:1,
-        // delay:0.3,
+        duration:0.8,
         ease: "sine.inOut",
     }, "-=0.2")
 }
-
-//====== Locomotive  Scroll Start ======
-// const locoScroll = new LocomotiveScroll({
-//     el:main,
-//     smooth:true,
-//     getDirection: true,
-// })
-
-
-// locoScroll.on("scroll", ScrollTrigger.update);
-
-// ScrollTrigger.scrollerProxy(".main",{
-//     scrollTop(value){
-//         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-//     },
-//     getBoundingClientRect(){
-//         return {
-//             left:0, top:0,
-//             width:locoScroll.innerWidth, 
-//             height:locoScroll.innerHeight,
-//         }
-//     },
-//     pinType: main.style.transform ? "transform" : "fixed"
-// });
-
-//====== Locomotive  Scroll End ======
-
 
 //========= Hide the Navbar when scrolling down start =========
 let lastScrollTop = 0;
@@ -97,6 +69,8 @@ navLinks.forEach(link =>{
   const navLinkPathname = new URL(link.href).pathname;
   if((windowPathname === navLinkPathname) || (windowPathname === "/index.html" && navLinkPathname === "/")){
     link.classList.add("active");
+  }else{
+    link.classList.remove("active");
   }
 })
 //======  Active Page Link end ======
@@ -115,17 +89,17 @@ hamburgerBtn.addEventListener('click', () => {
     toggleMenu();
     tl.from(".header--mobile", 0.8, { 
         x: "-100%",
-        ease:"power4.easeIn"
+        ease: "power4.inOut",
     })
     tl.from(".menu-img", 0.9,{
         opacity:0,
         x:-50,
-        ease:"power4.easeIn"
+        ease: "power4.inOut",
     })
     tl.from(".nav__link", 0.85,{
         opacity:0,
         y:60,
-        ease:"power4.easeInOut",
+        ease: "power4.inOut",
         stagger:0.12,
         delay:-0.65,
     },)
@@ -134,14 +108,14 @@ hamburgerBtn.addEventListener('click', () => {
         x:-60,
         stagger:0.12,
         delay:-1.2,
-        ease:"power4.easeInOut",
+        ease: "power4.inOut",
     },)
     tl.from(".socials__link", 0.9, {
         opacity:0,
         x:-100,
         stagger:0.15,
         delay:-1.25,
-        ease:"power4.easeIn",
+        ease: "power4.inOut",
     },)
 });
 
@@ -330,7 +304,7 @@ function handleCounter(){
                         duration: 1000,
                         easing: "swing",
                         step: function () {
-                        $this.text(Math.trunc(this.Counter) + 1);
+                            $this.text(Math.trunc(this.Counter) + 1);
                         },
                     }
                     );
@@ -342,7 +316,7 @@ function handleCounter(){
                         duration: 1000,
                         easing: "swing",
                         step: function () {
-                        $this.text(((this.Counter * 10) / 10).toFixed(1));
+                            $this.text(((this.Counter * 10) / 10).toFixed(1));
                         },
                     }
                     );
@@ -352,11 +326,6 @@ function handleCounter(){
     }
 } 
 //======= Counter End =============
-
-// locoScroll.on('scroll', ()=>{
-//     checkScroll();
-//     handleCounter();
-// });
 
 
 //====== custome cursor start ======
@@ -457,16 +426,16 @@ function filterCards(categoryType){
                 opacity: 0, 
                 scale: 0,
                 transformOrgin:"center", 
-                ease: "power3.easeOut" 
+                ease: "sine.inOut",
             });
         }else{
             card.classList.remove("show");
             gsap.to(card, { 
-            duration: 0.5, 
-            y:0,
-            opacity: 1, 
-            scale: 1, 
-            ease: "power3.easeOut" 
+                duration: 0.5, 
+                y:0,
+                opacity: 1, 
+                scale: 1, 
+                ease: "sine.inOut",
             });
         }
     });
@@ -486,30 +455,39 @@ function updateTabStatus(category){
 
 //========== Banner animtion start =================
 function bannerAnimation(){
+    tl.from(".header__wrapper",{
+        opacity:0,
+        duration:1,
+        ease: "power4.inOut",
+    },"-=0.5")
     tl.from(".banner-title",{
         opacity:0,
         x:-50,
         duration:1,
-        delay:0.1,
-        ease: "power3.out",
-    })
-    tl.from(".header__wrapper",{
-        opacity:0,
-        opacity:0,
-        duration:1,
-        ease: "power3.out",
-    },"-=1")
+        ease: "power4.inOut",
+    },"-=0.75")
     tl.from(".banner-subTitle",{
         opacity:0,
         y:50,
         duration:1,
-        ease: "power3.out",
-    },"-=0.8");
+        ease: "power4.inOut",
+    },"-=0.85");
     tl.from(".scroll-down-wrapper",{
         opacity:0,
         duration:1,
-        ease: "power3.out",
+        ease: "power4.inOut",
     }, "-=0.9");
+    tl.fromTo(".tabs__item",
+        {
+            x:-60,
+        },
+        {
+            x:0,
+            duration:1,
+            stagger:0.2,
+            ease: "power3.out",
+        },
+    "-=1.9");
 }
 
 window.addEventListener("load", (e) =>{
@@ -530,10 +508,9 @@ fadeUp.forEach((item, index) => {
         trigger:item,
         animation:anim,
         toggleActions:"play",
-        // scroller:".main",
         once:true,
         stagger:0.2,
-        ease: "power4.out",
+        ease: "power4.inOut",
     })
 })
 
@@ -547,10 +524,9 @@ fadeIn.forEach((item, index) => {
         trigger:item,
         animation:anim,
         toggleActions:"play",
-        // scroller:".main",
         once:true,
         stagger:0.2,
-        ease: "power4.out",
+        ease: "power4.inOut",
     })
 })
 
@@ -560,17 +536,15 @@ const imagesScale = gsap.utils.toArray(".scale-up");
 imagesScale.forEach((imgContainer, i) => {
   const anim = gsap.fromTo(imgContainer,
     { opacity: 0, y: 50, scale:0.95, transformOrigin:"bottom"},
-    { opacity: 1, y: 0, scale:1.0035, duration:1 }
+    { opacity: 1, y: 0, scale:1.0035, duration:1, ease: "power4.inOut" }
   );
   ScrollTrigger.create({
     trigger:imgContainer,
     animation: anim,
     toggleActions: "play",
-    once: true,
-    // scroller:".main",
     duration: 1,
-    stagger:0.1,
-    ease: "power4.out",
+    stagger:0.2,
+    ease: "power4.inOut",
   });
 });
 
@@ -583,24 +557,26 @@ dividers.forEach((divider, i) => {
         opacity: 0, 
         width:"0", 
         scale:0, 
-        transformOrigin:"left"
+        transformOrigin:"left",
     },
     { 
         opacity: 1,
         width: "100%", 
         scale:1, 
-        duration:1 
+        duration:2,
+        // ease: "power3.inOut",
+        ease: "expoScale(0.5,7,none)",
     }
   );
   ScrollTrigger.create({
     trigger:divider,
     animation: anim,
     toggleActions: "play",
-    // scroller:".main",
     once: true,
     duration:2,
-    stagger:0.25,
-    ease: "power4.out",
+    stagger:0.2,
+    // ease: "power3.inOut",
+    ease: "expoScale(0.5,7,none)",
   });
 });
 
@@ -612,10 +588,6 @@ function handleScroll(){
 }
 
 window.addEventListener("scroll", handleScroll);
-
-
-// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-// ScrollTrigger.refresh();
 
 // Update ScrollTrigger when Lenis scroll event occurs
 lenis.on('scroll', () => {

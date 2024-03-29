@@ -403,7 +403,7 @@
         @include flex-center-vertical;
         flex-wrap: wrap;
         gap:rem(16);
-        border-bottom:1px solid $clr-grey-1;
+        // border-bottom:1px solid $clr-grey-1;
         padding-block:em(32);
         @include breakpoint-sm{
             gap:rem(48); 
@@ -414,6 +414,10 @@
         @include breakpoint-lg{
             gap:rem(80); 
         }
+    }
+    &__wrapper{
+        position: relative;
+        overflow: hidden;
     }
     &__item{
         border: 1.5px solid $clr-grey;

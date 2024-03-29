@@ -786,6 +786,7 @@ swiper-container .swiper-notification {
   font-style: normal;
 }
 /* --------- Marcellus Regular------------- */
+/* --------- Aileron Regular------------- */
 /*-----------------------------
   [CAROL]
   Project:Carol
@@ -874,6 +875,7 @@ address {
   font-style: normal;
   font-size: 100%;
   color: #1a232a;
+  display: inline;
 }
 
 small {
@@ -887,6 +889,10 @@ input, textarea {
   outline: none;
   border: none;
   font-family: "Aileron-Regular", sans-serif;
+}
+
+textarea {
+  resize: none;
 }
 
 p + p, h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
@@ -14851,56 +14857,72 @@ p, ul, ol, body {
 
 .nav__link,
 .contact-list__link,
+.connect-us__link,
 .footer-link,
-.socials__link {
+.socials__link,
+.socials__link--contact {
   position: relative;
-  transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: color 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link::before, .nav__link::after,
 .contact-list__link::before,
 .contact-list__link::after,
+.connect-us__link::before,
+.connect-us__link::after,
 .footer-link::before,
 .footer-link::after,
 .socials__link::before,
-.socials__link::after {
+.socials__link::after,
+.socials__link--contact::before,
+.socials__link--contact::after {
   content: "";
   position: absolute;
   width: 0;
-  bottom: -0.1rem;
+  bottom: -0.3rem;
   height: 0.1rem;
   background: #10ADD9;
 }
 .nav__link::before,
 .contact-list__link::before,
+.connect-us__link::before,
 .footer-link::before,
-.socials__link::before {
+.socials__link::before,
+.socials__link--contact::before {
   left: 0;
 }
 .nav__link::after,
 .contact-list__link::after,
+.connect-us__link::after,
 .footer-link::after,
-.socials__link::after {
+.socials__link::after,
+.socials__link--contact::after {
   right: 0;
-  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link:hover,
 .contact-list__link:hover,
+.connect-us__link:hover,
 .footer-link:hover,
-.socials__link:hover {
+.socials__link:hover,
+.socials__link--contact:hover {
   cursor: pointer;
   color: #10ADD9;
 }
 .nav__link:hover::before,
 .contact-list__link:hover::before,
+.connect-us__link:hover::before,
 .footer-link:hover::before,
-.socials__link:hover::before {
+.socials__link:hover::before,
+.socials__link--contact:hover::before {
   width: 100%;
-  transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link:hover::after,
 .contact-list__link:hover::after,
+.connect-us__link:hover::after,
 .footer-link:hover::after,
-.socials__link:hover::after {
+.socials__link:hover::after,
+.socials__link--contact:hover::after {
   width: 100%;
   background: transparent;
   transition: 0s;
@@ -15071,42 +15093,7 @@ hover effect
   align-items: center;
   justify-content: center;
   width: min(90%, 1200px);
-  height: 200px;
-}
-@media only screen and (min-width: 340px) {
-  .modal-wrapper {
-    height: 240px;
-  }
-}
-@media only screen and (min-width: 452px) {
-  .modal-wrapper {
-    height: 300px;
-  }
-}
-@media only screen and (min-width: 36em) {
-  .modal-wrapper {
-    height: 360px;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .modal-wrapper {
-    height: 420px;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .modal-wrapper {
-    height: 480px;
-  }
-}
-@media only screen and (min-width: 75em) {
-  .modal-wrapper {
-    height: 640px;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .modal-wrapper {
-    height: 600px;
-  }
+  aspect-ratio: 16/9;
 }
 .modal-wrapper::before {
   content: "";
@@ -15748,7 +15735,6 @@ hover effect
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  border-bottom: 1px solid #d2d2d2;
   padding-block: 2em;
 }
 @media only screen and (min-width: 36em) {
@@ -15765,6 +15751,10 @@ hover effect
   .tabs__container {
     gap: 5rem;
   }
+}
+.tabs__wrapper {
+  position: relative;
+  overflow: hidden;
 }
 .tabs__item {
   border: 1.5px solid #707070;
@@ -15849,9 +15839,6 @@ hover effect
 .core-values__item {
   display: flex;
   gap: 1rem;
-}
-.core-values__item:not(:last-child) {
-  border-bottom: 2px solid #d2d2d2;
 }
 .core-values__item h6 {
   line-height: 1.57;
@@ -16042,9 +16029,6 @@ hover effect
 .connect-us__link {
   font-size: 1rem;
   line-height: 2.5;
-}
-.connect-us__link:hover {
-  color: #10ADD9;
 }
 
 .form__group {
@@ -16471,6 +16455,8 @@ hover effect
   border-top: 1px solid #707070;
 }
 .footer__link-list {
+  position: relative;
+  overflow: hidden;
   list-style: none;
   margin-top: 1.5rem;
 }
@@ -16478,9 +16464,6 @@ hover effect
   .footer__link-list {
     margin-top: 2rem;
   }
-}
-.footer__link-item {
-  display: flex;
 }
 .footer__top {
   padding-top: 9.625em;
@@ -16530,6 +16513,8 @@ hover effect
 }
 
 .socials__list {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;

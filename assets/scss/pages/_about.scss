@@ -34,9 +34,9 @@
     &__item{
         display: flex;
         gap:rem(16);
-        &:not(:last-child){
-            border-bottom: 2px solid $clr-grey-1;     
-        }
+        // &:not(:last-child){
+        //     border-bottom: 1px solid $clr-grey-1;     
+        // }
         h6{
             line-height: 1.57;
         }
