@@ -10,10 +10,10 @@
     &__container{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        @include breakpoint-sm{
+        @include breakpoint-md{
             grid-template-columns: repeat(2, 1fr);
         }
-        @include breakpoint-md{
+        @include breakpoint-lg{
             grid-template-columns: repeat(3, 1fr);
         }
         gap:rem(32);
@@ -61,11 +61,13 @@
         bottom: 0;
         padding:em(20);
         padding-top: 0;
-        transform: translateY(58%);
+        transform: translateY(70%);
         transition: transform 0.35s ease-out;
         overflow: hidden;
         z-index: 2;
-
+        @include media-query("min", 348px){
+            transform: translateY(58%);
+        }
         @include breakpoint-md{
             padding:em(20);
         }

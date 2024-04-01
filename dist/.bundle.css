@@ -785,8 +785,6 @@ swiper-container .swiper-notification {
   font-weight: 400;
   font-style: normal;
 }
-/* --------- Marcellus Regular------------- */
-/* --------- Aileron Regular------------- */
 /*-----------------------------
   [CAROL]
   Project:Carol
@@ -804,7 +802,13 @@ swiper-container .swiper-notification {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: initial;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
 }
 
 /* Scrollbar Styling */
@@ -15153,12 +15157,12 @@ hover effect
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
-@media only screen and (min-width: 36em) {
+@media only screen and (min-width: 48em) {
   .grid__container, .grid__container--properties, .grid__container--team {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 62em) {
   .grid__container, .grid__container--properties, .grid__container--team {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -15195,10 +15199,15 @@ hover effect
   bottom: 0;
   padding: 1.25em;
   padding-top: 0;
-  transform: translateY(58%);
+  transform: translateY(70%);
   transition: transform 0.35s ease-out;
   overflow: hidden;
   z-index: 2;
+}
+@media (min-width: 348px) {
+  .grid__content {
+    transform: translateY(58%);
+  }
 }
 @media only screen and (min-width: 48em) {
   .grid__content {
@@ -15386,25 +15395,32 @@ hover effect
 .legacy__card {
   position: absolute;
   bottom: 0;
-  margin-bottom: -150px;
+  margin-bottom: -170px;
   margin-left: -6px;
-  padding: 2em 1em;
-  padding-left: 0;
   background-color: #ffffff;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 36em) {
+  .legacy__card {
+    margin-bottom: -150px;
+  }
+}
+@media only screen and (min-width: 62em) {
   .legacy__card {
     padding: 4em;
-    width: 30rem;
+    max-width: 30rem;
   }
 }
 .legacy__card h6 {
   line-height: 1.57;
 }
 .legacy__text {
-  text-align: right;
   font-size: 1rem;
   line-height: 2;
+}
+@media only screen and (min-width: 36em) {
+  .legacy__text {
+    text-align: right;
+  }
 }
 .legacy h2 {
   max-width: 11ch;

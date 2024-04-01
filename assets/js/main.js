@@ -10,7 +10,7 @@ const tl = gsap.timeline();
 
 //========= Lenis Start =========
 const lenis = new Lenis({
-    duration: 1,
+    duration: 0.5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: "vertical", // vertical, horizontal
     gestureOrientation: "vertical", // vertical, horizontal, both
@@ -87,19 +87,20 @@ function toggleMenu(){
 
 hamburgerBtn.addEventListener('click', () => {
     toggleMenu();
-    tl.from(".header--mobile", 0.8, { 
+    tl.from(".header--mobile", 1, { 
         x: "-100%",
-        ease: "power4.inOut",
+        ease: "power3.inOut",
     })
-    tl.from(".menu-img", 0.9,{
+    tl.from(".menu-img", 1,{
         opacity:0,
         x:-50,
-        ease: "power4.inOut",
+        delay:-0.65,
+        ease: "power3.inOut",
     })
-    tl.from(".nav__link", 0.85,{
+    tl.from(".nav__link", 0.9,{
         opacity:0,
         y:60,
-        ease: "power4.inOut",
+        ease: "power3.inOut",
         stagger:0.12,
         delay:-0.65,
     },)
@@ -108,14 +109,14 @@ hamburgerBtn.addEventListener('click', () => {
         x:-60,
         stagger:0.12,
         delay:-1.2,
-        ease: "power4.inOut",
+        ease: "power3.inOut",
     },)
     tl.from(".socials__link", 0.9, {
         opacity:0,
         x:-100,
         stagger:0.15,
         delay:-1.25,
-        ease: "power4.inOut",
+        ease: "power3.inOut",
     },)
 });
 
@@ -421,17 +422,17 @@ function filterCards(categoryType){
         if(categoryType === "all" || cardCategories.includes(categoryType)){
             card.classList.add("show");
             gsap.from(card, { 
-                duration: 0.5, 
+                duration: 0.75, 
                 y:60,
                 opacity: 0, 
                 scale: 0,
-                transformOrgin:"center", 
+                transformOrigin:"center", 
                 ease: "sine.inOut",
             });
         }else{
             card.classList.remove("show");
             gsap.to(card, { 
-                duration: 0.5, 
+                duration: 0.75, 
                 y:0,
                 opacity: 1, 
                 scale: 1, 
@@ -458,36 +459,42 @@ function bannerAnimation(){
     tl.from(".header__wrapper",{
         opacity:0,
         duration:1,
-        ease: "power4.inOut",
-    },"-=0.5")
+        ease: "power3.inOut",
+    },"-=0.6")
     tl.from(".banner-title",{
         opacity:0,
-        x:-50,
+        y:50,
         duration:1,
-        ease: "power4.inOut",
-    },"-=0.75")
+        ease: "power3.inOut",
+    },"-=0.78")
     tl.from(".banner-subTitle",{
         opacity:0,
         y:50,
         duration:1,
-        ease: "power4.inOut",
-    },"-=0.85");
-    tl.from(".scroll-down-wrapper",{
-        opacity:0,
-        duration:1,
-        ease: "power4.inOut",
-    }, "-=0.9");
-    tl.fromTo(".tabs__item",
-        {
-            x:-60,
-        },
-        {
-            x:0,
+        ease: "power3.inOut",
+    },"-=0.88");
+    if(scrollButton &&  targetSection ){
+        tl.from(".scroll-down-wrapper",{
+            opacity:0,
             duration:1,
-            stagger:0.2,
-            ease: "power3.out",
-        },
-    "-=1.9");
+            ease: "power3.inOut",
+        }, "-=0.9");
+    }
+    if(tabBtns.length > 0){
+        tl.fromTo(tabBtns,
+            { y:60 },
+            {  y:0, duration:1, stagger:0.1, ease: "power3.inOut" },
+        "-=1.3");
+    }
+    tl.fromTo(".divider", 1.78,
+        { scale:0, transformOrigin:"left" },
+        { scale:1, ease: "power3.inOut" },
+    "-=1.52");
+
+    tl.fromTo(".featured__card", 1, 
+        { opacity: 0, y: 50,},
+        { opacity: 1, y: 0, ease: "power3.inOut" },
+    "-=1.7")
 }
 
 window.addEventListener("load", (e) =>{
@@ -502,14 +509,14 @@ window.addEventListener("load", (e) =>{
 const fadeUp = gsap.utils.toArray(".fade-up");
 fadeUp.forEach((item, index) => {
     const anim =  gsap.from(item,
-        { opacity:0,  y:60, duration:1 }
+        { opacity:0,  y:60, duration:1.25, ease: "power4.inOut", }
     );
     ScrollTrigger.create({
         trigger:item,
         animation:anim,
         toggleActions:"play",
         once:true,
-        stagger:0.2,
+        stagger:0.5,
         ease: "power4.inOut",
     })
 })
@@ -518,7 +525,7 @@ fadeUp.forEach((item, index) => {
 const fadeIn = gsap.utils.toArray(".fade-in");
 fadeIn.forEach((item, index) => {
     const anim =  gsap.from(item,
-        { opacity:0, duration:1 }
+        { opacity:0, duration:1.25,  ease: "power4.inOut", }
     );
     ScrollTrigger.create({
         trigger:item,
@@ -536,13 +543,13 @@ const imagesScale = gsap.utils.toArray(".scale-up");
 imagesScale.forEach((imgContainer, i) => {
   const anim = gsap.fromTo(imgContainer,
     { opacity: 0, y: 50, scale:0.95, transformOrigin:"bottom"},
-    { opacity: 1, y: 0, scale:1.0035, duration:1, ease: "power4.inOut" }
+    { opacity: 1, y: 0, scale:1, duration:1.25, ease: "power4.inOut" }
   );
   ScrollTrigger.create({
     trigger:imgContainer,
     animation: anim,
     toggleActions: "play",
-    duration: 1,
+    // duration: 1,
     stagger:0.2,
     ease: "power4.inOut",
   });
@@ -554,17 +561,13 @@ const dividers = gsap.utils.toArray(".divider");
 dividers.forEach((divider, i) => {
   const anim = gsap.fromTo(divider,
     { 
-        opacity: 0, 
-        width:"0", 
-        scale:0, 
-        transformOrigin:"left",
+        opacity: 0,width:"0", scale:0, transformOrigin:"left",
     },
     { 
         opacity: 1,
-        width: "100%", 
-        scale:1, 
-        duration:2,
-        // ease: "power3.inOut",
+        width:"100%", 
+        scale:1,  
+        duration:1, 
         ease: "expoScale(0.5,7,none)",
     }
   );
@@ -573,10 +576,9 @@ dividers.forEach((divider, i) => {
     animation: anim,
     toggleActions: "play",
     once: true,
-    duration:2,
-    stagger:0.2,
-    // ease: "power3.inOut",
-    ease: "expoScale(0.5,7,none)",
+    // duration:1,
+    stagger:0.1,
+    ease: "power4.inOut",
   });
 });
 
@@ -598,4 +600,4 @@ lenis.on('scroll', () => {
 //     lenis.raf(time * 1000);
 // });
   
-gsap.ticker.lagSmoothing(0)
+gsap.ticker.lagSmoothing(0);

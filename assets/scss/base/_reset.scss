@@ -21,7 +21,14 @@
 }
 
 html{
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
+  scroll-behavior: initial;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
 }
 
 /* Scrollbar Styling */

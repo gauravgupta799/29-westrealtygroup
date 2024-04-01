@@ -91,23 +91,28 @@
     &__card{
         position: absolute;
         bottom: 0;
-        margin-bottom: -150px;
+        margin-bottom: -170px;
         margin-left: -6px;
-        padding: em(32) em(16);
-        padding-left: 0;
+        // padding: em(32) em(16);
+        // padding-left: 0;
         background-color: $clr-white;
-        @include breakpoint-md{
+        @include breakpoint-sm{
+            margin-bottom: -150px;
+        }
+        @include breakpoint-lg{
             padding: em(64);
-            width: rem(480);
+            max-width: rem(480);
         }
         h6{
             line-height: 1.57;
         }
     }
     &__text{
-        text-align: right;
         font-size: rem(16);
         line-height: 2; 
+        @include breakpoint-sm{
+            text-align: right;
+        }
     }
     h2{
         max-width: 11ch;
