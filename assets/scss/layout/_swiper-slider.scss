@@ -1,10 +1,54 @@
 @use "../abstract/breakpoints" as *;
-// @use "../abstract/colors" as *;
-// @use "../abstract/fonts" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
 @use "../abstract/functions" as *;
 @use "../abstract/mixins" as *;
 
 
-.swiper-wrapper{
-  padding-block:em(48) !important;
+$swiper-navigation-size:18px;
+
+.testimonials{
+  .swiper-pagination{
+    position: static !important;
+    @include flex-center;
+    &__wrapper{
+      @include flex-center;
+      gap:rem(32);
+    }
+    &-bullet{
+      @include flex-center;
+      @include dimensions(rem(28),rem(28));
+      font-size: rem(16);
+      color: $clr-primary;
+      font-family: $ff-secondary;
+      opacity: 1;
+      background: transparent;
+      @include transition(all, 0.25s, ease-out);
+      &-active{
+        background-color:$clr-secondary !important;
+        color:$clr-white !important;
+      }
+      &:hover{
+        cursor: pointer;
+        background-color:$clr-secondary;
+        color:$clr-white;
+      }
+    }
+  }
+
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  width: auto !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+  position:static !important;
+  z-index: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+    &::after{
+      font-size:$swiper-navigation-size !important;
+      color:$clr-primary !important;
+    }
+  }
 }

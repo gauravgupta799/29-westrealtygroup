@@ -71,14 +71,13 @@
 
 
 .nav__link,
-.contact-list__link,
-.connect-us__link,
-.footer-link,
+.contact-list__link:not(address),
+.connect-us__link:not(address),
+.footer-link:not(address),
 .socials__link,
 .socials__link--contact{
     position: relative;
     transition: color 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
-
     &::before, &::after {
         content: '';
         position: absolute;

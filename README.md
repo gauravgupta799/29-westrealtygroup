@@ -30,3 +30,25 @@
 #22/03/2024
 1. Fixed the design issues
 
+#26/03/2024
+1. Made the changes
+2. Fixed the animation
+   
+#27/03/2024
+#28/03/2024
+
+
+#01/04/2024
+1.Change CTA and Footer Section
+
+#02/04/2024
+1. Made Change on Home and About pages
+2. Footer
+
+#03/04/2024
+1. Made Changes in Property Inner page
+2. Testimonial Changed
+3. Added Pagination
+4. Team's card mousemove and mouseleave effect
+
+

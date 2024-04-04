@@ -1184,26 +1184,26 @@ p, ul, ol, body {
 }
 @media screen and (min-width: 36em) {
   p, ul, ol, body {
-    font-size: 1.125rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 48em) {
   p, ul, ol, body {
-    font-size: 1.125rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 62em) {
   p, ul, ol, body {
-    font-size: 1.125rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 75em) {
   p, ul, ol, body {
-    font-size: 1.125rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 100em) {
@@ -14860,21 +14860,21 @@ p, ul, ol, body {
 }
 
 .nav__link,
-.contact-list__link,
-.connect-us__link,
-.footer-link,
+.contact-list__link:not(address),
+.connect-us__link:not(address),
+.footer-link:not(address),
 .socials__link,
 .socials__link--contact {
   position: relative;
   transition: color 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link::before, .nav__link::after,
-.contact-list__link::before,
-.contact-list__link::after,
-.connect-us__link::before,
-.connect-us__link::after,
-.footer-link::before,
-.footer-link::after,
+.contact-list__link:not(address)::before,
+.contact-list__link:not(address)::after,
+.connect-us__link:not(address)::before,
+.connect-us__link:not(address)::after,
+.footer-link:not(address)::before,
+.footer-link:not(address)::after,
 .socials__link::before,
 .socials__link::after,
 .socials__link--contact::before,
@@ -14887,44 +14887,44 @@ p, ul, ol, body {
   background: #10ADD9;
 }
 .nav__link::before,
-.contact-list__link::before,
-.connect-us__link::before,
-.footer-link::before,
+.contact-list__link:not(address)::before,
+.connect-us__link:not(address)::before,
+.footer-link:not(address)::before,
 .socials__link::before,
 .socials__link--contact::before {
   left: 0;
 }
 .nav__link::after,
-.contact-list__link::after,
-.connect-us__link::after,
-.footer-link::after,
+.contact-list__link:not(address)::after,
+.connect-us__link:not(address)::after,
+.footer-link:not(address)::after,
 .socials__link::after,
 .socials__link--contact::after {
   right: 0;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link:hover,
-.contact-list__link:hover,
-.connect-us__link:hover,
-.footer-link:hover,
+.contact-list__link:not(address):hover,
+.connect-us__link:not(address):hover,
+.footer-link:not(address):hover,
 .socials__link:hover,
 .socials__link--contact:hover {
   cursor: pointer;
   color: #10ADD9;
 }
 .nav__link:hover::before,
-.contact-list__link:hover::before,
-.connect-us__link:hover::before,
-.footer-link:hover::before,
+.contact-list__link:not(address):hover::before,
+.connect-us__link:not(address):hover::before,
+.footer-link:not(address):hover::before,
 .socials__link:hover::before,
 .socials__link--contact:hover::before {
   width: 100%;
   transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .nav__link:hover::after,
-.contact-list__link:hover::after,
-.connect-us__link:hover::after,
-.footer-link:hover::after,
+.contact-list__link:not(address):hover::after,
+.connect-us__link:not(address):hover::after,
+.footer-link:not(address):hover::after,
 .socials__link:hover::after,
 .socials__link--contact:hover::after {
   width: 100%;
@@ -14942,14 +14942,9 @@ p, ul, ol, body {
   font-size: 1rem;
   line-height: 1.78;
   font-weight: normal;
-  padding: 0.75em 2.125em;
+  padding: 0.875em 2.375em;
   color: #f1f1f1;
   transition: all 0.2s ease-out;
-}
-@media only screen and (min-width: 48em) {
-  .btn {
-    font-size: 1.125rem;
-  }
 }
 .btn svg path {
   fill: #10ADD9;
@@ -14979,17 +14974,14 @@ p, ul, ol, body {
 
 .btn--transparent {
   background: transparent;
-  color: #10ADD9;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding-inline: 0;
+  color: #1a232a;
+  padding: 0;
 }
-.btn--transparent:hover {
-  padding-inline: 1em;
+.btn--transparent svg path {
+  fill: #10ADD9;
 }
 .btn--transparent:hover svg path {
-  fill: #ffffff;
+  fill: #1a232a;
 }
 
 /*
@@ -15038,39 +15030,6 @@ hover effect
 .btn--secondary::before,
 .btn--outline::before {
   background: #10ADD9;
-}
-
-.play-btn {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: #10ADD9;
-  border: 1px solid transparent;
-  transition: all 0.35s ease-out;
-}
-@media only screen and (min-width: 48em) {
-  .play-btn {
-    width: 6.25rem;
-    height: 6.25rem;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .play-btn {
-    width: 6.25rem;
-    height: 6.25rem;
-  }
-}
-.play-btn:hover {
-  cursor: pointer;
-  background: #ffffff;
-  border-color: #10ADD9;
-}
-.play-btn:hover svg path {
-  fill: #10ADD9;
 }
 
 .modal {
@@ -15152,20 +15111,23 @@ hover effect
   color: #ffffff;
 }
 
-.grid__container, .grid__container--properties, .grid__container--team {
+.grid__container, .grid__container--properties, .grid__container--featured, .grid__container--team {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 @media only screen and (min-width: 48em) {
-  .grid__container, .grid__container--properties, .grid__container--team {
+  .grid__container, .grid__container--properties, .grid__container--featured, .grid__container--team {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (min-width: 62em) {
-  .grid__container, .grid__container--properties, .grid__container--team {
+  .grid__container, .grid__container--properties, .grid__container--featured, .grid__container--team {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+.grid__container--featured {
+  gap: 3.75rem;
 }
 .grid__container--properties {
   gap: 4rem;
@@ -15193,6 +15155,32 @@ hover effect
 }
 .grid__figure:hover .grid__content p {
   margin-top: 1rem;
+}
+.grid__figure--team {
+  position: relative;
+  overflow: hidden;
+}
+.grid__figure--team .learn-more {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #10ADD9;
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  scale: 0;
+}
+.grid__figure--team:hover .learn-more {
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
 }
 .grid__content {
   position: absolute;
@@ -15249,6 +15237,21 @@ hover effect
 }
 .grid__container--properties .grid-item.show {
   display: block;
+}
+
+.learn-more-btn {
+  position: fixed;
+  pointer-events: none;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #10ADD9;
+  color: #ffffff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
 .loader-upper, .loader-inner {
@@ -15330,11 +15333,16 @@ hover effect
 }
 .home-banner__wrapper .banner-content {
   position: absolute;
-  bottom: 120px;
+  bottom: 6.25rem;
 }
 @media only screen and (min-width: 36em) {
   .home-banner__wrapper .banner-content {
     width: 100%;
+  }
+}
+@media only screen and (min-width: 100em) {
+  .home-banner__wrapper .banner-content {
+    bottom: 11rem;
   }
 }
 .home-banner__wrapper .banner-title, .home-banner__wrapper .banner-subTitle {
@@ -15393,18 +15401,27 @@ hover effect
   position: relative;
 }
 .legacy__card {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: -170px;
-  margin-left: -6px;
+  margin-top: 2rem;
   background-color: #ffffff;
+  width: 100%;
+  padding: 1em;
 }
 @media only screen and (min-width: 36em) {
   .legacy__card {
-    margin-bottom: -150px;
+    padding: 2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 70%;
+    margin-top: 12%;
   }
 }
-@media only screen and (min-width: 62em) {
+@media only screen and (min-width: 48em) {
+  .legacy__card {
+    max-width: 50%;
+  }
+}
+@media only screen and (min-width: 75em) {
   .legacy__card {
     padding: 4em;
     max-width: 30rem;
@@ -15427,93 +15444,98 @@ hover effect
 }
 
 .counter {
-  font-size: 6.25rem;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  line-height: 1;
   font-family: "Marcellus-Regular", sans-serif;
   display: flex;
 }
+@media only screen and (min-width: 48em) {
+  .counter {
+    justify-content: center;
+  }
+}
 .counter__wrapper {
-  padding: 2.5em;
-  padding-inline: 0;
   position: relative;
   overflow: hidden;
+  padding-block: 2em;
 }
 @media only screen and (min-width: 36em) {
   .counter__wrapper {
-    padding-inline: 1.25em;
+    font-size: 4rem;
+    padding-block: 1em;
   }
 }
 @media only screen and (min-width: 48em) {
   .counter__wrapper {
-    padding-inline: 1.875em;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .counter__wrapper {
-    padding-inline: 2.5em;
-  }
-}
-.counter__wrapper::before, .counter__wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #707070;
-}
-.counter__wrapper::before {
-  left: 0;
-  height: 1px;
-}
-@media only screen and (min-width: 36em) {
-  .counter__wrapper::before {
-    max-width: 16.25rem;
-    margin-left: 3.125rem;
+    font-size: 4.5rem;
+    padding-block: 0;
   }
 }
 @media only screen and (min-width: 75em) {
-  .counter__wrapper::before {
-    margin-left: 2.25rem;
-    max-width: 11.875rem;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .counter__wrapper::before {
-    margin-left: 3.125rem;
-  }
-}
-.counter__wrapper::after {
-  width: 1px;
-  height: 12.5rem;
-  right: 0;
-  top: 30px;
-  opacity: 0;
-  visibility: hidden;
-}
-@media only screen and (min-width: 36em) {
-  .counter__wrapper::after {
-    opacity: 1;
-    visibility: visible;
-    height: 7.875rem;
-    top: 50px;
+  .counter__wrapper {
+    font-size: 5rem;
+    line-height: 0.75;
   }
 }
 .counter__subTitle {
   margin-top: 1.5rem;
 }
-@media only screen and (min-width: 36em) {
+@media only screen and (min-width: 48em) {
   .counter__subTitle {
     margin-top: 2rem;
+    text-align: center;
   }
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 62em) {
   .counter__subTitle {
     margin-top: 2.25rem;
   }
 }
 
-.col-lg-3:nth-of-type(4) .counter__wrapper::after {
-  display: none;
+.col-lg-3:nth-of-type(1) .counter {
+  justify-content: flex-start;
+}
+
+.counter__wrapper:not(:nth-child(4)) {
+  border-bottom: 1px solid #1a232a;
+}
+@media only screen and (min-width: 48em) {
+  .counter__wrapper:not(:nth-child(4)) {
+    border-right: 1px solid #1a232a;
+    border-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  #counter-section > div:nth-child(4) > div {
+    border: none;
+  }
+}
+
+.meet-team {
+  position: relative;
+}
+.meet-team__card {
+  padding: 1em;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 1.75rem;
+}
+@media only screen and (min-width: 48em) {
+  .meet-team__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10%;
+    max-width: 28.75rem;
+    padding: 1.5em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .meet-team__card {
+    max-width: 37.5rem;
+    padding: 4em;
+  }
 }
 
 .featured {
@@ -15560,11 +15582,6 @@ hover effect
 @media only screen and (min-width: 75em) {
   .featured__card-body {
     padding-block: 2em;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .featured__card-body {
-    padding-block: 2.25em 2em;
   }
 }
 .featured__card-body p {
@@ -15634,8 +15651,13 @@ hover effect
 .testimonials__header .navigation-buttons button:nth-child(2) {
   margin-left: 1rem;
 }
+.testimonials__content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .testimonials__content-wrapper h6 {
-  text-align: left;
   line-height: 1.72;
   text-transform: lowercase;
 }
@@ -15648,52 +15670,30 @@ hover effect
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-@media only screen and (min-width: 36em) {
-  .testimonials__footer {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .testimonials__footer {
-    gap: 2.25rem;
-  }
-}
 @media only screen and (min-width: 75em) {
   .testimonials__footer {
-    gap: 2.875rem;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .testimonials__footer {
-    gap: 5.875rem;
+    margin-left: 1rem;
   }
 }
 .testimonials__footer p {
   white-space: nowrap;
 }
 .testimonials__figure {
-  width: 10rem;
-  height: 10rem;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 50%;
   flex-shrink: 0;
 }
 @media only screen and (min-width: 48em) {
   .testimonials__figure {
-    width: 12.5rem;
-    height: 12.5rem;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .testimonials__figure {
-    width: 15rem;
-    height: 15rem;
+    width: 7.5rem;
+    height: 7.5rem;
   }
 }
 @media only screen and (min-width: 100em) {
   .testimonials__figure {
-    width: 17.5rem;
-    height: 17.5rem;
+    width: 8.75rem;
+    height: 8.75rem;
   }
 }
 .testimonials__figure img {
@@ -15742,7 +15742,7 @@ hover effect
   -moz-text-decoration-color: #10ADD9;
 }
 
-.cta__container {
+.cta {
   background: rgba(0, 0, 0, 0.88);
 }
 
@@ -15773,8 +15773,8 @@ hover effect
   overflow: hidden;
 }
 .tabs__item {
-  border: 1.5px solid #707070;
-  padding: 0.5em 1.25em;
+  border: 1.5px solid #10ADD9;
+  padding: 0.5em 1em;
   opacity: 0.67;
   transition: opacity 0.35s ease-in, border 0.35s ease-in;
 }
@@ -15787,8 +15787,8 @@ hover effect
 .tabs__item:hover {
   cursor: pointer;
   opacity: 1;
-  border-color: #ffffff;
-  background-color: #1a232a;
+  border-color: #10ADD9;
+  background-color: #10ADD9;
 }
 @media only screen and (min-width: 48em) {
   .tabs__item:hover {
@@ -15800,14 +15800,14 @@ hover effect
 }
 @media only screen and (min-width: 48em) {
   .tabs__item:hover h6, .tabs__item:hover sup {
-    color: #1a232a;
+    color: #10ADD9;
   }
 }
 .tabs__item.active {
   opacity: 1;
-  border-color: #1a232a;
+  border-color: #10ADD9;
   transition: opacity 0.35s ease-in, border 0.35s ease-in;
-  background-color: #1a232a;
+  background-color: #10ADD9;
 }
 @media only screen and (min-width: 48em) {
   .tabs__item.active {
@@ -15819,7 +15819,7 @@ hover effect
 }
 @media only screen and (min-width: 48em) {
   .tabs__item.active h6, .tabs__item.active sup {
-    color: #1a232a;
+    color: #10ADD9;
   }
 }
 
@@ -15827,29 +15827,35 @@ hover effect
   max-width: 57ch;
 }
 
-@media only screen and (min-width: 62em) {
+.main {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 100em) {
   .about-banner h1 {
     max-width: 12ch;
   }
 }
 
-@media only screen and (min-width: 62em) {
-  .helping h2 {
-    max-width: 20ch;
+.core-values__list {
+  max-width: 90%;
+}
+.core-values__list li {
+  padding-block: 1em;
+}
+@media only screen and (min-width: 48em) {
+  .core-values__list li {
+    padding-block: 1.5em;
   }
 }
-
-.core-values__list li {
-  padding-block: 0.75em;
+@media only screen and (min-width: 62em) {
+  .core-values__list li {
+    padding-block: 2em;
+  }
 }
 @media only screen and (min-width: 75em) {
   .core-values__list li {
-    padding-block: 1em;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .core-values__list li {
-    padding-block: 1.5em;
+    padding-block: 2.5em;
   }
 }
 .core-values__item {
@@ -15877,10 +15883,6 @@ hover effect
 @media only screen and (min-width: 75em) {
   .core-values__item {
     gap: 2.5rem;
-  }
-}
-@media only screen and (min-width: 100em) {
-  .core-values__item {
     align-items: center;
   }
 }
@@ -16143,7 +16145,6 @@ hover effect
 }
 
 .what-to-love__list li {
-  border-bottom: 1px solid #707070;
   padding-block: 2em;
   display: flex;
   gap: 1rem;
@@ -16174,6 +16175,10 @@ hover effect
 }
 .what-to-love__list li:first-child {
   padding-top: 0;
+}
+.what-to-love__content {
+  position: relative;
+  overflow: hidden;
 }
 @media only screen and (min-width: 62em) {
   .what-to-love__content h6 {
@@ -16285,6 +16290,10 @@ hover effect
 .amenities__wrapper h6 {
   opacity: 0.4;
 }
+.amenities__list {
+  position: relative;
+  overflow: hidden;
+}
 .amenities__list li {
   line-height: 2.22;
 }
@@ -16326,7 +16335,7 @@ hover effect
 }
 .header.sticky {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
-  padding-block: 0.875em;
+  padding-block: 0.75em;
 }
 .header.hidden {
   top: -110px;
@@ -16346,7 +16355,12 @@ hover effect
   width: 100%;
   height: 100%;
   background-color: #070707;
-  padding-block: 2rem;
+  padding-block: 1em;
+}
+@media only screen and (min-width: 36em) {
+  .header--mobile {
+    padding-block: 2em;
+  }
 }
 @media only screen and (min-width: 75em) {
   .header--mobile {
@@ -16448,25 +16462,87 @@ hover effect
   overflow: hidden;
 }
 
+.hamburgur__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media only screen and (min-width: 36em) {
+  .hamburgur__wrapper {
+    gap: 1.25rem;
+  }
+}
+.hamburgur__wrapper span {
+  margin-top: 0;
+}
+.hamburgur__wrapper .menu-text {
+  line-height: 2;
+}
+.hamburgur__wrapper:hover {
+  cursor: pointer;
+}
 .hamburgur .menu-line {
-  width: 3.75rem;
-  height: 0.1875rem;
+  width: 2.625rem;
+  height: 0.0625rem;
   background: #1a232a;
   display: block;
   margin-bottom: 5px;
 }
 .hamburgur .menu-line:nth-child(2) {
-  width: 2.5rem;
-}
-.hamburgur .menu-line:last-child {
-  display: none;
   width: 2rem;
 }
-.hamburgur:hover {
+
+.testimonials .swiper-pagination {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials .swiper-pagination__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.testimonials .swiper-pagination-bullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 1rem;
+  color: #1a232a;
+  font-family: "Aileron-Regular", sans-serif;
+  opacity: 1;
+  background: transparent;
+  transition: all 0.25s ease-out;
+}
+.testimonials .swiper-pagination-bullet-active {
+  background-color: #10ADD9 !important;
+  color: #ffffff !important;
+}
+.testimonials .swiper-pagination-bullet:hover {
+  cursor: pointer;
+  background-color: #10ADD9;
+  color: #ffffff;
+}
+.testimonials .swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto !important;
+}
+.testimonials .swiper-button-prev,
+.testimonials .swiper-button-next {
+  position: static !important;
+  z-index: 0 !important;
+  margin: 0 !important;
   cursor: pointer;
 }
+.testimonials .swiper-button-prev::after,
+.testimonials .swiper-button-next::after {
+  font-size: 18px !important;
+  color: #1a232a !important;
+}
 
-.footer__container {
+.footer {
   background: rgba(0, 0, 0, 0.88);
   border-top: 1px solid #707070;
 }

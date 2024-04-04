@@ -14,12 +14,11 @@
     background: transparent;
     z-index: 5;
     background: $clr-white;
-    // transition: top 0.5s ease-out;
     @include transition(top, 0.5s, ease-out);
     
     &.sticky{
         box-shadow: 0 2px 5px rgba(0,0,0,0.35);
-        padding-block:em(14); 
+        padding-block:em(12); 
     }
     &.hidden{
         top: -110px;
@@ -36,7 +35,10 @@
         overflow-y: auto;
         @include full-dimensions;
         background-color:$clr-blck-2;
-        padding-block: 2rem;
+        padding-block: em(16);
+        @include breakpoint-sm{
+            padding-block: em(32);
+        }
         @include breakpoint-xl{
             padding-block: 4rem 10rem;
         }
@@ -132,21 +134,31 @@
 
 //====== Hamburger Styles Start =======
 .hamburgur{
+    &__wrapper{
+        display:flex;
+        align-items: center;
+        gap:rem(16);
+        @include breakpoint-sm{
+            gap:rem(20);
+        }
+        span{
+            margin-top: 0;
+        }
+        .menu-text{
+            line-height: 2;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
     .menu-line{
-        @include dimensions(rem(60),rem(3));
+        @include dimensions(rem(42), rem(1));
         background: $clr-primary;
         display: block;
         margin-bottom: 5px;
         &:nth-child(2){
-            width: rem(40);
-        }
-        &:last-child{
-            display: none;
             width: rem(32);
-        } 
-    }
-    &:hover{
-        cursor: pointer;
+        }
     }
 }
 //====== Hamburger Styles End =======

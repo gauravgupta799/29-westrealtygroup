@@ -7,7 +7,7 @@
 .what-to-love{
     &__list{
         li{
-            border-bottom: 1px solid $clr-grey;
+            // border-bottom: 1px solid $clr-grey;
             padding-block: em(32);
             display: flex;
             gap:rem(16);
@@ -35,6 +35,8 @@
         }
     }
     &__content{
+        position: relative;
+        overflow: hidden;
         h6{
             @include breakpoint-lg{
                 line-height: 1.57;

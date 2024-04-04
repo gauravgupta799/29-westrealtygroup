@@ -27,11 +27,13 @@
         <div class="header--desktop">
             <div class="page-container">
                 <div class="header__wrapper">
-                    <span class="hamburgur" id="hamburgur">
-                        <span class="menu-line"></span>
-                        <span class="menu-line"></span>
-                        <span class="menu-line"></span>
-                    </span>
+                    <div class="hamburgur__wrapper" id="hamburgur">
+                        <span class="hamburgur cursor-scale">
+                            <span class="menu-line"></span>
+                            <span class="menu-line"></span>
+                        </span>
+                        <span class="menu-text">Menu</span>
+                    </div>
                     <div class="header__logo">
                         <a href="index.html" class="d-flex">
                             <img src="./assets/logos/logo-1.svg" alt="carol's logo" class="img-fluid">
@@ -70,7 +72,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="row pt--3 pt--sm--4 pt--xxl--5 g-lg-0">
+                <div class="row pt--2 pt--sm--4 pt--xxl--5 g-lg-0">
                     <div class="col-lg-4 d-none d-lg-block">
                         <figure class="overflow-hidden">
                             <img src="./assets/images/img-header.webp" alt="" class="img-fluid menu-img">
@@ -110,20 +112,17 @@
     <!-- ====== Main Start ====== -->
     <main class="main">
         <!-- ======= Banner section start ======= -->
-        <section class="home-banner mt--1">
-            <div class="page-container">
-                <div class="home-banner__wrapper">
-                    <img src="./assets/images/banner-buy.webp" alt="Banner-Image" class="img-fluid home-banner-img">
-                    <img src="./assets/images/banner-by-2x.webp" alt="Banner-Image" class="img-fluid home-banner-img--mobile">         
-                    <div class="row banner-content">
-                        <div class="col-sm-10 col-md-8 col-xxl-6 section-heading">
-                            <h1 class="banner-title">
-                                Buying Process Overwhelm You?
-                            </h1>
-                            <p class="banner-subTitle mt--1 mt--lg-2">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            </p>
-                        </div>
+        <section class="home-banner">
+            <div class="home-banner__wrapper">
+                <img src="./assets/images/banner-buy.webp" alt="banner's image" class="img-fluid-full" loading="lazy">
+                <div class="row banner-content">
+                    <div class="col-sm-10 col-md-8 col-xxl-6 section-heading">
+                        <h1 class="banner-title">
+                            Buying Process Overwhelm You?
+                        </h1>
+                        <!-- <p class="banner-subTitle mt--1 mt--lg-2">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        </p> -->
                     </div>
                 </div>
             </div>
@@ -131,7 +130,7 @@
         <!-- ======= Banner section end ======= -->
 
         <!-- ======= Homegrown-expert section start ======= -->
-        <section class="homegrown-expert mt--6 mt--lg--10">
+        <section class="homegrown-expert mt--6 mt--md--10 mt--lg--12">
             <div class="page-container">
                 <div class="row">
                     <div class="col-lg-8 col-xxl-6">
@@ -150,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <figure class="mt--5 mt--lg--8 img-hover scale-up">
+                <figure class="mt--5 mt--lg--8 scale-up">
                     <img src="./assets/images/banner-by-2x.webp" alt="" class="img-fluid" loading="lazy">
                 </figure>
             </div>
@@ -207,110 +206,106 @@
 
     <!-- ====== Footer Start ====== -->
     <footer class="footer">
-        <div class="page-container">
-            <div class="footer__container">
-                <div class="footer__top">
-                    <div class="page-container">
+        <div class="footer__top">
+            <div class="page-container">
+                <div class="row">
+                    <div class="col-lg-4 overflow-wrapper">
+                        <div class="footer-logo-wrapper cursor-scale">
+                            <a href="index.html" class="fade-in">
+                                <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid" loading="lazy">
+                            </a>
+                        </div>
+                        <p class="mt--2 footer-description fade-up cursor-scale small">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                        </p>
+                    </div>
+                    <div class="col-xl-8 mt--5 mt--xl--0">
                         <div class="row">
-                            <div class="col-lg-4 overflow-wrapper">
-                                <div class="footer-logo-wrapper cursor-scale">
-                                    <a href="index.html" class="fade-in">
-                                        <img src="./assets/logos/logo-2.svg" alt="company's logo" class="img-fluid" loading="lazy">
-                                    </a>
-                                </div>
-                                <p class="mt--2 footer-description fade-up cursor-scale small">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                </p>
+                            <div class="col-sm-6 col-lg-4">
+                                <p class="footer-link-title fade-in cursor-scale small">Links</p>
+                                <ul class="footer__link-list cursor-scale">
+                                    <li class="footer__link-item fade-up">
+                                        <a href="index.html" class="footer-link">Home</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./about.html" class="footer-link">About</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./team.html" class="footer-link">Team</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./properties.html" class="footer-link">Property</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./communities.html" class="footer-link">Communities</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./buy.html" class="footer-link">Buy</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="./contact.html" class="footer-link">Contact</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="col-xl-8 mt--5 mt--xl--0">
-                                <div class="row">
-                                    <div class="col-sm-6 col-lg-4">
-                                        <p class="footer-link-title fade-in cursor-scale small">Links</p>
-                                        <ul class="footer__link-list cursor-scale">
-                                            <li class="footer__link-item fade-up">
-                                                <a href="index.html" class="footer-link">Home</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./about.html" class="footer-link">About</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./team.html" class="footer-link">Team</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./properties.html" class="footer-link">Property</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./communities.html" class="footer-link">Communities</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./buy.html" class="footer-link">Buy</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="./contact.html" class="footer-link">Contact</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
-                                        <p class="footer-link-title fade-in cursor-scale small">Contact Us</p>
-                                        <ul class="footer__link-list cursor-scale">
-                                            <li class="footer__link-item fade-up">                            
-                                                <a href="mailto:​Carol@29Westrealty.com" class="footer-link" target="_blank" rel="noopener noreferrer">​Carol@29Westrealty.com</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up">
-                                                <a href="tel:512-921-1003" class="footer-link" target="_blank" rel="noopener noreferrer">512-921-1003</a>
-                                            </li>
-                                            <li class="footer__link-item fade-up mt--2 mt--lg--4">
-                                                <div class="btn-wrapper">
-                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-                                                        <span>Find On Map +</span>
-                                                    </a>
-                                                </div>
-                                            </li>           
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
-                                        <p class="footer-link-title cursor-scale small">Address</p>
-                                        <ul class="footer__link-list cursor-scale">
-                                            <li class="footer__link-item fade-up">                            
-                                                <address class="footer-link">Georgetown, TX 78628</address>
-                                            </li>
-                                            <li class="footer__link-item fade-up mt--2 mt--lg--3">
-                                                <div class="btn-wrapper">
-                                                    <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-                                                        <span>Find On Map +</span>
-                                                    </a>
-                                                </div>
-                                            </li>           
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="col-sm-6 col-lg-4 mt--3 mt--sm--0">
+                                <p class="footer-link-title fade-in cursor-scale small">Contact Us</p>
+                                <ul class="footer__link-list cursor-scale">
+                                    <li class="footer__link-item fade-up">                            
+                                        <a href="mailto:​Carol@29Westrealty.com" class="footer-link" target="_blank" rel="noopener noreferrer">​Carol@29Westrealty.com</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up">
+                                        <a href="tel:512-921-1003" class="footer-link" target="_blank" rel="noopener noreferrer">512-921-1003</a>
+                                    </li>
+                                    <li class="footer__link-item fade-up mt--2 mt--lg--4">
+                                        <div class="btn-wrapper">
+                                            <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                                                <span>Find On Map +</span>
+                                            </a>
+                                        </div>
+                                    </li>           
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mt--3 mt--lg--0">
+                                <p class="footer-link-title cursor-scale small">Address</p>
+                                <ul class="footer__link-list cursor-scale">
+                                    <li class="footer__link-item fade-up">                            
+                                        <address class="footer-link">Georgetown, TX 78628</address>
+                                    </li>
+                                    <li class="footer__link-item fade-up mt--2 mt--lg--3">
+                                        <div class="btn-wrapper">
+                                            <a href="https://maps.app.goo.gl/kmX5QCpfMJzRoSKx5" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                                                <span>Find On Map +</span>
+                                            </a>
+                                        </div>
+                                    </li>           
+                                </ul>
                             </div>
                         </div>
-                       <div class="socials-wrapper pt--5 pt--lg--11">
-                            <ul class="socials__list list-none cursor-scale">
-                                <li class="fade-up">
-                                    <a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>Instagram</span></a>
-                                </li>
-                                <li class="fade-up">
-                                    <a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
-                                </li>
-                                <li class="fade-up">
-                                    <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>Facebook</span></a>
-                                </li>
-                            </ul>
-                       </div>
                     </div>
                 </div>
-                <div class="footer__bottom">
-                    <div class="page-container">
-                        <div class="footer__bottom-wrapper cursor-scale">
-                            <p class="fade-in">Website by your Hustler</p>
-                            <ul class="list-none">
-                                <li class="fade-in"><a href="#" class="" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
-                                <li class="fade-in"><a href="#" class="" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
+               <div class="socials-wrapper pt--5 pt--lg--11">
+                    <ul class="socials__list list-none cursor-scale">
+                        <li class="fade-up">
+                            <a href="https://www.instagram.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>Instagram</span></a>
+                        </li>
+                        <li class="fade-up">
+                            <a href="https://www.linkedin.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
+                        </li>
+                        <li class="fade-up">
+                            <a href="https://www.facebook.com/29westrealty" class="socials__link" target="_blank" rel="noopener noreferrer"><span>Facebook</span></a>
+                        </li>
+                    </ul>
+               </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="page-container">
+                <div class="footer__bottom-wrapper cursor-scale">
+                    <p class="fade-in">Website by your Hustler</p>
+                    <ul class="list-none">
+                        <li class="fade-in"><a href="#" class="" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
+                        <li class="fade-in"><a href="#" class="" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

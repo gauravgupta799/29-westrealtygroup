@@ -6,10 +6,8 @@
 
 
 .footer{
-    &__container{
-        background: $clr-black-88;
-        border-top:1px solid $clr-grey;
-    }
+    background: $clr-black-88;
+    border-top:1px solid $clr-grey;
     &__link-list{
         position: relative;
         overflow: hidden;
@@ -18,11 +16,6 @@
         @include breakpoint-md{
             margin-top: rem(32);
         }
-    }
-    &__link-item{
-        // display:flex;
-        // position: relative;
-        // overflow: hidden;
     }
     &__top{
         padding-top: em(154);

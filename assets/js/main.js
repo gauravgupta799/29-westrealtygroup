@@ -10,7 +10,7 @@ const tl = gsap.timeline();
 
 //========= Lenis Start =========
 const lenis = new Lenis({
-    duration: 0.5,
+    duration: 1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: "vertical", // vertical, horizontal
     gestureOrientation: "vertical", // vertical, horizontal, both
@@ -33,12 +33,12 @@ requestAnimationFrame(raf);
 function hideLoader(){
     tl.to(".loader-upper",{
         y:"-100%",
-        duration:0.8,
+        duration:0.9,
         ease: "sine.inOut",
     })
     tl.to(".loader-inner",{
         x:"100%",
-        duration:0.8,
+        duration:0.9,
         ease: "sine.inOut",
     }, "-=0.2")
 }
@@ -99,14 +99,14 @@ hamburgerBtn.addEventListener('click', () => {
     })
     tl.from(".nav__link", 0.9,{
         opacity:0,
-        y:60,
+        y:50,
         ease: "power3.inOut",
         stagger:0.12,
         delay:-0.65,
     },)
     tl.from(".contact-list__link", 0.86,{
         opacity:0,
-        x:-60,
+        x:-50,
         stagger:0.12,
         delay:-1.2,
         ease: "power3.inOut",
@@ -127,22 +127,61 @@ if(closeMenuBtn){
 
 
 //======= Scroll-Now Start =============
-const scrollButton = document.getElementById('scrollButton');
-const targetSection = document.getElementById('targetSection');
-if(scrollButton &&  targetSection ){
-    scrollButton.addEventListener('click', function(){
-    //   targetSection.scrollIntoView({ behavior: 'smooth', duration: 1000 });
-        gsap.to(window, {
-            duration: 1, 
-            scrollTo: {
-                y: targetSection,
-                offsetY: 0
-            },
-            ease: "sine.inOut",
+// const scrollButton = document.getElementById('scrollButton');
+// const targetSection = document.getElementById('targetSection');
+// if(scrollButton &&  targetSection ){
+//     scrollButton.addEventListener('click', function(){
+//         gsap.to(window, {
+//             duration: 1, 
+//             scrollTo: {
+//                 y: targetSection,
+//                 offsetY: 0
+//             },
+//             ease: "sine.inOut",
+//         });
+//     });
+// }
+//======= Scroll-Now End =============
+
+const learnMoreBtn = document.querySelector(".learn-more-btn");
+let scale = 1;
+let X, Y;
+
+function mousemoveHandler(e) {
+    X = e.clientX;
+    Y = e.clientY;
+    const target = e.target;
+    const tl = gsap.timeline({
+        default:{ x:X,  y:Y, ease: "power2.out",}
+    })
+    if(target.tagName.toLowerCase() === "img" && target.closest(".grid__container--team")){
+        tl.to(learnMoreBtn, {
+            opacity:1,
+            zIndex:5,
+            duration: .5,
+            ease:"power2.out",
+            x:X,
+            y:Y
         });
+    }else{
+        tl.to(learnMoreBtn, {
+            opacity:0,
+            x:X,
+            y:Y
+        });
+    }
+}
+
+function mouseleaveHandler(){
+    gsap.to(learnMoreBtn , {
+      opacity: 0,
     });
 }
-//======= Scroll-Now End =============
+  
+if(learnMoreBtn){
+    document.addEventListener("mousemove", mousemoveHandler);
+    document.addEventListener("mouseleave", mouseleaveHandler);
+}
 
 
 //========= Swipers Start =============
@@ -154,6 +193,13 @@ const swiper1 = new Swiper(".swiper-testimonials",{
     navigation:{
         prevEl: ".backward-button",
         nextEl: ".forward-button",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
     },
 });
 
@@ -181,6 +227,7 @@ const swiper2 = new Swiper(".swiper-container-follows",{
 var galleryThumbs = new Swiper('.gallery-thumbs', {
     spaceBetween: 10,
     slidesPerView: 2,
+    loop:true,
     freeMode: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
@@ -206,9 +253,11 @@ var galleryTop = new Swiper('.gallery-top', {
     swiper: galleryThumbs
     }
 });
+const fill = document.querySelector(".swiper-pagination-progressbar-fill");
+console.log(fill);
 
 //========== Timeline animtion start =================
-var mySwiper = new Swiper(".swiper-container--timeline", {
+var mySwiper1 = new Swiper(".swiper-container--timeline", {
     autoHeight: true,
     spaceBetween:20,
     slidesPerView:1.4,
@@ -230,7 +279,7 @@ var mySwiper = new Swiper(".swiper-container--timeline", {
       },
       slideChangeTransitionStart: function () {
         // $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-        $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
+        $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper1.realIndex).addClass("active");
       }
     }
 });
@@ -263,7 +312,7 @@ let mySwiper2 = new Swiper(".swiper-container--content", {
 });
 
 $(".swiper-pagination-custom .swiper-pagination-switch").click(function(){
-    mySwiper.slideTo($(this).index());
+    mySwiper1.slideTo($(this).index());
     mySwiper2.slideTo($(this).index());
     $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
     $(this).addClass("active");
@@ -370,37 +419,37 @@ function handleCounter(){
 
 
 //========= Open Modal Video Start =============
-const modal = document.getElementById("modal");
-const closeBtn = document.getElementById("close-btn");
-const openVideoBtns = document.querySelectorAll(".open-video");
-const videoIframe = document.getElementById("video-iframe");
-const baseUrl = "https://www.youtube.com/embed";
+// const modal = document.getElementById("modal");
+// const closeBtn = document.getElementById("close-btn");
+// const openVideoBtns = document.querySelectorAll(".open-video");
+// const videoIframe = document.getElementById("video-iframe");
+// const baseUrl = "https://www.youtube.com/embed";
 
-const testimonersVideoId = [
-    "0kWG5o7G5HE?si=aGpqv9kaaQliczP7", 
-    "o6oqc5XBKQc?si=lhekscWfS2TX8B9S",
-    "50ethB3GQho?si=4Nqjv56m3oaVapOv"
-];
+// const testimonersVideoId = [
+//     "0kWG5o7G5HE?si=aGpqv9kaaQliczP7", 
+//     "o6oqc5XBKQc?si=lhekscWfS2TX8B9S",
+//     "50ethB3GQho?si=4Nqjv56m3oaVapOv"
+// ];
 
-let isModalActive = false;
-function toggleModal(){
-    isModalActive = !isModalActive;
-    modal.style.display = isModalActive ? "grid" : "none"
-    isModalActive ? lenis.stop() : lenis.start();
-}
+// let isModalActive = false;
+// function toggleModal(){
+//     isModalActive = !isModalActive;
+//     modal.style.display = isModalActive ? "grid" : "none"
+//     isModalActive ? lenis.stop() : lenis.start();
+// }
 
-if(openVideoBtns && modal){
-    openVideoBtns.forEach((playbtn, index)=>{
-        playbtn.addEventListener("click", ()=>{
-            videoIframe.src = `${baseUrl}/${testimonersVideoId[index]}`;
-            toggleModal();
-        });
-    });
-    closeBtn.addEventListener("click", ()=>{
-        videoIframe.src = "";
-        toggleModal();
-    });
-}
+// if(openVideoBtns && modal){
+//     openVideoBtns.forEach((playbtn, index)=>{
+//         playbtn.addEventListener("click", ()=>{
+//             videoIframe.src = `${baseUrl}/${testimonersVideoId[index]}`;
+//             toggleModal();
+//         });
+//     });
+//     closeBtn.addEventListener("click", ()=>{
+//         videoIframe.src = "";
+//         toggleModal();
+//     });
+// }
 //========= Open Modal Video End =============
 
 
@@ -421,23 +470,13 @@ function filterCards(categoryType){
         let cardCategories = card.getAttribute("data-category").split(" ");
         if(categoryType === "all" || cardCategories.includes(categoryType)){
             card.classList.add("show");
-            gsap.from(card, { 
-                duration: 0.75, 
-                y:60,
-                opacity: 0, 
-                scale: 0,
-                transformOrigin:"center", 
-                ease: "sine.inOut",
-            });
+            gsap.fromTo(card, 
+                { opacity: 0, scale: 0, transformOrigin:"center",},
+                { opacity: 1, scale: 1, duration:0.75, ease:"sine.inOut",},
+            );
         }else{
             card.classList.remove("show");
-            gsap.to(card, { 
-                duration: 0.75, 
-                y:0,
-                opacity: 1, 
-                scale: 1, 
-                ease: "sine.inOut",
-            });
+            gsap.to(card, { duration: 0.75, opacity: 1, scale: 1, ease: "sine.inOut"} );
         }
     });
     updateTabStatus(categoryType)
@@ -467,34 +506,50 @@ function bannerAnimation(){
         duration:1,
         ease: "power3.inOut",
     },"-=0.78")
-    tl.from(".banner-subTitle",{
-        opacity:0,
-        y:50,
-        duration:1,
-        ease: "power3.inOut",
-    },"-=0.88");
-    if(scrollButton &&  targetSection ){
-        tl.from(".scroll-down-wrapper",{
+    const bannerSubtitle = document.querySelector(".banner-subTitle");
+    if( bannerSubtitle){
+        tl.from(".banner-subTitle",{
             opacity:0,
+            y:50,
             duration:1,
             ease: "power3.inOut",
-        }, "-=0.9");
+        },"-=0.88");
     }
+    const galleryThumbImages = document.querySelectorAll(".gallery-thumbs-figure");
+    if(galleryThumbImages.length > 0){
+        const galleryThumb = gsap.utils.toArray(galleryThumbImages)
+        tl.from(galleryThumb ,{
+            y:50, opacity:0, duration:1, stagger:0.15, ease:Power3.easeOut,
+        },"-=0.8")
+    }
+    // if(scrollButton &&  targetSection ){
+    //     tl.from(".scroll-down-wrapper",{
+    //         opacity:0,
+    //         duration:1,
+    //         ease: "power3.inOut",
+    //     }, "-=0.9");
+    // }
     if(tabBtns.length > 0){
-        tl.fromTo(tabBtns,
+        const tabs = gsap.utils.toArray(tabBtns);
+        tl.fromTo(tabs,
             { y:60 },
             {  y:0, duration:1, stagger:0.1, ease: "power3.inOut" },
         "-=1.3");
     }
-    tl.fromTo(".divider", 1.78,
-        { scale:0, transformOrigin:"left" },
-        { scale:1, ease: "power3.inOut" },
-    "-=1.52");
-
-    tl.fromTo(".featured__card", 1, 
-        { opacity: 0, y: 50,},
-        { opacity: 1, y: 0, ease: "power3.inOut" },
-    "-=1.7")
+    const divider = document.querySelector(".divider");
+    if(divider){
+        tl.fromTo(".divider", 1.78,
+            { scale:0, transformOrigin:"left" },
+            { scale:1, ease: "power3.inOut" },
+        "-=1.52");
+    }
+    const featuredCard = document.querySelector(".featured__card");
+    if(featuredCard){
+        tl.fromTo(".featured__card", 1, 
+            { opacity: 0, y: 50,},
+            { opacity: 1, y: 0, ease: "power3.inOut" },
+        "-=1.7")
+    } 
 }
 
 window.addEventListener("load", (e) =>{
@@ -508,32 +563,36 @@ window.addEventListener("load", (e) =>{
 //=========== Animation Start ==============
 const fadeUp = gsap.utils.toArray(".fade-up");
 fadeUp.forEach((item, index) => {
-    const anim =  gsap.from(item,
-        { opacity:0,  y:60, duration:1.25, ease: "power4.inOut", }
+    const anim =  gsap.fromTo(item,
+        { opacity:0,  y:50},
+        { opacity:1, y:0, duration:1.2}
     );
     ScrollTrigger.create({
         trigger:item,
         animation:anim,
         toggleActions:"play",
         once:true,
-        stagger:0.5,
-        ease: "power4.inOut",
+        duration:1.2,
+        stagger:0.2,
+        ease: Power4.easeOut,
     })
 })
 
 
 const fadeIn = gsap.utils.toArray(".fade-in");
 fadeIn.forEach((item, index) => {
-    const anim =  gsap.from(item,
-        { opacity:0, duration:1.25,  ease: "power4.inOut", }
+    const anim =  gsap.fromTo(item,
+        { opacity:0},
+        { opacity:1, duration:1.5,},
     );
     ScrollTrigger.create({
         trigger:item,
         animation:anim,
         toggleActions:"play",
         once:true,
-        stagger:0.2,
-        ease: "power4.inOut",
+        duration:1.5,
+        // stagger:0.2,
+        ease: Power4.easeOut,
     })
 })
 
@@ -542,16 +601,16 @@ fadeIn.forEach((item, index) => {
 const imagesScale = gsap.utils.toArray(".scale-up");
 imagesScale.forEach((imgContainer, i) => {
   const anim = gsap.fromTo(imgContainer,
-    { opacity: 0, y: 50, scale:0.95, transformOrigin:"bottom"},
-    { opacity: 1, y: 0, scale:1, duration:1.25, ease: "power4.inOut" }
+    { opacity: 0, y: 50, scale:0.9, transformOrigin:"bottom"},
+    { opacity: 1, y: 0, scale:1, duration:1.25, }
   );
   ScrollTrigger.create({
     trigger:imgContainer,
     animation: anim,
     toggleActions: "play",
-    // duration: 1,
-    stagger:0.2,
-    ease: "power4.inOut",
+    duration: 1.25,
+    // stagger:0.1,
+    ease: Power4.easeOut,
   });
 });
 
@@ -560,25 +619,16 @@ imagesScale.forEach((imgContainer, i) => {
 const dividers = gsap.utils.toArray(".divider");
 dividers.forEach((divider, i) => {
   const anim = gsap.fromTo(divider,
-    { 
-        opacity: 0,width:"0", scale:0, transformOrigin:"left",
-    },
-    { 
-        opacity: 1,
-        width:"100%", 
-        scale:1,  
-        duration:1, 
-        ease: "expoScale(0.5,7,none)",
-    }
+    { opacity: 0,width:"0", scale:0, transformOrigin:"left" },
+    { opacity: 1, width:"100%", scale:1, duration:1.2,}
   );
   ScrollTrigger.create({
     trigger:divider,
     animation: anim,
     toggleActions: "play",
     once: true,
-    // duration:1,
-    stagger:0.1,
-    ease: "power4.inOut",
+    stagger:0.2,
+    ease: Power4.easeOut,
   });
 });
 

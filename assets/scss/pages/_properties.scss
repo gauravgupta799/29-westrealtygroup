@@ -85,6 +85,8 @@
         h6 { opacity: 0.4; }
     }
     &__list{
+        position: relative;
+        overflow: hidden;
         li{
             line-height: 2.22;
         }

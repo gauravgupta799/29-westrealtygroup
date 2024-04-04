@@ -7,36 +7,37 @@
 
 .about-banner{
     h1{
-        @include breakpoint-lg{
+        @include breakpoint-xxl{
             max-width: 12ch;
         }
     }
 }
-.helping{
-    h2{
-        @include breakpoint-lg{
-            max-width: 20ch;
-        }
-    }
-}
+// .helping{
+//     h2{
+//         @include breakpoint-xxl{
+//             max-width: 20ch;
+//         }
+//     }
+// }
 .core-values{
     &__list{
+        max-width:90%;
         li{
-            padding-block:em(12);
-            @include breakpoint-xl{
-                padding-block:em(16);
-            }
-            @include breakpoint-xxl{
+            padding-block:em(16);
+            @include breakpoint-md{
                 padding-block:em(24);
+            }
+            @include breakpoint-lg{
+                padding-block:em(32);
+            }
+            @include breakpoint-xl{
+                padding-block:em(40);
             }
         }
     }
     &__item{
         display: flex;
         gap:rem(16);
-        // &:not(:last-child){
-        //     border-bottom: 1px solid $clr-grey-1;     
-        // }
         h6{
             line-height: 1.57;
         }
@@ -51,8 +52,6 @@
         }
         @include breakpoint-xl{
             gap:rem(40);
-        }
-        @include breakpoint-xxl{
             align-items: center;
         }
     }
