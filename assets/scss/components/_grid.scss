@@ -19,6 +19,9 @@
         }
         &--team{
             @extend .grid__container;
+            @include breakpoint-xl{
+                gap:rem(80);
+            }
         }
         &--featured{
             @extend .grid__container;
@@ -59,27 +62,6 @@
         &--team{
             position: relative;
             overflow: hidden;
-            .learn-more{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                @include dimensions(rem(100), rem(100));
-                @include border-radius("full-round");
-                @include flex-center;
-                background: $clr-secondary;
-                color:$clr-white;
-                visibility: hidden;
-                opacity: 0;
-                scale:0
-            }
-            &:hover{
-                .learn-more{
-                    visibility: visible;
-                    opacity: 1;
-                    scale:1;
-                }
-            }
         }
     }
     &__content{
@@ -141,4 +123,7 @@
     color:$clr-white;
     box-shadow:1px 2px 10px rgba(0,0,0,0.5);
     opacity: 0;
+    @include breakpoint-xxl{
+        @include dimensions(rem(120), rem(120));
+    }
 }

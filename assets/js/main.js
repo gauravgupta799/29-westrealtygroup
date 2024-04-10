@@ -10,19 +10,20 @@ const tl = gsap.timeline();
 
 //========= Lenis Start =========
 const lenis = new Lenis({
-    duration: 1,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: "vertical", // vertical, horizontal
-    gestureOrientation: "vertical", // vertical, horizontal, both
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 1,
+    // orientation: "vertical",
+    // gestureOrientation: "vertical",
+    // smoothWheel: true,
+    // wheelMultiplier: 1,
+    // smoothTouch: false,
+    // touchMultiplier: 1,
     infinite: false
 });
-  
-function raf(time) {
+
+function raf(time){
     lenis.raf(time);
+    ScrollTrigger.update();
     requestAnimationFrame(raf);
 }
 
@@ -33,12 +34,12 @@ requestAnimationFrame(raf);
 function hideLoader(){
     tl.to(".loader-upper",{
         y:"-100%",
-        duration:0.9,
+        duration:0.8,
         ease: "sine.inOut",
     })
     tl.to(".loader-inner",{
         x:"100%",
-        duration:0.9,
+        duration:0.8,
         ease: "sine.inOut",
     }, "-=0.2")
 }
@@ -46,7 +47,6 @@ function hideLoader(){
 //========= Hide the Navbar when scrolling down start =========
 let lastScrollTop = 0;
 const checkScroll = () => {
-    // let scrollTop = locoScroll.scrollY || document.documentElement.scrollTop;
     let scrollTop = window.scrollY || document.documentElement.scrollTop;
     if(scrollTop > lastScrollTop) {
         header.classList.remove("sticky");
@@ -57,8 +57,6 @@ const checkScroll = () => {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }
-
-// window.addEventListener("scroll", checkScroll);
 //========= Hide the Navbar when scrolling down end =========
 
 
@@ -87,29 +85,29 @@ function toggleMenu(){
 
 hamburgerBtn.addEventListener('click', () => {
     toggleMenu();
-    tl.from(".header--mobile", 1, { 
+    tl.from(".header--mobile", 0.9, { 
         x: "-100%",
-        ease: "power3.inOut",
+        ease: "power4.inOut",
     })
     tl.from(".menu-img", 1,{
         opacity:0,
         x:-50,
         delay:-0.65,
-        ease: "power3.inOut",
+        ease: "power4.inOut",
     })
     tl.from(".nav__link", 0.9,{
         opacity:0,
-        y:50,
-        ease: "power3.inOut",
-        stagger:0.12,
+        y:-50,
+        stagger:0.1,
         delay:-0.65,
+        ease: "power4.inOut",
     },)
     tl.from(".contact-list__link", 0.86,{
         opacity:0,
         x:-50,
         stagger:0.12,
         delay:-1.2,
-        ease: "power3.inOut",
+        ease: "power4.inOut",
     },)
     tl.from(".socials__link", 0.9, {
         opacity:0,
@@ -125,23 +123,6 @@ if(closeMenuBtn){
 }
 //======= Toggle Menu ENd =============
 
-
-//======= Scroll-Now Start =============
-// const scrollButton = document.getElementById('scrollButton');
-// const targetSection = document.getElementById('targetSection');
-// if(scrollButton &&  targetSection ){
-//     scrollButton.addEventListener('click', function(){
-//         gsap.to(window, {
-//             duration: 1, 
-//             scrollTo: {
-//                 y: targetSection,
-//                 offsetY: 0
-//             },
-//             ease: "sine.inOut",
-//         });
-//     });
-// }
-//======= Scroll-Now End =============
 
 const learnMoreBtn = document.querySelector(".learn-more-btn");
 let scale = 1;
@@ -254,8 +235,7 @@ var galleryTop = new Swiper('.gallery-top', {
     }
 });
 const fill = document.querySelector(".swiper-pagination-progressbar-fill");
-console.log(fill);
-
+ console.log(fill);
 //========== Timeline animtion start =================
 var mySwiper1 = new Swiper(".swiper-container--timeline", {
     autoHeight: true,
@@ -299,16 +279,16 @@ let mySwiper2 = new Swiper(".swiper-container--content", {
         delay: 2000,
         disableOnInteraction: false
     },
-    // on: {
-    //     init: function () {
-    //       $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-    //       $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
-    //     },
-    //     slideChangeTransitionStart: function () {
-    //       $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-    //       $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper2.realIndex).addClass("active");
-    //     },
-    // }
+    on: {
+        init: function () {
+          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+          $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+        },
+        slideChangeTransitionStart: function () {
+          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+          $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper2.realIndex).addClass("active");
+        },
+    }
 });
 
 $(".swiper-pagination-custom .swiper-pagination-switch").click(function(){
@@ -334,7 +314,7 @@ function visible(partial) {
     compareBottom = partial === true ? _top : _bottom;
 
     return (
-    compareBottom <= viewBottom && compareTop >= viewTop && $t.is(":visible")
+        compareBottom <= viewBottom && compareTop >= viewTop && $t.is(":visible")
     );
 }
 
@@ -376,81 +356,6 @@ function handleCounter(){
     }
 } 
 //======= Counter End =============
-
-
-//====== custome cursor start ======
-// var cursor = document.querySelector('.cursor'),
-// cursorScales = document.querySelectorAll('.cursor-scale')
-// mouseX = 0,
-// mouseY = 0;
-// gsap.to({}, 0.016, {
-//     repeat:-1,
-//     duration:0.75,
-//     ease:"power2.out",
-//     onRepeat:function(){
-//         gsap.set(cursor,{
-//             css:{
-//                 left:mouseX,
-//                 top:mouseY
-//             }
-//         })
-//     }
-// })
-// cursorScales.forEach((cursorScale)=>{
-//     cursorScale.addEventListener("mousemove", ()=>{
-//         cursor.classList.add('grow');
-//         if(cursorScale.classList.contains('small')){
-//             cursor.classList.remove('grow');
-//             cursor.classList.add('grow-small');
-//         }
-//     });
-//     cursorScale.addEventListener("mouseleave", ()=>{
-//         cursor.classList.remove('grow');
-//         cursor.classList.remove('grow-small');
-//     });
-// });
-
-// window.addEventListener("mousemove", (e) => {
-//     mouseX = e.clientX;
-//     mouseY = e.clientY;
-// });
-
-//====== custome cursor end ======
-
-
-//========= Open Modal Video Start =============
-// const modal = document.getElementById("modal");
-// const closeBtn = document.getElementById("close-btn");
-// const openVideoBtns = document.querySelectorAll(".open-video");
-// const videoIframe = document.getElementById("video-iframe");
-// const baseUrl = "https://www.youtube.com/embed";
-
-// const testimonersVideoId = [
-//     "0kWG5o7G5HE?si=aGpqv9kaaQliczP7", 
-//     "o6oqc5XBKQc?si=lhekscWfS2TX8B9S",
-//     "50ethB3GQho?si=4Nqjv56m3oaVapOv"
-// ];
-
-// let isModalActive = false;
-// function toggleModal(){
-//     isModalActive = !isModalActive;
-//     modal.style.display = isModalActive ? "grid" : "none"
-//     isModalActive ? lenis.stop() : lenis.start();
-// }
-
-// if(openVideoBtns && modal){
-//     openVideoBtns.forEach((playbtn, index)=>{
-//         playbtn.addEventListener("click", ()=>{
-//             videoIframe.src = `${baseUrl}/${testimonersVideoId[index]}`;
-//             toggleModal();
-//         });
-//     });
-//     closeBtn.addEventListener("click", ()=>{
-//         videoIframe.src = "";
-//         toggleModal();
-//     });
-// }
-//========= Open Modal Video End =============
 
 
 //========== Filter Cards Start =================
@@ -507,11 +412,12 @@ function bannerAnimation(){
         ease: "power3.inOut",
     },"-=0.78")
     const bannerSubtitle = document.querySelector(".banner-subTitle");
-    if( bannerSubtitle){
+    if(bannerSubtitle){
         tl.from(".banner-subTitle",{
             opacity:0,
             y:50,
             duration:1,
+            stagger:0.1,
             ease: "power3.inOut",
         },"-=0.88");
     }
@@ -543,11 +449,12 @@ function bannerAnimation(){
             { scale:1, ease: "power3.inOut" },
         "-=1.52");
     }
-    const featuredCard = document.querySelector(".featured__card");
+    const featuredCards = document.querySelectorAll(".featured__card");
+    const featuredCard = gsap.utils.toArray(featuredCards);
     if(featuredCard){
-        tl.fromTo(".featured__card", 1, 
+        tl.fromTo(featuredCard, 1, 
             { opacity: 0, y: 50,},
-            { opacity: 1, y: 0, ease: "power3.inOut" },
+            { opacity: 1, y: 0, stagger:0.2, ease: "power3.inOut" },
         "-=1.7")
     } 
 }
@@ -564,15 +471,15 @@ window.addEventListener("load", (e) =>{
 const fadeUp = gsap.utils.toArray(".fade-up");
 fadeUp.forEach((item, index) => {
     const anim =  gsap.fromTo(item,
-        { opacity:0,  y:50},
-        { opacity:1, y:0, duration:1.2}
+        { opacity:0,  y:60},
+        { opacity:1, y:0, duration:1.1}
     );
     ScrollTrigger.create({
         trigger:item,
         animation:anim,
         toggleActions:"play",
         once:true,
-        duration:1.2,
+        // duration:1.1,
         stagger:0.2,
         ease: Power4.easeOut,
     })
@@ -590,8 +497,25 @@ fadeIn.forEach((item, index) => {
         animation:anim,
         toggleActions:"play",
         once:true,
-        duration:1.5,
-        // stagger:0.2,
+        // duration:1.5,
+        stagger:0.2,
+        ease: Power4.easeOut,
+    })
+})
+
+const fadeRight = gsap.utils.toArray(".fade-right");
+fadeRight.forEach((item, index) => {
+    const anim =  gsap.fromTo(item,
+        { opacity:0, x:-50},
+        { opacity:1,x:0, duration:1.5,},
+    );
+    ScrollTrigger.create({
+        trigger:item,
+        animation:anim,
+        toggleActions:"play",
+        once:true,
+        // duration:1.5,
+        stagger:0.2,
         ease: Power4.easeOut,
     })
 })
@@ -602,13 +526,13 @@ const imagesScale = gsap.utils.toArray(".scale-up");
 imagesScale.forEach((imgContainer, i) => {
   const anim = gsap.fromTo(imgContainer,
     { opacity: 0, y: 50, scale:0.9, transformOrigin:"bottom"},
-    { opacity: 1, y: 0, scale:1, duration:1.25, }
+    { opacity: 1, y: 0, scale:1, duration:1.15,}
   );
   ScrollTrigger.create({
     trigger:imgContainer,
     animation: anim,
     toggleActions: "play",
-    duration: 1.25,
+    duration: 1.15,
     // stagger:0.1,
     ease: Power4.easeOut,
   });
@@ -620,7 +544,7 @@ const dividers = gsap.utils.toArray(".divider");
 dividers.forEach((divider, i) => {
   const anim = gsap.fromTo(divider,
     { opacity: 0,width:"0", scale:0, transformOrigin:"left" },
-    { opacity: 1, width:"100%", scale:1, duration:1.2,}
+    { opacity: 1, width:"100%", scale:1, duration:1.15,}
   );
   ScrollTrigger.create({
     trigger:divider,
@@ -641,13 +565,14 @@ function handleScroll(){
 
 window.addEventListener("scroll", handleScroll);
 
+// lenis.on("scroll", () => {
+//     handleScroll();
+// })
+
 // Update ScrollTrigger when Lenis scroll event occurs
-lenis.on('scroll', () => {
+lenis.on('scroll', (e) => {
     ScrollTrigger.update();
 });
 
-// gsap.ticker.add((time)=>{
-//     lenis.raf(time * 1000);
-// });
-  
+
 gsap.ticker.lagSmoothing(0);

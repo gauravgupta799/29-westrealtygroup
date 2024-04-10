@@ -267,16 +267,13 @@
         @include breakpoint-xl{
             padding-block: em(32);
         }
-        // @include breakpoint-xxl{
-        //     padding-block: em(36) em(32);
-        // }
         p{
             margin-top: 6px;
         }
 
     }
     &__card-footer{
-        border-top:1px solid $clr-grey;
+        // border-top:1px solid $clr-grey;
         border-bottom:1px solid $clr-grey;
         padding-block: em(20);
         @include breakpoint-md{
@@ -288,8 +285,7 @@
             padding-block: em(28);
         }
         ul{
-            display: flex;
-            align-items: center;
+            @include flex-center-vertical;
             gap:em(8);
             @include breakpoint-md{
                 gap:em(16);
@@ -436,7 +432,7 @@
         border: 1.5px solid $clr-secondary;
         padding: em(8) em(16);
         opacity: 0.67;
-        transition:opacity 0.35s ease-in , border 0.35s ease-in;
+        transition:opacity 0.35s ease-in , border 0.35s ease-in,;
         @include breakpoint-md{
             border:none;
             padding:0;
@@ -446,6 +442,7 @@
             opacity: 1;
             border-color: $clr-secondary;
             background-color: $clr-secondary;
+            transform:scale(1.05);
             @include breakpoint-md{
                 background: transparent; 
             }

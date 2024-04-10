@@ -137,9 +137,9 @@
     &__wrapper{
         display:flex;
         align-items: center;
-        gap:rem(16);
+        gap:rem(10);
         @include breakpoint-sm{
-            gap:rem(20);
+            gap:rem(16);
         }
         span{
             margin-top: 0;
