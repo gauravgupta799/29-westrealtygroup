@@ -7,7 +7,23 @@
 
 //========== Mobile Menu Start ========
 .nav{
-    &__mobile{
+    &--desktop{
+        .nav-list{
+            @include flex-center-vertical;
+            display: none;
+            @include breakpoint-lg{
+                display: flex;
+                gap: 32px;
+            }
+            @include breakpoint-xl{
+                gap: 48px;
+            }
+            @include breakpoint-xxl{
+                gap: 64px;
+            }
+        }
+    }
+    &--mobile{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -70,7 +86,7 @@
 
 
 
-.nav__link,
+.nav__link,.cta-link,.nav-link, .h-mail-btn,
 .contact-list__link:not(address),
 .connect-us__link:not(address),
 .footer-link:not(address),

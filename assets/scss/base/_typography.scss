@@ -20,64 +20,64 @@ $p-font-sizes: (
   null:(rem(16), rem(28)), // Font sizes and line height 
   sm: (rem(16), rem(28)),
   md: (rem(16), rem(28)),
-  lg: (rem(16), rem(28)),
-  xl: (rem(16), rem(28)),
+  lg: (rem(18), rem(32)),
+  xl: (rem(18), rem(32)),
   xxl:(rem(18), rem(32)), 
 );
 
 
 $h1-font-sizes: (
-  null: (rem(40), rem(48)),   
-  sm: (rem(40), rem(48)),
-  md: (rem(48), rem(58)),
-  lg: (rem(56), rem(68)),
-  xl: (rem(64), rem(76)),
-  xxl: (rem(72), rem(86)),
+  null: (rem(44), rem(48)),   
+  sm: (rem(44), rem(48)),
+  md: (rem(56), rem(62)),
+  lg: (rem(64), rem(71)),
+  xl: (rem(72), rem(80)),
+  xxl: (rem(80), rem(88)),
 );
 
 $h2-font-sizes:(
-  null:(rem(32), rem(38)), 
-  sm:(rem(32), rem(38)),
-  md:(rem(36), rem(44)),
-  lg:(rem(40), rem(48)),
-  xl:(rem(44), rem(52)),
-  xxl:(rem(48), rem(58)),
+  null:(rem(40), rem(48)), 
+  sm:(rem(40), rem(48)),
+  md:(rem(44), rem(54)),
+  lg:(rem(48), rem(58)),
+  xl:(rem(52), rem(64)),
+  xxl:(rem(60), rem(72)),
 );
 
 $h3-font-sizes: (
-  null:(rem(28), rem(34)), 
-  sm:(rem(28), rem(34)),
-  md:(rem(32), rem(38)),
-  lg:(rem(36), rem(44)),
-  xl:(rem(40), rem(48)),
-  xxl:(rem(44), rem(52)),
+  null:(rem(36), rem(44)), 
+  sm:(rem(36), rem(44)),
+  md:(rem(40), rem(48)),
+  lg:(rem(44), rem(54)),
+  xl:(rem(48), rem(58)),
+  xxl:(rem(52), rem(64)),
 );
 
 $h4-font-sizes: (
-  null:(rem(26), rem(32)), 
-  sm :(rem(26), rem(32)),
-  md :(rem(28), rem(34)),
-  lg :(rem(28), rem(34)),
-  xl :(rem(32), rem(38)),
-  xxl :(rem(36), rem(44)),
+  null:(rem(28), rem(34)), 
+  sm :(rem(28), rem(34)),
+  md :(rem(32), rem(38)),
+  lg :(rem(36), rem(44)),
+  xl :(rem(40), rem(48)),
+  xxl :(rem(44), rem(54)),
 );
 
 $h5-font-sizes: (
-  null:(rem(24), rem(28)), 
-  sm :(rem(24), rem(28)),
+  null:(rem(24), rem(29)), 
+  sm :(rem(24), rem(29)),
   md :(rem(26), rem(32)),
-  lg :(rem(26), rem(32)),
-  xl :(rem(28), rem(34)),
-  xxl:(rem(32), rem(38)),
+  lg :(rem(28), rem(34)),
+  xl :(rem(32), rem(38)),
+  xxl:(rem(36), rem(44)),
 ); 
 
 
 $h6-font-sizes: (
   null: (rem(22), rem(26)),
   sm : (rem(22), rem(26)),
-  md : (rem(22), rem(26)),
-  lg : (rem(24), rem(28)),
-  xl:  (rem(24), rem(28)),
+  md : (rem(24), rem(30)),
+  lg : (rem(24), rem(30)),
+  xl:  (rem(26), rem(32)),
   xxl: (rem(28), rem(34)),
 ); 
 
@@ -138,6 +138,12 @@ h1, h2, h3, h4, h5, h6{
     @include font-heading;
     color: $clr-primary;
     font-weight: normal;
+}
+
+.bg-colored{
+    h1, h2, h3, h4, h5, h6, p, span, a, ul, li{
+        color:$clr-white;
+    }
 }
 
 p, ul, ol, body{

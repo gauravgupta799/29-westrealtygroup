@@ -12,13 +12,10 @@ const tl = gsap.timeline();
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    // orientation: "vertical",
-    // gestureOrientation: "vertical",
-    // smoothWheel: true,
-    // wheelMultiplier: 1,
-    // smoothTouch: false,
-    // touchMultiplier: 1,
-    infinite: false
+    infinite: false,
+    syncTouch:false, // mimic touch device scroll while allowing scroll sync (can be unstable on iOS<16)
+    smooth: true,
+    smoothTouch: false,
 });
 
 function raf(time){
@@ -29,6 +26,11 @@ function raf(time){
 
 requestAnimationFrame(raf);
 //========= Lenis End =========
+let isOpened = false;
+function stopLenisScroll(){
+  isOpened = !isOpened;
+  isOpened ?  lenis.stop() : lenis.start() 
+}
 
 
 function hideLoader(){
@@ -41,13 +43,13 @@ function hideLoader(){
         x:"100%",
         duration:0.8,
         ease: "sine.inOut",
-    }, "-=0.2")
+    }, "-=0.15")
 }
 
 //========= Hide the Navbar when scrolling down start =========
 let lastScrollTop = 0;
 const checkScroll = () => {
-    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    let scrollTop = lenis.scrollY || document.documentElement.scrollTop;
     if(scrollTop > lastScrollTop) {
         header.classList.remove("sticky");
         header.classList.add("hidden");
@@ -75,12 +77,10 @@ navLinks.forEach(link =>{
 
 
 //======= Toggle Menu Start =============
-let isOpened = false;
 function toggleMenu(){
-	isOpened = !isOpened;
     const mobileMenu = document.querySelector('.header--mobile');
     mobileMenu.classList.toggle("hide");
-    isOpened ?  lenis.stop() : lenis.start() 
+    stopLenisScroll();
 }
 
 hamburgerBtn.addEventListener('click', () => {
@@ -118,9 +118,8 @@ hamburgerBtn.addEventListener('click', () => {
     },)
 });
 
-if(closeMenuBtn){
-    closeMenuBtn.addEventListener('click', toggleMenu);
-}
+closeMenuBtn && closeMenuBtn.addEventListener('click', toggleMenu);
+
 //======= Toggle Menu ENd =============
 
 
@@ -172,35 +171,36 @@ const swiper1 = new Swiper(".swiper-testimonials",{
     loop:true,
     grabCursor: true,
     navigation:{
-        prevEl: ".backward-button",
-        nextEl: ".forward-button",
+        prevEl: "#prev-btn",
+        nextEl: "#next-btn",
     },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
+});
+const swiper = new Swiper(".swiper-container--properties",{
+    direction: "horizontal",
+    spaceBetween: 30,
+    navigation:{
+        prevEl: "#prev-btn",
+        nextEl: "#next-btn",
     },
 });
 
 const swiper2 = new Swiper(".swiper-container-follows",{
     spaceBetween: 10,
-    slidesPerView: 1.25,
+    slidesPerView: 1.2455,
     loop:true,
     grabCursor: true,
     breakpoints:{
         480:{
-            slidesPerView: 1.75,
+            slidesPerView: 1.65,
         },
         576:{
-            slidesPerView: 2.25,
+            slidesPerView: 2.65,
         },
         992:{
-        slidesPerView: 3.25,
+            slidesPerView: 3.25,
         },
         1200:{
-        slidesPerView: 4.25,
+            slidesPerView: 3.65,
         },
     }
 });
@@ -224,6 +224,10 @@ var galleryThumbs = new Swiper('.gallery-thumbs', {
         1200:{
             slidesPerView: 6,
         },
+        1680:{
+            slidesPerView: 7.3,
+            spaceBetween: 20,
+        },
     }
 });
 
@@ -234,13 +238,14 @@ var galleryTop = new Swiper('.gallery-top', {
     swiper: galleryThumbs
     }
 });
-const fill = document.querySelector(".swiper-pagination-progressbar-fill");
- console.log(fill);
+
+
 //========== Timeline animtion start =================
-var mySwiper1 = new Swiper(".swiper-container--timeline", {
+var mySwiper1 = new Swiper(".swiper-imgs-container", {
     autoHeight: true,
     spaceBetween:20,
-    slidesPerView:1.4,
+    // slidesPerView:1.4,
+    slidesPerView:1,
     autoplay: {
       delay: 2000,
       disableOnInteraction: false
@@ -265,6 +270,7 @@ var mySwiper1 = new Swiper(".swiper-container--timeline", {
 });
   
 let mySwiper2 = new Swiper(".swiper-container--content", {
+    autoHeight: true,
     slidesPerView: "auto",
     allowTouchMove: false,
     grabCursor: true,
@@ -279,16 +285,6 @@ let mySwiper2 = new Swiper(".swiper-container--content", {
         delay: 2000,
         disableOnInteraction: false
     },
-    on: {
-        init: function () {
-          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-          $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
-        },
-        slideChangeTransitionStart: function () {
-          $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
-          $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper2.realIndex).addClass("active");
-        },
-    }
 });
 
 $(".swiper-pagination-custom .swiper-pagination-switch").click(function(){
@@ -358,6 +354,36 @@ function handleCounter(){
 //======= Counter End =============
 
 
+
+//========== Video Play /Pause Button Start ============
+const playBtn = document.querySelector("#play-btn");
+if(playBtn) {
+  const videoContainer = document.querySelector(".video__popup-container");
+  const closeBtn = document.querySelector(".video__popup-close");
+  let iframe = document.querySelector(".video__popup-iframe-container > iframe");
+
+  function togglePopup() {
+    stopLenisScroll();
+    videoContainer.classList.toggle("show");
+    gsap.fromTo(".video__popup-wrapper", 0.5,
+      { opacity:0, y:50},
+      { opacity:1, y:0, ease:Power4.easeOut }
+    );
+  }
+
+  playBtn.addEventListener("click", function(){
+    const videoId = this.dataset.id;
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    togglePopup();
+  })
+
+  closeBtn && closeBtn.addEventListener("click", ()=>{
+    iframe.src = "";
+    togglePopup();
+  });
+}
+//========== Video Play /Pause Button End ============
+
 //========== Filter Cards Start =================
 const tabBtns = document.querySelectorAll(".tabs__item");
 if(tabBtns.length > 0){
@@ -409,8 +435,37 @@ function bannerAnimation(){
         opacity:0,
         y:50,
         duration:1,
+        stagger:0.1,
         ease: "power3.inOut",
     },"-=0.78")
+    tl.from(".banner-subtitle ",{
+        opacity:0,
+        y:50,
+        duration:1,
+        ease: "power3.inOut",
+    },"-=0.85")
+    tl.from(".banner-btn",{
+        opacity:0,
+        y:50,
+        duration:1,
+        ease: "power3.inOut",
+    },"-=0.95")
+    tl.from(".banner-img",{
+        y:50,
+        duration:1,
+        ease: "power3.out",
+    },"-=0.95")
+
+    const formGroup = document.querySelectorAll(".banner-form-group");
+    if(formGroup.length > 0){
+        tl.from(".banner-form-group",{
+            opacity:0,
+            y:50,
+            duration:1,
+            stagger:0.1,
+            ease: "power3.inOut",
+        },"-=0.9");
+    }
     const bannerSubtitle = document.querySelector(".banner-subTitle");
     if(bannerSubtitle){
         tl.from(".banner-subTitle",{
@@ -419,22 +474,15 @@ function bannerAnimation(){
             duration:1,
             stagger:0.1,
             ease: "power3.inOut",
-        },"-=0.88");
+        },"-=3.5");
     }
     const galleryThumbImages = document.querySelectorAll(".gallery-thumbs-figure");
     if(galleryThumbImages.length > 0){
         const galleryThumb = gsap.utils.toArray(galleryThumbImages)
         tl.from(galleryThumb ,{
             y:50, opacity:0, duration:1, stagger:0.15, ease:Power3.easeOut,
-        },"-=0.8")
+        },"-=2.65")
     }
-    // if(scrollButton &&  targetSection ){
-    //     tl.from(".scroll-down-wrapper",{
-    //         opacity:0,
-    //         duration:1,
-    //         ease: "power3.inOut",
-    //     }, "-=0.9");
-    // }
     if(tabBtns.length > 0){
         const tabs = gsap.utils.toArray(tabBtns);
         tl.fromTo(tabs,
@@ -449,13 +497,13 @@ function bannerAnimation(){
             { scale:1, ease: "power3.inOut" },
         "-=1.52");
     }
-    const featuredCards = document.querySelectorAll(".featured__card");
+    const featuredCards = document.querySelectorAll(".featured__card-figure");
     const featuredCard = gsap.utils.toArray(featuredCards);
     if(featuredCard){
         tl.fromTo(featuredCard, 1, 
-            { opacity: 0, y: 50,},
+            { opacity: 0, y: 60,},
             { opacity: 1, y: 0, stagger:0.2, ease: "power3.inOut" },
-        "-=1.7")
+        "-=1.6")
     } 
 }
 
@@ -565,9 +613,6 @@ function handleScroll(){
 
 window.addEventListener("scroll", handleScroll);
 
-// lenis.on("scroll", () => {
-//     handleScroll();
-// })
 
 // Update ScrollTrigger when Lenis scroll event occurs
 lenis.on('scroll', (e) => {

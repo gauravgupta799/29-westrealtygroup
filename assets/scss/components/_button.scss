@@ -13,10 +13,11 @@
     overflow: hidden;
     z-index: 1;
     font-size:rem(16);
-    line-height: 1.78;
+    // line-height: 1.78;
+    line-height: 2;
     font-weight: normal;
-    padding:em(14) em(38);
-    color:$clr-white-1;
+    padding:em(12) em(44);
+    color:$clr-white;
     @include transition(all, 0.2s, ease-out);
     svg path{
         fill: $clr-secondary;
@@ -48,8 +49,6 @@
 .btn--transparent{
     background:transparent;
     color:$clr-primary;
-    // padding-inline:0;
-    // padding-inline:em(16);
     padding: 0;
     svg{
         path{
@@ -57,7 +56,6 @@
         }
     }
     &:hover{
-        // padding-inline:em(16);
         svg{
             path{
                 fill:$clr-primary;
@@ -116,26 +114,57 @@ hover effect
 
 
 // ========= Play Button ==========
-// .play-btn{
-//     @include dimensions(rem(80), rem(80));
-//     @include border-radius("full-round");
-//     @include flex-center;
-//     flex-shrink: 0;
-//     background: $clr-secondary;
-//     border:1px solid transparent;
-//     @include transition(all, 0.35s, ease-out);
-//     @include breakpoint-md{
-//         @include dimensions(rem(100), rem(100));
-//     }
-//     @include breakpoint-lg{
-//         @include dimensions(rem(100), rem(100));
-//     }
-//     &:hover{
-//         cursor: pointer;
-//         background: $clr-white;
-//         border-color: $clr-secondary;
-//         svg path{
-//             fill:$clr-secondary;
-//         }
-//     }
-// }
+.play-btn-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-btn{
+    position: relative;
+    @include flex-center;
+    @include dimensions(rem(80), rem(80));
+    @include border-radius("full-round");
+    @include transition(all, 0.3s, ease);
+    flex-shrink: 0;
+    background: $clr-black;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
+    z-index: 1;
+
+    @include breakpoint-sm{
+        @include dimensions(rem(96), rem(96));
+    }
+    @include breakpoint-lg{
+        @include dimensions(rem(112), rem(112));
+    }
+    @include breakpoint-xxl{
+        @include dimensions(rem(120), rem(120));
+    }
+   
+    &::after {
+        @include rippel-animation(2.5s, 0s);
+    }
+      
+    &::before {
+        @include rippel-animation(2.5s, 0.5s);
+    }
+
+    &:hover{
+        cursor: pointer;
+        background: $clr-secondary;
+    }
+}
+
+
+@keyframes rippel{
+    from {
+      opacity: 1;
+      transform: scale3d(0.75,0.75,1);
+    }
+    
+    to {
+      opacity: 0;
+      transform: scale3d(1.5,1.5,1);
+    }
+}

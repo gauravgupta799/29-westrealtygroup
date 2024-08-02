@@ -11,14 +11,22 @@
     left: 0;
     width: 100%;
     padding-block:em(16);
-    background: transparent;
     z-index: 5;
-    background: $clr-white;
+    background: $clr-black;
     @include transition(top, 0.5s, ease-out);
+
+    &--white{
+        background: $clr-white;
+        padding-block:em(20);
+    }
     
     &.sticky{
-        box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.35);
         padding-block:em(12); 
+
+        &__header--white{
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+        }
     }
     &.hidden{
         top: -110px;
@@ -50,6 +58,12 @@
         background: $clr-tertiary;
     }
     &__logo{
+        @include breakpoint-xl{
+            margin-left: 10rem;
+        }
+        @include breakpoint-xxl{
+            margin-left: 15rem;
+        }
         img{
             max-width: rem(200);
             @include breakpoint-lg{
@@ -70,7 +84,46 @@
         }
     }
     .header-btn{
+        @include flex-center-vertical;
+        gap:2rem;
+    }
+
+    &__left{
+        @include flex-center-vertical;
+        gap:2rem;
+        @include breakpoint-xl{
+            gap:5rem;
+        }
+        .nav__link{
+            font-size: 18px;
+            line-height: 1.78;
+            color:$clr-white;
+            font-family: $ff-secondary;
+            display: none;
+            @include breakpoint-xl{
+                display: flex;
+            }
+        }
+    }
+}
+
+
+.h-mail-btn{
+    align-items: center;
+    gap:10px;
+    color:$clr-white;
+    display: none;
+    @include breakpoint-xl{
         display: flex;
+    }
+    &--black{
+        color:$clr-black;
+    }
+    &:hover{
+        color:$clr-secondary;
+        svg path{
+            fill:$clr-secondary;
+        }
     }
 }
 
@@ -78,6 +131,7 @@
     display: none;
     @include breakpoint-lg{
         display: flex;
+        border:none;
     }
 }
 
@@ -87,6 +141,68 @@
         display: none;
     }
 }
+
+//====== Hamburger Styles Start =======
+.hamburgur{
+    &__wrapper{
+        @include flex-center-vertical;
+        gap:rem(10);
+        @include breakpoint-sm{
+            gap:rem(16);
+        }
+        span{
+            margin-top: 0; 
+        }
+        .menu-text{
+            line-height: 2;
+            color:$clr-white;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .menu-line{
+        @include dimensions(rem(42), rem(1.5));
+        background: $clr-primary;
+        display: block;
+        margin-bottom: 4.5px;
+        background: $clr-white;
+        &:nth-child(2){
+            width: rem(32);
+        }
+    }
+
+    &--black{
+        .menu-line{
+            background: $clr-black; 
+        }
+    }
+}
+//====== Hamburger Styles End =======
+
+
+//====== Socials Styles Start =======
+.socials{
+    &__list{
+        &--mobile{
+            @include  flex-center-vertical;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            @media (min-width:20em){
+                gap: 2rem;
+            }
+            @include breakpoint-sm{
+                justify-content: flex-end;  
+            }
+            li{
+                position: relative;
+                overflow: hidden;
+            }
+        }
+    }
+}
+//====== Socials Styles End =======
 
 //========== Close Menu Button Start ========
 .close-menu-btn{
@@ -110,55 +226,3 @@
     }
 }
 //========== Close Menu Button End ========
-
-.socials{
-    &__list{
-        &--mobile{
-            @include  flex-center-vertical;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-            @media (min-width:20em){
-                gap: 2rem;
-            }
-            @include breakpoint-sm{
-                justify-content: flex-end;  
-            }
-            li{
-                position: relative;
-                overflow: hidden;
-            }
-        }
-    }
-}
-
-//====== Hamburger Styles Start =======
-.hamburgur{
-    &__wrapper{
-        display:flex;
-        align-items: center;
-        gap:rem(10);
-        @include breakpoint-sm{
-            gap:rem(16);
-        }
-        span{
-            margin-top: 0;
-        }
-        .menu-text{
-            line-height: 2;
-        }
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    .menu-line{
-        @include dimensions(rem(42), rem(1));
-        background: $clr-primary;
-        display: block;
-        margin-bottom: 5px;
-        &:nth-child(2){
-            width: rem(32);
-        }
-    }
-}
-//====== Hamburger Styles End =======

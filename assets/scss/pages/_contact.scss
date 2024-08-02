@@ -54,6 +54,38 @@
     }
 }
 
+.cta-link-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-block:em(24) em(32);
+    gap:24px;
+
+    .cta-link{
+        display: flex;
+        align-items: center;
+        gap:6px;
+    }
+}
+
+.cta-title{
+    font-weight: bold;
+}
+
+.cta-link{
+    font-size: 16px;
+    line-height: 2;
+    &:hover{
+        color:$clr-secondary;
+    }
+}
+
+.direction-txt{
+    color:$clr-secondary;
+    text-decoration: underline;
+}
+
 // ======== Form ========
 .form{
     &__group{
@@ -61,36 +93,37 @@
         label{
             position: absolute;
             top:50%;
-            left: 20px;   
+            left: 0;   
             transform: translateY(-50%);
             pointer-events: none;
             @include transition(all, 0.25s, ease-out);
-            @include breakpoint-sm{
-                left: 30px;  
-            }
+            color:$clr-black;
+            font-family: $ff-primary;
+            font-size: 20px;
+            line-height: 3.83;
+
             @include breakpoint-md{
-                left: 40px;  
+                font-size: 22px;
+            }
+            @include breakpoint-xl{
+                font-size: 24px;
             }
         }
     }
     &__control{
         width: 100%;
-        outline:0.5px solid #000;
+        // outline:0.5px solid #000;
+        border-bottom: 1px solid $clr-black;
         font-size: rem(16);
-        padding:em(16);
+        padding-block:em(16);
         caret-color: $clr-secondary;
         @include breakpoint-sm{
-            padding:em(20) em(32);
-        }
-        @include breakpoint-md{
-            padding:em(20) em(36);
-        }
-        @include breakpoint-lg{
             font-size: rem(18);
+            padding-block:em(20);
         }
         &:focus, &:hover{
-            outline-color:$clr-secondary;
-            outline-width: 1px;
+            border-color:$clr-secondary;
+            border-width: 1.5px;
 
         }
     }
@@ -102,19 +135,11 @@
 
 .form__control:focus + label,
 .form__control:not(:placeholder-shown) + label{
-    font-size: rem(14);
+    font-size: rem(18);
     top: 0;
     color:$clr-secondary;
-    background-color:$clr-tertiary;
     padding-inline:8px;
     line-height: 1.67;
     border-radius:0 0 16px 16px;
-    left: rem(12);
     letter-spacing: 0.8px;
-    @include breakpoint-sm{
-        left: rem(24);
-    }
-    @include breakpoint-md{
-        left: rem(32);
-    }
 }

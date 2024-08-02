@@ -6,37 +6,33 @@
 
 
 .footer{
-    background: $clr-black-88;
-    border-top:1px solid $clr-grey;
+    background: $clr-black;
     &__link-list{
         position: relative;
         overflow: hidden;
         list-style: none;
-        margin-top: rem(24);
-        @include breakpoint-md{
-            margin-top: rem(32);
-        }
     }
     &__top{
         padding-top: em(154);
         padding-bottom: em(36);
     }
     &__bottom{
-        padding-block: em(32);
-        border-top:1px solid $clr-grey;
-        &-wrapper{
-            @include  flex-space-between;
-            flex-wrap: wrap;
-            p, a{
-                color:$clr-white-1;
+        p, a{
+            color:$clr-white-1;
+            font-size: 14px;
+            line-height: 2;
+        }
+        ul{
+            @include flex-center-vertical;
+            column-gap: rem(10);
+            @include media-query("min", em(380)){
+                margin-top: 0;
             }
-            ul{
-                @include flex-center-vertical;
+            @include media-query("min", em(480)){
+                column-gap: rem(16);
+            }
+            @include breakpoint-lg{
                 column-gap: rem(32);
-                margin-top: 16px;
-                @include media-query("min", em(380)){
-                    margin-top: 0;
-                }
             }
         }
     }
@@ -51,7 +47,7 @@
 .footer-link{
     color:$clr-white-1;
     font-size: rem(16);
-    line-height: 2.5;
+    line-height: 2;
 }
 
 .footer-description{
@@ -59,27 +55,33 @@
     color: $clr-white;
 }
 
+.footer-logo-wrapper{
+    display: flex;
+}
 
 .socials{
     &__list{
-        position: relative;
-        overflow: hidden;
         @include flex-center-vertical;
-        justify-content: flex-start;
         flex-wrap: wrap;
         gap:em(16);
         @include media-query("min", em(320)){
             gap:em(32);
         }
-        @include breakpoint-sm{
-            justify-content: flex-end;
-        }
     }
-    &__link{
-        color:$clr-white-1;
-        &--contact{
-            font-size: rem(16);
-            line-height: 2.5;
-        }
-    }
+    // &__link{
+    //     position: relative;
+    //     z-index: 1;
+    //     @include flex-center;
+    //     &::before{
+    //         content:"";
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         border-radius:50%;
+    //         width: 36px;
+    //         height: 36px;
+    //         background: $clr-secondary;
+    //         z-index: -1;
+    //     }
+    // }
 }

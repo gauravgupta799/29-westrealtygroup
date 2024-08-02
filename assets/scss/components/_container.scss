@@ -26,29 +26,29 @@ $full-width:100%;
     }
 
     @include breakpoint-xxl{
-        max-width:calc($full-width*0.94375);
+        max-width:calc($full-width*0.91667);
     }
 }
 
 // page container with no margin on left
 .page-container--ml{
     @include breakpoint-md{
-        max-width:calc($full-width*0.9527);
+        max-width:calc($full-width*0.958);
         margin-left:auto;
         margin-right:0;
     }
   
-    @include breakpoint-lg{
-        max-width:calc($full-width*0.93775);
-    }
+    // @include breakpoint-lg{
+    //     max-width:calc($full-width*0.93775);
+    // }
 
-    @include breakpoint-xl{
-        max-width:calc($full-width*0.9375);
-    }
+    // @include breakpoint-xl{
+    //     max-width:calc($full-width*0.9375);
+    // }
 
-    @include breakpoint-xxl{
-        max-width:calc($full-width*0.8277);
-    }
+    // @include breakpoint-xxl{
+    //     max-width:calc($full-width*0.8277);
+    // }
 }
 
 

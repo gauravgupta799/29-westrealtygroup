@@ -7,42 +7,31 @@
 //?--------- Hero Styles Start ---------
 
 //========== Hero styles start ============
-.home-banner{
-    &__wrapper{
-        position: relative;
-        overflow: hidden;
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000);
-        }
-        .banner-content{
-            position: absolute;
-            bottom: rem(100);
-            @include breakpoint-sm{
-                width: 100%;        
-            }
-            @include breakpoint-xxl{
-                bottom: rem(176);
-            }
-        }
-        .banner-title, .banner-subTitle{
-            color:$clr-white;
-        }
-        img{
-            height: 600px;
-            @include breakpoint-md{
-                height: auto;
-            }
-        }
+.hero-banner-container{
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    @include flex-center;
+    .banner-title, .banner-subTitle{
+        color:$clr-white;
     }
-    &__img{
-        height:580px;
-        @include breakpoint-md{
-            height: auto;
-        }
+    &--home{
+       background-image: linear-gradient(to bottom, #0000 4%, #000) ,
+        url("../assets/images/home/home-banner.webp");
+    }
+
+    &--about{
+        background-image: linear-gradient(to bottom, #0000 4%, #000) ,
+        url("../assets/images/about/about-banner.webp");
+        height: 80vh;
+    }
+
+    &--team{
+        background-image: linear-gradient(to bottom, #0000 4%, #000) ,
+        url("../assets/images/team/team-banner.webp");
+        height: 80vh;
     }
 }
 
@@ -59,31 +48,6 @@
 }
 //========== Hero styles end ==============
 
-.scroll-down-wrapper{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-right: 26px;
-    margin-bottom: 26px;
-    text-align: center;
-    @include transition(transform, 0.35s, ease-in);
-    // @include breakpoint-sm{
-    //     margin-bottom: 46px; 
-    // }
-    // @include breakpoint-md{
-    //     margin-bottom: 66px; 
-    // }
-    // @include breakpoint-lg{
-    //     margin-bottom: 76px; 
-    // }
-    &:hover{
-        cursor: pointer;
-        transform:translateY(10px);
-    }
-}
-.scroll-down-text{
-    color:$clr-white;
-}
 
 //========== Legacy styles start ============
 .legacy{
@@ -105,7 +69,6 @@
         }
         @include breakpoint-md{
             max-width: 50%;
-            // margin-top: rem(64);
         }
         @include breakpoint-xl{
             padding: em(64);
@@ -130,130 +93,27 @@
 
 
 //========== Counter styles start ============
-.counter{
-    font-size: rem(56);
-    line-height: 1;
-    font-family: $ff-primary;
-    display: flex;
-    @include breakpoint-md{
-        justify-content: center;
-    }
-    &__wrapper{
-        position: relative;
-        overflow: hidden;
-        padding-block: em(32);
-        @include breakpoint-sm{
-            font-size: rem(64);
-            padding-block: em(16);
-        }
-        @include breakpoint-md{
-            font-size: rem(72);
-            padding-block: 0;
-        }
-        @include breakpoint-xl{
-            font-size: rem(80);   
-            line-height: 0.75;
-        }
-        // &::after{
-        //     content: '';
-        //     position: absolute;
-        //     @include full-dimensions;
-        //     background:$clr-grey;
-        //     width: 100%; 
-        //     height: 1px;
-        //     margin-top: 30px;
-        //     @include breakpoint-md{
-        //         top: 0;
-        //         right: 0;
-        //         width: 1px; 
-        //         height: 100%;
-        //         margin-top: 0;
-        //     }
-        // }
-    }
-    &__subTitle{
-        margin-top: rem(24);
-        @include breakpoint-md{
-            margin-top: rem(32);
-            text-align: center;
-        }
-        @include breakpoint-lg{
-            margin-top: rem(36);
+
+.counters{
+    &__container{
+        background: $clr-black;
+
+        h2{
+            display: inline-flex;
         }
     }
 }
 
-.col-lg-3:nth-of-type(1) .counter{
-    justify-content: flex-start;
-}
-
-.counter__wrapper:not(:nth-child(4)){
-    border-bottom:1px solid $clr-primary;
-    @include breakpoint-md{
-        border-right:1px solid $clr-primary;
-        border-bottom: 0;
-    }
-}
-
-#counter-section > div:nth-child(4) > div{
-    @include breakpoint-md{
-        border: none;
-    }
-}
-// .col-lg-3:nth-of-type(4) .counter__wrapper {
-//     &::after{
-//         @include breakpoint-lg{
-//             display: none;
-//         }
-//     }
-// }
 //========== Counter styles end ==============
-
-.meet-team{
-    position: relative;
-    &__card{
-        padding: em(16);
-        background-color: $clr-white;
-        width: 100%;
-        margin-top: rem(28);
-        @include breakpoint-md{
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin-top: 10%;
-            max-width: rem(460);
-            padding: em(24); 
-        }
-        @include breakpoint-xl{
-            max-width: rem(600);
-            padding: em(64); 
-        }
-    }
-}
-
 //========== Featured styles start ============
 .featured{
-    background: $clr-tertiary;
     &__card-figure{
         position: relative;
         .just-listed-btn{
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 16px;
+            right: -16px;
             padding-block: em(4);
-        }
-    }
-    &__card{
-        background:$clr-white;
-    }
-    &__card-body,
-    &__card-footer{
-        padding-inline:em(20);
-        @include breakpoint-md{
-            padding-inline:em(30);
-        }
-        @include breakpoint-lg{
-            padding-inline:em(40);
         }
     }
     &__card-body{
@@ -264,26 +124,13 @@
         @include breakpoint-lg{
             padding-block: em(28);
         }
-        @include breakpoint-xl{
-            padding-block: em(32);
-        }
         p{
             margin-top: 6px;
         }
 
     }
     &__card-footer{
-        // border-top:1px solid $clr-grey;
-        border-bottom:1px solid $clr-grey;
-        padding-block: em(20);
-        @include breakpoint-md{
-            border-bottom: 0;
-            border-color:$clr-grey-1;
-            padding-block: em(24);
-        }
-        @include breakpoint-lg{
-            padding-block: em(28);
-        }
+    
         ul{
             @include flex-center-vertical;
             gap:em(8);
@@ -299,12 +146,54 @@
             }
         }
     }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
 }
+
 //========== Featured styles end ==============
 
 
 //========== Testimonials styles start ============
 .testimonials{
+    &__container{
+        position: relative;
+        background: $clr-black;
+        .double-quote{
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            img{
+                max-width: 110px;
+                @include breakpoint-sm{
+                    max-width: 130px;
+                }
+                @include breakpoint-md{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    &__footer{
+        h6{
+            font-size: 20px;
+            line-height: 1.33;
+            text-transform: capitalize;
+            @include breakpoint-sm{
+                font-size: 22px;
+            }
+            @include breakpoint-md{
+                font-size: 24px;
+            }
+        }
+    }
     &__header{
         @include flex-space-between;
         .navigation-buttons{
@@ -326,65 +215,6 @@
             }
         }
     }
-    &__content-wrapper{
-        @include flex-center;
-        flex-direction: column;
-        h6{
-            line-height: 1.72;
-            text-transform: lowercase;
-            &::first-letter{
-                text-transform: uppercase;
-            }
-        }
-    }
-    &__footer{
-        @include flex-center-vertical;
-        flex-wrap: wrap;
-        gap:rem(24);
-        @include breakpoint-xl{
-            margin-left: rem(16);
-        }
-        p{
-            white-space: nowrap;
-        }
-    }
-    &__figure{
-        @include dimensions(rem(100), rem(100));
-        @include border-radius("full-round");
-        flex-shrink: 0;
-        @include breakpoint-md{
-            @include dimensions(rem(120), rem(120));
-        }
-        @include breakpoint-xxl{
-            @include dimensions(rem(140), rem(140));
-        }
-        img{
-            @include border-radius("full-round");
-           @include full-dimensions;
-        }
-        &--quotes{
-            img{
-                width: rem(64);
-                height: auto;
-                
-                @include media-query("min", em(348)){
-                    width: rem(84);
-                }
-                @include media-query("min", em(420)){
-                    width: rem(96);
-                }
-                @include breakpoint-sm{
-                    width: rem(120);
-                }
-                @include breakpoint-md{
-                    width: rem(140);
-                }
-                @include breakpoint-lg{
-                   width: auto;
-                }
-            }
-        }
-    }
 }
 //========== Testimonials styles end ==============
 
@@ -393,6 +223,7 @@
 .follow-us{
     overflow: hidden;
 }
+
 .follow-us-link:hover{
     text-decoration: underline;
     text-underline-offset:10px;
@@ -404,9 +235,80 @@
 
 //========== CTA styles start ============
 .cta{
-    background: $clr-black-88;
+    position: relative;
+    background-image: url("../assets/images/cta-banner.webp");
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    @include breakpoint-sm{
+        height: 80vh;
+    }
+    &__card{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $clr-black;
+        padding-inline:em(16);
+        width: min(80%, 820px);
+    
+        @include breakpoint-md{
+            padding-inline:em(32);
+            width: min(60%, 820px);
+        }
+        @include breakpoint-lg{
+            padding-inline:em(48);
+            width: min(50%, 820px);
+        }
+        @include breakpoint-xl{
+            padding-inline:em(64);
+        }
+      
+    }
 }
 //========== CTA styles end ==============
+
+
+//========== video-spotlight styles Start ==============
+.video-spotlight-container{
+    position: relative;
+    figure{
+        figcaption {
+            position: absolute;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            background: $clr-primary;
+            padding:em(16);
+            @include flex-center-vertical;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+          
+            @include breakpoint-sm{
+                justify-content: space-around;
+                padding-block:em(32);
+                padding-inline:0;
+            }
+            @include breakpoint-xl{
+                margin-right: -48px;
+            }
+            ul{
+                @include flex-center-vertical;
+                justify-content: space-between;
+                gap:10px;
+                @include breakpoint-sm{
+                    gap:16px;
+                }
+                @include breakpoint-md{
+                    gap:20px;
+                }
+            }
+        }
+    }
+}
+
+//========== video-spotlight styles end ==============
+
+
 
 .tabs{
     &__container{
@@ -469,10 +371,6 @@
             }
         }
     }
-}
-
-.content-wrapper {
-    max-width: 57ch;
 }
 
 .main{

@@ -18,15 +18,17 @@
             grid-template-columns: repeat(3, 1fr);
         }
         &--team{
-            @extend .grid__container;
+            @extend .grid__container;         
             @include breakpoint-xl{
-                gap:rem(80);
+                gap:rem(48);
             }
         }
+
         &--featured{
             @extend .grid__container;
             gap:rem(60);
         }
+
         &--properties{
             @extend .grid__container;
             gap:rem(64);
@@ -35,6 +37,7 @@
     &__body{
         &--team{
             margin-top: rem(24);
+            padding-right: em(32);
         }
     }
     &__figure{

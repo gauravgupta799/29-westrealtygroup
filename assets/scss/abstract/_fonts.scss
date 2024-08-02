@@ -1,11 +1,12 @@
-/* --------- Marcellus Regular------------- */
+/* --------- Roslindale-DeckNarrow-Regular------------ */
 @font-face{
-    font-family:"Marcellus-Regular";
-    src:url("../../../assets/fonts/Marcellus/Marcellus-Regular.eot");
-    src:url("../../../assets/fonts/Marcellus/Marcellus-Regular.woff2") format('woff2'),
-    url("../../../assets/fonts/Marcellus/Marcellus-Regular.woff") format('woff'),
-    url("../../../assets/fonts/Marcellus/Marcellus-Regular.ttf") format('truetype'),
-    url("../../../assets/fonts/Marcellus/Marcellus-Regular.svg#Marcellus-Regular") format('svg');
+    font-family:"Roslindale-Display-Regular";
+    src:url("../assets/fonts/Roslindele-Display/Roslindale-Display.eot");
+    src:url("../assets/fonts/Roslindele-Display/Roslindale-Display.eot"),
+        url("../assets/fonts/Roslindele-Display/Roslindale-Display.woff2") format('woff2'),
+        url("../assets/fonts/Roslindele-Display/Roslindale-Display.woff") format('woff'),
+        url("../assets/fonts/Roslindele-Display/Roslindale-Display.ttf") format('truetype'),
+        url("../assets/fonts/Roslindele-Display/Roslindale-Display.svg#Roslindale-Display-Regular") format('svg');
     font-weight:400;
     font-style: normal;
 }
@@ -13,43 +14,17 @@
 /* --------- Aileron Regular------------- */
 @font-face{
     font-family:"Aileron-Regular";
-    src:url("../../../assets/fonts/Aileron/Aileron-Regular.eot");
-    src:url("../../../assets/fonts/Aileron/Aileron-Regular.woff2") format('woff2'),
-    url("../../../assets/fonts/Aileron/Aileron-Regular.woff") format('woff'),
-    url("../../../assets/fonts/Aileron/Aileron-Regular.ttf") format('truetype'),
-    url("../../../assets/fonts/Aileron/Aileron-Regular.svg#Aileron-Regular") format('svg');
+    src:url("../assets/fonts/Aileron/Aileron-Regular.eot");
+    src:url("../assets/fonts/Aileron/Aileron-Regular.eot"),
+        url("../assets/fonts/Aileron/Aileron-Regular.woff2") format('woff2'),
+        url("../assets/fonts/Aileron/Aileron-Regular.woff") format('woff'),
+        url("../assets/fonts/Aileron/Aileron-Regular.ttf") format('truetype'),
+        url("../assets/fonts/Aileron/Aileron-Regular.svg#Aileron-Regular") format('svg');
     font-weight:400;
     font-style: normal;
 }
 
 
 
-// /* --------- Marcellus Regular------------- */
-// @font-face{
-//     font-family:"Marcellus-Regular";
-//     src:url("../../../29-west/assets/fonts/Marcellus/Marcellus-Regular.eot");
-//     src:url("../../../29-west/assets/fonts/Marcellus/Marcellus-Regular.woff2") format('woff2'),
-//     url("../../../29-west/assets/fonts/Marcellus/Marcellus-Regular.woff") format('woff'),
-//     url("../../../29-west/assets/fonts/Marcellus/Marcellus-Regular.ttf") format('truetype'),
-//     url("../../../29-west/assets/fonts/Marcellus/Marcellus-Regular.svg#Marcellus-Regular") format('svg');
-//     font-weight:400;
-//     font-style: normal;
-// }
-
-//  /* --------- Aileron Regular------------- */
-// @font-face{
-//     font-family:"Aileron-Regular";
-//     src:url("../../../29-west/assets/fonts/Aileron/Aileron-Regular.eot");
-//     src:url("../../../29-west/assets/fonts/Aileron/Aileron-Regular.woff2") format('woff2'),
-//     url("../../../29-west/assets/fonts/Aileron/Aileron-Regular.woff") format('woff'),
-//     url("../../../29-west/assets/fonts/Aileron/Aileron-Regular.ttf") format('truetype'),
-//     url("../../../29-west/assets/fonts/Aileron/Aileron-Regular.svg#Aileron-Regular") format('svg');
-//     font-weight:400;
-//     font-style: normal;
-// }
-
-$ff-primary:"Marcellus-Regular",sans-serif;
+$ff-primary:"Roslindale-Display-Regular",sans-serif;
 $ff-secondary:"Aileron-Regular",sans-serif;
-
-
-

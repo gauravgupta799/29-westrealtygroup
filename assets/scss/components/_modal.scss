@@ -23,30 +23,7 @@
     background:$clr-primary;
     @include flex-center;
     width: min(90%, 1200px);
-    // height: 200px;
     aspect-ratio: 16/9;
-
-    // @media only screen and (min-width:340px){
-    //     height: 240px;
-    // }
-    // @media only screen and (min-width:452px){
-    //     height: 300px;
-    // }
-    // @include breakpoint-sm{
-    //     height: 360px;
-    // }
-    // @include breakpoint-md{
-    //     height: 420px;
-    // }
-    // @include breakpoint-lg{
-    //     height: 480px;
-    // }
-    // @include breakpoint-xl{
-    //     height: 640px;
-    // }
-    // @include breakpoint-xxl{
-    //     height: 600px;
-    // }
     &::before{
         content:"";
         position: absolute;

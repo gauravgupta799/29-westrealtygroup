@@ -16,9 +16,20 @@
             transform: translateY(-50%);
             pointer-events: none;
             transition: 0.3s ease-out;
-            color: $clr-primary;
+            color: $clr-black;
             padding-left: em(16);
             @include border-radius(4px);
+            font-family: $ff-primary;
+            font-size: 18px;
+            line-height: 3.83;
+
+            @include breakpoint-lg{
+                font-size: 20px;
+            }
+            @include breakpoint-xl{
+                font-size: 24px;
+            }
+
         }
     }
     &__control{
@@ -32,9 +43,13 @@
         font-family: $ff-rhd-regular;
         caret-color: $clr-secondary;
         @include border-radius(2px);
-        outline: 1px solid $clr-primary;
+        // outline: 1px solid $clr-primary;
+        @include breakpoint-sm{
+            font-size: rem(18);
+        }
+
         &:focus, &:hover{
-            outline-color: $clr-secondary;  
+            // outline-color: $clr-secondary;  
             outline-width: 2px;
         }
     }

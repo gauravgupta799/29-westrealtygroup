@@ -12,46 +12,33 @@
         }
     }
 }
-// .helping{
-//     h2{
-//         @include breakpoint-xxl{
-//             max-width: 20ch;
-//         }
-//     }
-// }
+
 .core-values{
     &__list{
-        max-width:90%;
+        @media only screen and (min-width:1440px){
+            max-width:90%;
+        }
         li{
             padding-block:em(16);
-            @include breakpoint-md{
+            @include breakpoint-xl{
                 padding-block:em(24);
             }
-            @include breakpoint-lg{
+            @include breakpoint-xxl{
                 padding-block:em(32);
-            }
-            @include breakpoint-xl{
-                padding-block:em(40);
             }
         }
     }
     &__item{
         display: flex;
         gap:rem(16);
-        h6{
-            line-height: 1.57;
-        }
         @include breakpoint-sm{
             gap:rem(22);
         }
-        @include breakpoint-md{
-            gap:rem(28);
-        }
-        @include breakpoint-lg{
-            gap:rem(34);
-        }
         @include breakpoint-xl{
-            gap:rem(40);
+            gap:rem(32);
+        }
+        @include breakpoint-xxl{
+            gap:rem(36);
             align-items: center;
         }
     }

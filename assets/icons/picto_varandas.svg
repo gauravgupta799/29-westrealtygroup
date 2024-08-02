@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="93.95" viewBox="0 0 100 93.95">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_26" data-name="Rectangle 26" width="100" height="93.95" transform="translate(30.333 33)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="picto_varandas" transform="translate(-30.333 -33)" clip-path="url(#clip-path)">
+    <path id="Path_20" data-name="Path 20" d="M130.333,92.58v-2h-100v2h6.03v32.37h-6.03v2h100v-2H124.3V92.58Zm-72.87,0h7.55v32.37h-7.55Zm-2,32.37h-7.55V92.58h7.55Zm11.55-32.37h7.55v32.37h-7.55Zm9.55,0h7.55v32.37h-7.55Zm9.55,0h7.55v32.37h-7.55Zm9.55,0h7.55v32.37h-7.55Zm9.55,0h7.55v32.37h-7.55Zm-66.84,0h7.55v32.37h-7.55Zm83.93,32.37h-7.55V92.58h7.55Z"/>
+    <path id="Path_21" data-name="Path 21" d="M43.333,77.54h36v9.95h2V77.54h35.99v9.95h2V33H41.333V87.49h2Zm73.99-2H81.333V35h35.99ZM79.333,35V75.54h-36V35Z"/>
+    <path id="Path_22" data-name="Path 22" d="M104.965,38.254l-1.414,1.414,9.1,9.1,1.415-1.414Z"/>
+    <path id="Path_23" data-name="Path 23" d="M96.706,38.245,95.291,39.66l17.346,17.345,1.414-1.414Z"/>
+  </g>
+</svg>

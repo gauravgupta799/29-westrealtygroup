@@ -8,47 +8,62 @@
 $swiper-navigation-size:18px;
 
 .testimonials{
-  .swiper-pagination{
-    position: static !important;
-    @include flex-center;
-    &__wrapper{
-      @include flex-center;
-      gap:rem(32);
-    }
-    &-bullet{
-      @include flex-center;
-      @include dimensions(rem(28),rem(28));
-      font-size: rem(16);
-      color: $clr-primary;
-      font-family: $ff-secondary;
-      opacity: 1;
-      background: transparent;
-      @include transition(all, 0.25s, ease-out);
-      &-active{
-        background-color:$clr-secondary !important;
-        color:$clr-white !important;
-      }
-      &:hover{
-        cursor: pointer;
-        background-color:$clr-secondary;
-        color:$clr-white;
-      }
-    }
-  }
+  // .swiper-pagination{
+  //   position: static !important;
+  //   @include flex-center;
+  //   &__wrapper{
+  //     @include flex-center;
+  //     gap:rem(32);
+  //   }
+  //   &-bullet{
+  //     @include flex-center;
+  //     @include dimensions(rem(28),rem(28));
+  //     font-size: rem(16);
+  //     color: $clr-primary;
+  //     font-family: $ff-secondary;
+  //     opacity: 1;
+  //     background: transparent;
+  //     @include transition(all, 0.25s, ease-out);
+  //     &-active{
+  //       background-color:$clr-secondary !important;
+  //       color:$clr-white !important;
+  //     }
+  //     &:hover{
+  //       cursor: pointer;
+  //       background-color:$clr-secondary;
+  //       color:$clr-white;
+  //     }
+  //   }
+  // }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal{
-  width: auto !important;
+  // .swiper-pagination-bullets.swiper-pagination-horizontal{
+  //   width: auto !important;
+  // }
+
 }
 
-.swiper-button-prev,
-.swiper-button-next{
-  position:static !important;
-  z-index: 0 !important;
-  margin: 0 !important;
-  cursor: pointer;
-    &::after{
-      font-size:$swiper-navigation-size !important;
-      color:$clr-primary !important;
+.swiper-btns-wrapper{
+  @include flex-center-vertical;
+  gap:10px;
+
+  button{
+    padding:em(10) em(32);
+  }
+}
+
+
+.swiper-btn{
+  @include flex-center;
+  width: 60px;
+  height: 34px;
+  border: solid 1px $clr-primary;
+  background-color: $clr-white;
+  svg path{
+    fill:$clr-primary;
+  }
+  &:hover{
+    svg path{
+      fill:$clr-white;
     }
   }
 }

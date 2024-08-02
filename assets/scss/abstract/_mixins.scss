@@ -39,6 +39,13 @@
     justify-content: space-between;
 }
 
+@mixin center-through-position{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
 @mixin full-dimensions{
     width: 100%; height: 100%;
 }
@@ -138,6 +145,14 @@
     }
 }
 
+@mixin bg-img-with-gradient($img-url){
+    background-image: linear-gradient(to bottom, #000000 4%, #000000), 
+    url($img-url);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
 @mixin caret-down{
     content:"";
     position: absolute;
@@ -146,4 +161,29 @@
     border-left: 0.35rem solid transparent;
     border-right: 0.35rem  solid transparent;
     border-top: 0.35rem solid $clr-primary;
+}
+
+@mixin rippel-animation($duration, $delay) {
+    content: '';
+    position: absolute;
+    inset:0;
+    // @include pseudo-cover;
+    // @include flex-center;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // @include full-dimensions;
+
+    height: 100%;
+    width: 100%;
+    
+    border: 8px solid rgba(230, 233, 120, 0.75);
+    border-radius: 50%;
+    animation-name: ripple;
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.65,0,.34,1);
+    z-index: -1;
 }
