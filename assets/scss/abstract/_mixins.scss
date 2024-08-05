@@ -164,20 +164,10 @@
 }
 
 @mixin rippel-animation($duration, $delay) {
-    content: '';
-    position: absolute;
-    inset:0;
-    // @include pseudo-cover;
-    // @include flex-center;
+    @include pseudo-cover;
+    @include flex-center;
+    @include full-dimensions;
     opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // @include full-dimensions;
-
-    height: 100%;
-    width: 100%;
-    
     border: 8px solid rgba(230, 233, 120, 0.75);
     border-radius: 50%;
     animation-name: ripple;

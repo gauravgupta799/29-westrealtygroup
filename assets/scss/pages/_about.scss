@@ -24,7 +24,7 @@
                 padding-block:em(24);
             }
             @include breakpoint-xxl{
-                padding-block:em(32);
+                padding-block:em(24);
             }
         }
     }
@@ -35,11 +35,10 @@
             gap:rem(22);
         }
         @include breakpoint-xl{
-            gap:rem(32);
+            gap:rem(26);
         }
         @include breakpoint-xxl{
-            gap:rem(36);
-            align-items: center;
+            gap:rem(32);
         }
     }
 }
@@ -96,6 +95,72 @@
     }
 }
 
+.about-property{
+    &__list{
+        display: flex;
+        align-items: center;  
+        text-transform: capitalize;
+    }
+    &__footer{
+       width: min(100%, 480px);
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            @media only screen and (min-width:380px){
+                gap: 1.5rem;  
+            }
+            @include breakpoint-sm{
+                gap: 2rem;
+            }
+            @include breakpoint-md{
+                gap: 3rem;
+            }
+            // @include breakpoint-sm{
+            //     gap: 2rem;
+            // }
+        }
+    }
+}
+
+.owner-details-card{
+    display: flex;
+    flex-wrap: wrap;
+    &__body{
+        background: $clr-primary;
+        padding:em(20);
+        a{
+            font-size: 14px;
+            line-height: 2;
+            @include breakpoint-sm{
+                font-size: 16px;
+            }
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 2rem; 
+            @media only screen and (min-width:1400px){
+                gap:3rem;
+            }
+        }
+
+    }
+    .cta-btn{
+        color:$clr-secondary;
+        text-decoration: underline;
+        transition:all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 14px;
+        @include breakpoint-sm{
+            font-size: 16px;
+        }
+        &:hover{
+            color:$clr-white;
+            text-decoration-color: $clr-white;
+        }
+    }
+}
 
 
 .swiper-container-wrapper{

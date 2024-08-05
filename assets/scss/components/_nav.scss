@@ -22,6 +22,17 @@
                 gap: 64px;
             }
         }
+        .nav__link{
+            font-size: 16px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color:$clr-white;
+            font-family: $ff-secondary;
+            display: none;
+            @include breakpoint-xl{
+                display: flex;
+            }
+        }
     }
     &--mobile{
         display: flex;
@@ -34,11 +45,6 @@
             flex-wrap: nowrap;
             gap:rem(96);
         }
-        @include breakpoint-xl{
-        }
-        @include breakpoint-xxl{
-        }
-        
     }
     &__item{
         position: relative;
@@ -47,53 +53,89 @@
     &__link {
         color:$clr-white;
         font-family: $ff-primary;
-        font-size: rem(32);
-        line-height: 1.67;
+        font-size: rem(24);
+        line-height: 1.8;
         @include breakpoint-md{
-            font-size: rem(36);
+            font-size: rem(28);
         }
         @include breakpoint-lg{
-            font-size: rem(40);
+            font-size: rem(32);
         }
         @include breakpoint-xl{
-            font-size: rem(44);
+            font-size: rem(36);
         }
         @include breakpoint-xxl{
-            font-size: rem(48);
+            font-size: rem(40);
         }
-        &.active{
-            color:$clr-secondary;
-            &::before {
-                width: 100%;
-                transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-            }
-            &::after {
-                width: 100%;
-                background: transparent;
-                transition: 0s;
+    }
+    &__contact-list{
+        li{
+            @include breakpoint-sm{
+                text-align: right;
             }
         }
     }
 }
 //========== Mobile Menu End ========
+.nav-link{
+    text-transform: uppercase;
+}
 
+.nav__link{
+    &:hover{
+        color:$clr-secondary;
+        span{
+            color:$clr-secondary;
+        }
+    }
+    &.active{
+        color:$clr-secondary;
+        span{
+            color:$clr-secondary;
+        }
+        &::before {
+            width: 100%;
+            transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        &::after {
+            width: 100%;
+            background: transparent;
+            transition: 0s;
+        }
+    }
+}
+
+.cta-link{
+    &:hover{
+        address{
+            color:$clr-secondary;
+        }
+    }
+}
+
+.direction-txt{
+    text-decoration-color: $clr-primary;
+    &:hover{
+        span{
+            color:$clr-primary;
+        }
+    }
+}
 
 .contact-list__link{
     color:$clr-white;
-    font-weight: 300;
-    line-height: 3;
+    line-height: 2.5;
 }
 
 
-
-.nav__link,.cta-link,.nav-link, .h-mail-btn,
+.nav__link, .nav-link, 
+.h-mail-btn span:nth-child(2),
+.cta-link:not(address),
 .contact-list__link:not(address),
-.connect-us__link:not(address),
-.footer-link:not(address),
-.socials__link,
-.socials__link--contact{
+.footer-link:not(address){
     position: relative;
     transition: color 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+
     &::before, &::after {
         content: '';
         position: absolute;

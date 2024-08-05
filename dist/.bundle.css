@@ -777,14 +777,27 @@ swiper-container .swiper-notification {
   font-weight: 400;
   font-style: normal;
 }
-/* --------- Aileron Regular------------- */
+/* --------- Figtree Regular------------- */
 @font-face {
-  font-family: "Aileron-Regular";
-  src: url("../assets/fonts/Aileron/Aileron-Regular.eot");
-  src: url("../assets/fonts/Aileron/Aileron-Regular.eot"), url("../assets/fonts/Aileron/Aileron-Regular.woff2") format("woff2"), url("../assets/fonts/Aileron/Aileron-Regular.woff") format("woff"), url("../assets/fonts/Aileron/Aileron-Regular.ttf") format("truetype"), url("../assets/fonts/Aileron/Aileron-Regular.svg#Aileron-Regular") format("svg");
+  font-family: "Figtree-Regular";
+  src: url("../assets/fonts/Figtree/Figtree-Regular.eot");
+  src: url("../assets/fonts/Figtree/Figtree-Regular.eot"), url("../assets/fonts/Figtree/Figtree-Regular.woff2") format("woff2"), url("../assets/fonts/Figtree/Figtree-Regular.woff") format("woff"), url("../assets/fonts/Figtree/Figtree-Regular.ttf") format("truetype"), url("../assets/fonts/Figtree/Figtree-Regular.svg#Figtree-Regular") format("svg");
   font-weight: 400;
   font-style: normal;
 }
+/* --------- Aileron Regular------------- 
+@font-face{
+    font-family:"Aileron-Regular";
+    src:url("../assets/fonts/Aileron/Aileron-Regular.eot");
+    src:url("../assets/fonts/Aileron/Aileron-Regular.eot"),
+        url("../assets/fonts/Aileron/Aileron-Regular.woff2") format('woff2'),
+        url("../assets/fonts/Aileron/Aileron-Regular.woff") format('woff'),
+        url("../assets/fonts/Aileron/Aileron-Regular.ttf") format('truetype'),
+        url("../assets/fonts/Aileron/Aileron-Regular.svg#Aileron-Regular") format('svg');
+    font-weight:400;
+    font-style: normal;
+}
+*/
 /*-----------------------------
   [CAROL]
   Project:Carol
@@ -892,7 +905,7 @@ small {
 input, textarea {
   outline: none;
   border: none;
-  font-family: "Aileron-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
 }
 
 textarea {
@@ -914,7 +927,7 @@ h1, h2, h3, h4, h5, h6 {
 button {
   border: none;
   outline: none;
-  font-family: "Aileron-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-weight: 900;
   line-height: 1.78;
   background: transparent;
@@ -923,26 +936,26 @@ button {
 label {
   color: #1a232a;
   font-size: 1rem;
-  font-family: "Aileron-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
 }
 
 sup {
   vertical-align: super;
   font-size: 1rem;
   line-height: 2;
-  font-family: "Aileron-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   color: #000000;
 }
 
 ::-moz-placeholder {
   font-size: 1rem !important;
-  font-family: "Aileron-Regular", sans-serif !important;
+  font-family: "Figtree-Regular", sans-serif !important;
   color: #1a232a !important;
 }
 
 ::placeholder {
   font-size: 1rem !important;
-  font-family: "Aileron-Regular", sans-serif !important;
+  font-family: "Figtree-Regular", sans-serif !important;
   color: #1a232a !important;
 }
 
@@ -961,107 +974,107 @@ sup {
 }
 
 h1 {
-  font-size: 2.75rem;
-  line-height: 3rem;
-}
-@media screen and (min-width: 36em) {
-  h1 {
-    font-size: 2.75rem;
-    line-height: 3rem;
-  }
-}
-@media screen and (min-width: 48em) {
-  h1 {
-    font-size: 3.5rem;
-    line-height: 3.875rem;
-  }
-}
-@media screen and (min-width: 62em) {
-  h1 {
-    font-size: 4rem;
-    line-height: 4.4375rem;
-  }
-}
-@media screen and (min-width: 75em) {
-  h1 {
-    font-size: 4.5rem;
-    line-height: 5rem;
-  }
-}
-@media screen and (min-width: 100em) {
-  h1 {
-    font-size: 5rem;
-    line-height: 5.5rem;
-  }
-}
-
-h2 {
   font-size: 2.5rem;
-  line-height: 3rem;
+  line-height: 2.625rem;
 }
 @media screen and (min-width: 36em) {
-  h2 {
+  h1 {
     font-size: 2.5rem;
-    line-height: 3rem;
+    line-height: 2.625rem;
   }
 }
 @media screen and (min-width: 48em) {
-  h2 {
+  h1 {
     font-size: 2.75rem;
-    line-height: 3.375rem;
+    line-height: 2.875rem;
   }
 }
 @media screen and (min-width: 62em) {
-  h2 {
+  h1 {
     font-size: 3rem;
-    line-height: 3.625rem;
+    line-height: 3.125rem;
   }
 }
 @media screen and (min-width: 75em) {
-  h2 {
+  h1 {
     font-size: 3.25rem;
-    line-height: 4rem;
+    line-height: 3.5rem;
   }
 }
 @media screen and (min-width: 100em) {
-  h2 {
-    font-size: 3.75rem;
+  h1 {
+    font-size: 4.25rem;
     line-height: 4.5rem;
   }
 }
 
-h3 {
+h2 {
   font-size: 2.25rem;
-  line-height: 2.75rem;
+  line-height: 2.6875rem;
 }
 @media screen and (min-width: 36em) {
-  h3 {
+  h2 {
     font-size: 2.25rem;
-    line-height: 2.75rem;
+    line-height: 2.6875rem;
   }
 }
 @media screen and (min-width: 48em) {
-  h3 {
+  h2 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
 }
 @media screen and (min-width: 62em) {
-  h3 {
+  h2 {
     font-size: 2.75rem;
-    line-height: 3.375rem;
+    line-height: 3.25rem;
   }
 }
 @media screen and (min-width: 75em) {
-  h3 {
+  h2 {
     font-size: 3rem;
     line-height: 3.625rem;
   }
 }
 @media screen and (min-width: 100em) {
-  h3 {
+  h2 {
     font-size: 3.25rem;
-    line-height: 4rem;
+    line-height: 3.875rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.375rem;
+}
+@media screen and (min-width: 36em) {
+  h3 {
+    font-size: 2rem;
+    line-height: 2.375rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  h3 {
+    font-size: 2.25rem;
+    line-height: 2.6875rem;
+  }
+}
+@media screen and (min-width: 62em) {
+  h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+@media screen and (min-width: 75em) {
+  h3 {
+    font-size: 2.75rem;
+    line-height: 3.25rem;
+  }
+}
+@media screen and (min-width: 100em) {
+  h3 {
+    font-size: 3rem;
+    line-height: 3.375rem;
   }
 }
 
@@ -1084,7 +1097,7 @@ h4 {
 @media screen and (min-width: 62em) {
   h4 {
     font-size: 2.25rem;
-    line-height: 2.75rem;
+    line-height: 2.6875rem;
   }
 }
 @media screen and (min-width: 75em) {
@@ -1096,7 +1109,7 @@ h4 {
 @media screen and (min-width: 100em) {
   h4 {
     font-size: 2.75rem;
-    line-height: 3.375rem;
+    line-height: 3.25rem;
   }
 }
 
@@ -1137,36 +1150,36 @@ h5 {
 
 h6 {
   font-size: 1.375rem;
-  line-height: 1.625rem;
+  line-height: 1.875rem;
 }
 @media screen and (min-width: 36em) {
   h6 {
     font-size: 1.375rem;
-    line-height: 1.625rem;
+    line-height: 1.875rem;
   }
 }
 @media screen and (min-width: 48em) {
   h6 {
     font-size: 1.5rem;
-    line-height: 1.875rem;
+    line-height: 2.0625rem;
   }
 }
 @media screen and (min-width: 62em) {
   h6 {
     font-size: 1.5rem;
-    line-height: 1.875rem;
+    line-height: 2.0625rem;
   }
 }
 @media screen and (min-width: 75em) {
   h6 {
     font-size: 1.625rem;
-    line-height: 2rem;
+    line-height: 2.25rem;
   }
 }
 @media screen and (min-width: 100em) {
   h6 {
     font-size: 1.75rem;
-    line-height: 2.125rem;
+    line-height: 2.375rem;
   }
 }
 
@@ -1183,37 +1196,37 @@ h1, h2, h3, h4, h5, h6 {
 
 p, ul, ol, body {
   font-size: 1rem;
-  line-height: 1.75rem;
-  font-family: "Aileron-Regular", sans-serif;
+  line-height: 1.5rem;
+  font-family: "Figtree-Regular", sans-serif;
 }
 @media screen and (min-width: 36em) {
   p, ul, ol, body {
     font-size: 1rem;
-    line-height: 1.75rem;
+    line-height: 1.5rem;
   }
 }
 @media screen and (min-width: 48em) {
   p, ul, ol, body {
     font-size: 1rem;
-    line-height: 1.75rem;
+    line-height: 1.5rem;
   }
 }
 @media screen and (min-width: 62em) {
   p, ul, ol, body {
     font-size: 1.125rem;
-    line-height: 2rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 75em) {
   p, ul, ol, body {
     font-size: 1.125rem;
-    line-height: 2rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 100em) {
   p, ul, ol, body {
     font-size: 1.125rem;
-    line-height: 2rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -14880,6 +14893,19 @@ p, ul, ol, body {
     gap: 64px;
   }
 }
+.nav--desktop .nav__link {
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Figtree-Regular", sans-serif;
+  display: none;
+}
+@media only screen and (min-width: 75em) {
+  .nav--desktop .nav__link {
+    display: flex;
+  }
+}
 .nav--mobile {
   display: flex;
   justify-content: space-between;
@@ -14903,30 +14929,49 @@ p, ul, ol, body {
 .nav__link {
   color: #ffffff;
   font-family: "Roslindale-Display-Regular", sans-serif;
-  font-size: 2rem;
-  line-height: 1.67;
+  font-size: 1.5rem;
+  line-height: 1.8;
 }
 @media only screen and (min-width: 48em) {
   .nav__link {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   }
 }
 @media only screen and (min-width: 62em) {
   .nav__link {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 75em) {
   .nav__link {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
   }
 }
 @media only screen and (min-width: 100em) {
   .nav__link {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
+@media only screen and (min-width: 36em) {
+  .nav__contact-list li {
+    text-align: right;
+  }
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.nav__link:hover {
+  color: #10ADD9;
+}
+.nav__link:hover span {
+  color: #10ADD9;
+}
 .nav__link.active {
+  color: #10ADD9;
+}
+.nav__link.active span {
   color: #10ADD9;
 }
 .nav__link.active::before {
@@ -14939,32 +14984,39 @@ p, ul, ol, body {
   transition: 0s;
 }
 
-.contact-list__link {
-  color: #ffffff;
-  font-weight: 300;
-  line-height: 3;
+.cta-link:hover address {
+  color: #10ADD9;
 }
 
-.nav__link, .cta-link, .nav-link, .h-mail-btn,
+.direction-txt {
+  text-decoration-color: #1a232a;
+}
+.direction-txt:hover span {
+  color: #1a232a;
+}
+
+.contact-list__link {
+  color: #ffffff;
+  line-height: 2.5;
+}
+
+.nav__link, .nav-link,
+.h-mail-btn span:nth-child(2),
+.cta-link:not(address),
 .contact-list__link:not(address),
-.connect-us__link:not(address),
-.footer-link:not(address),
-.socials__link,
-.socials__link--contact {
+.footer-link:not(address) {
   position: relative;
   transition: color 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.nav__link::before, .nav__link::after, .cta-link::before, .cta-link::after, .nav-link::before, .nav-link::after, .h-mail-btn::before, .h-mail-btn::after,
+.nav__link::before, .nav__link::after, .nav-link::before, .nav-link::after,
+.h-mail-btn span:nth-child(2)::before,
+.h-mail-btn span:nth-child(2)::after,
+.cta-link:not(address)::before,
+.cta-link:not(address)::after,
 .contact-list__link:not(address)::before,
 .contact-list__link:not(address)::after,
-.connect-us__link:not(address)::before,
-.connect-us__link:not(address)::after,
 .footer-link:not(address)::before,
-.footer-link:not(address)::after,
-.socials__link::before,
-.socials__link::after,
-.socials__link--contact::before,
-.socials__link--contact::after {
+.footer-link:not(address)::after {
   content: "";
   position: absolute;
   width: 0;
@@ -14972,47 +15024,42 @@ p, ul, ol, body {
   height: 0.1rem;
   background: #10ADD9;
 }
-.nav__link::before, .cta-link::before, .nav-link::before, .h-mail-btn::before,
+.nav__link::before, .nav-link::before,
+.h-mail-btn span:nth-child(2)::before,
+.cta-link:not(address)::before,
 .contact-list__link:not(address)::before,
-.connect-us__link:not(address)::before,
-.footer-link:not(address)::before,
-.socials__link::before,
-.socials__link--contact::before {
+.footer-link:not(address)::before {
   left: 0;
 }
-.nav__link::after, .cta-link::after, .nav-link::after, .h-mail-btn::after,
+.nav__link::after, .nav-link::after,
+.h-mail-btn span:nth-child(2)::after,
+.cta-link:not(address)::after,
 .contact-list__link:not(address)::after,
-.connect-us__link:not(address)::after,
-.footer-link:not(address)::after,
-.socials__link::after,
-.socials__link--contact::after {
+.footer-link:not(address)::after {
   right: 0;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.nav__link:hover, .cta-link:hover, .nav-link:hover, .h-mail-btn:hover,
+.nav__link:hover, .nav-link:hover,
+.h-mail-btn span:nth-child(2):hover,
+.cta-link:not(address):hover,
 .contact-list__link:not(address):hover,
-.connect-us__link:not(address):hover,
-.footer-link:not(address):hover,
-.socials__link:hover,
-.socials__link--contact:hover {
+.footer-link:not(address):hover {
   cursor: pointer;
   color: #10ADD9;
 }
-.nav__link:hover::before, .cta-link:hover::before, .nav-link:hover::before, .h-mail-btn:hover::before,
+.nav__link:hover::before, .nav-link:hover::before,
+.h-mail-btn span:nth-child(2):hover::before,
+.cta-link:not(address):hover::before,
 .contact-list__link:not(address):hover::before,
-.connect-us__link:not(address):hover::before,
-.footer-link:not(address):hover::before,
-.socials__link:hover::before,
-.socials__link--contact:hover::before {
+.footer-link:not(address):hover::before {
   width: 100%;
   transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.nav__link:hover::after, .cta-link:hover::after, .nav-link:hover::after, .h-mail-btn:hover::after,
+.nav__link:hover::after, .nav-link:hover::after,
+.h-mail-btn span:nth-child(2):hover::after,
+.cta-link:not(address):hover::after,
 .contact-list__link:not(address):hover::after,
-.connect-us__link:not(address):hover::after,
-.footer-link:not(address):hover::after,
-.socials__link:hover::after,
-.socials__link--contact:hover::after {
+.footer-link:not(address):hover::after {
   width: 100%;
   background: transparent;
   transition: 0s;
@@ -15028,8 +15075,9 @@ p, ul, ol, body {
   font-size: 1rem;
   line-height: 2;
   font-weight: normal;
-  padding: 0.75em 2.75em;
+  padding: 0.75em 2.5em;
   color: #ffffff;
+  text-transform: uppercase;
   transition: all 0.2s ease-out;
 }
 .btn svg path {
@@ -15141,65 +15189,47 @@ hover effect
 }
 @media only screen and (min-width: 36em) {
   .play-btn {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .play-btn {
     width: 6rem;
     height: 6rem;
   }
 }
-@media only screen and (min-width: 62em) {
+@media only screen and (min-width: 100em) {
   .play-btn {
     width: 7rem;
     height: 7rem;
   }
 }
-@media only screen and (min-width: 100em) {
-  .play-btn {
-    width: 7.5rem;
-    height: 7.5rem;
-  }
-}
-.play-btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  border: 8px solid rgba(230, 233, 120, 0.75);
-  border-radius: 50%;
-  animation-name: ripple;
-  animation-duration: 2.5s;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
-  z-index: -1;
-}
-.play-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  border: 8px solid rgba(230, 233, 120, 0.75);
-  border-radius: 50%;
-  animation-name: ripple;
-  animation-duration: 2.5s;
-  animation-delay: 0.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
-  z-index: -1;
-}
 .play-btn:hover {
   cursor: pointer;
   background: #10ADD9;
 }
+.play-btn::before {
+  animation: ripple-play-btn 1.5s ease-out infinite;
+  background-color: inherit;
+  border-radius: 50%;
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
 
+@keyframes ripple-play-btn {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
 @keyframes rippel {
   from {
     opacity: 1;
@@ -15559,15 +15589,13 @@ hover effect
   color: #ffffff;
 }
 .hero-banner-container--home {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000), url("../assets/images/home/home-banner.webp");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/home/home-banner.webp");
 }
 .hero-banner-container--about {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000), url("../assets/images/about/about-banner.webp");
-  height: 80vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/about/about-banner.webp");
 }
 .hero-banner-container--team {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 4%, #000), url("../assets/images/team/team-banner.webp");
-  height: 80vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/team/team-banner.webp");
 }
 
 .home-banner-img {
@@ -15680,6 +15708,7 @@ hover effect
 .featured__card-footer ul li {
   font-size: 0.875rem;
   line-height: 2;
+  text-transform: capitalize;
 }
 .featured__list {
   display: flex;
@@ -15713,19 +15742,25 @@ hover effect
     max-width: 100%;
   }
 }
+.testimonials__content {
+  text-transform: lowercase;
+}
+.testimonials__content::first-letter {
+  text-transform: uppercase;
+}
 .testimonials__footer h6 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.33;
   text-transform: capitalize;
 }
 @media only screen and (min-width: 36em) {
   .testimonials__footer h6 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media only screen and (min-width: 48em) {
   .testimonials__footer h6 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .testimonials__header {
@@ -15813,7 +15848,7 @@ hover effect
   width: 100%;
   right: 0;
   bottom: 0;
-  background: #1a232a;
+  background: #000000;
   padding: 1em;
   display: flex;
   align-items: center;
@@ -15847,6 +15882,9 @@ hover effect
   .video-spotlight-container figure figcaption ul {
     gap: 20px;
   }
+}
+.video-spotlight-container figure figcaption ul li {
+  text-transform: capitalize;
 }
 
 .tabs__container {
@@ -15952,7 +15990,7 @@ hover effect
 }
 @media only screen and (min-width: 100em) {
   .core-values__list li {
-    padding-block: 2em;
+    padding-block: 1.5em;
   }
 }
 .core-values__item {
@@ -15966,13 +16004,12 @@ hover effect
 }
 @media only screen and (min-width: 75em) {
   .core-values__item {
-    gap: 2rem;
+    gap: 1.625rem;
   }
 }
 @media only screen and (min-width: 100em) {
   .core-values__item {
-    gap: 2.25rem;
-    align-items: center;
+    gap: 2rem;
   }
 }
 
@@ -16027,6 +16064,79 @@ hover effect
 }
 .timeline__content p {
   max-width: 56ch;
+}
+
+.about-property__list {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.about-property__footer {
+  width: min(100%, 480px);
+}
+.about-property__footer ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media only screen and (min-width: 380px) {
+  .about-property__footer ul {
+    gap: 1.5rem;
+  }
+}
+@media only screen and (min-width: 36em) {
+  .about-property__footer ul {
+    gap: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .about-property__footer ul {
+    gap: 3rem;
+  }
+}
+
+.owner-details-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.owner-details-card__body {
+  background: #1a232a;
+  padding: 1.25em;
+}
+.owner-details-card__body a {
+  font-size: 14px;
+  line-height: 2;
+}
+@media only screen and (min-width: 36em) {
+  .owner-details-card__body a {
+    font-size: 16px;
+  }
+}
+.owner-details-card__body ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+@media only screen and (min-width: 1400px) {
+  .owner-details-card__body ul {
+    gap: 3rem;
+  }
+}
+.owner-details-card .cta-btn {
+  color: #10ADD9;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+@media only screen and (min-width: 36em) {
+  .owner-details-card .cta-btn {
+    font-size: 16px;
+  }
+}
+.owner-details-card .cta-btn:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
 .swiper-container-wrapper {
@@ -16474,36 +16584,17 @@ hover effect
 .header--properties {
   background: #F6F6F6;
 }
-@media only screen and (min-width: 75em) {
-  .header__logo {
-    margin-left: 10rem;
+.header__logo img {
+  height: 3rem;
+}
+@media only screen and (min-width: 36em) {
+  .header__logo img {
+    height: 4rem;
   }
 }
 @media only screen and (min-width: 100em) {
-  .header__logo {
-    margin-left: 15rem;
-  }
-}
-.header__logo img {
-  max-width: 12.5rem;
-}
-@media only screen and (min-width: 62em) {
   .header__logo img {
-    max-width: 100%;
-  }
-}
-.header__logo--mobile img {
-  max-width: 12.5rem;
-  height: 3.75rem;
-}
-@media only screen and (min-width: 36em) {
-  .header__logo--mobile img {
-    height: 4.375rem;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .header__logo--mobile img {
-    height: 5rem;
+    height: auto;
   }
 }
 .header .header-btn {
@@ -16521,23 +16612,14 @@ hover effect
     gap: 5rem;
   }
 }
-.header__left .nav__link {
-  font-size: 18px;
-  line-height: 1.78;
-  color: #ffffff;
-  font-family: "Aileron-Regular", sans-serif;
-  display: none;
-}
-@media only screen and (min-width: 75em) {
-  .header__left .nav__link {
-    display: flex;
-  }
-}
 
 .h-mail-btn {
   align-items: center;
   gap: 10px;
   color: #ffffff;
+  font-size: 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
   display: none;
 }
 @media only screen and (min-width: 75em) {
@@ -16561,7 +16643,7 @@ hover effect
 @media only screen and (min-width: 62em) {
   .header .get-in-touch-btn {
     display: flex;
-    border: none;
+    border: 1px solid #000000;
   }
 }
 
@@ -16728,6 +16810,7 @@ hover effect
   color: #f1f1f1;
   font-size: 1rem;
   line-height: 2;
+  text-transform: capitalize;
 }
 
 .footer-description {

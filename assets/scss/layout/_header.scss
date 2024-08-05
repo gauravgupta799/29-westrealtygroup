@@ -58,28 +58,13 @@
         background: $clr-tertiary;
     }
     &__logo{
-        @include breakpoint-xl{
-            margin-left: 10rem;
-        }
-        @include breakpoint-xxl{
-            margin-left: 15rem;
-        }
         img{
-            max-width: rem(200);
-            @include breakpoint-lg{
-                max-width: 100%;
+            height:rem(48);
+            @include breakpoint-sm{
+                height:rem(64);
             }
-        }
-        &--mobile{
-            img{
-                max-width: rem(200);
-                height:rem(60);
-                @include breakpoint-sm{
-                    height:rem(70);
-                }
-                @include breakpoint-md{
-                    height:rem(80);
-                }
+            @include breakpoint-xxl{
+                height:auto;
             }
         }
     }
@@ -94,16 +79,6 @@
         @include breakpoint-xl{
             gap:5rem;
         }
-        .nav__link{
-            font-size: 18px;
-            line-height: 1.78;
-            color:$clr-white;
-            font-family: $ff-secondary;
-            display: none;
-            @include breakpoint-xl{
-                display: flex;
-            }
-        }
     }
 }
 
@@ -112,6 +87,9 @@
     align-items: center;
     gap:10px;
     color:$clr-white;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
     display: none;
     @include breakpoint-xl{
         display: flex;
@@ -131,7 +109,7 @@
     display: none;
     @include breakpoint-lg{
         display: flex;
-        border:none;
+        border:1px solid $clr-black;
     }
 }
 

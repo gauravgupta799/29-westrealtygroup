@@ -13,11 +13,11 @@
     overflow: hidden;
     z-index: 1;
     font-size:rem(16);
-    // line-height: 1.78;
     line-height: 2;
     font-weight: normal;
-    padding:em(12) em(44);
+    padding:em(12) em(40);
     color:$clr-white;
+    text-transform: uppercase;
     @include transition(all, 0.2s, ease-out);
     svg path{
         fill: $clr-secondary;
@@ -133,29 +133,45 @@ hover effect
     z-index: 1;
 
     @include breakpoint-sm{
-        @include dimensions(rem(96), rem(96));
+        @include dimensions(rem(80), rem(80));
     }
     @include breakpoint-lg{
-        @include dimensions(rem(112), rem(112));
+        @include dimensions(rem(96), rem(96));
     }
     @include breakpoint-xxl{
-        @include dimensions(rem(120), rem(120));
+        @include dimensions(rem(112), rem(112));
     }
    
-    &::after {
-        @include rippel-animation(2.5s, 0s);
-    }
-      
-    &::before {
-        @include rippel-animation(2.5s, 0.5s);
-    }
 
     &:hover{
         cursor: pointer;
         background: $clr-secondary;
     }
+
+    &::before{
+        animation: ripple-play-btn 1.5s ease-out infinite;
+        background-color: inherit;
+        border-radius: 50%;
+        content: "";
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
 }
 
+
+@keyframes ripple-play-btn {
+    0%{
+        opacity: 1;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+    
+}
 
 @keyframes rippel{
     from {

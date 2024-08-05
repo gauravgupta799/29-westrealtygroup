@@ -11,7 +11,22 @@
     font-style: normal;
 }
 
-/* --------- Aileron Regular------------- */
+
+/* --------- Figtree Regular------------- */
+@font-face{
+    font-family:"Figtree-Regular";
+    src:url("../assets/fonts/Figtree/Figtree-Regular.eot");
+    src:url("../assets/fonts/Figtree/Figtree-Regular.eot"),
+        url("../assets/fonts/Figtree/Figtree-Regular.woff2") format('woff2'),
+        url("../assets/fonts/Figtree/Figtree-Regular.woff") format('woff'),
+        url("../assets/fonts/Figtree/Figtree-Regular.ttf") format('truetype'),
+        url("../assets/fonts/Figtree/Figtree-Regular.svg#Figtree-Regular") format('svg');
+    font-weight:400;
+    font-style: normal;
+}
+
+
+/* --------- Aileron Regular------------- 
 @font-face{
     font-family:"Aileron-Regular";
     src:url("../assets/fonts/Aileron/Aileron-Regular.eot");
@@ -23,8 +38,11 @@
     font-weight:400;
     font-style: normal;
 }
+*/
 
 
 
-$ff-primary:"Roslindale-Display-Regular",sans-serif;
-$ff-secondary:"Aileron-Regular",sans-serif;
+
+$ff-primary:"Roslindale-Display-Regular", sans-serif;
+$ff-secondary:"Figtree-Regular", sans-serif;
+// $ff-secondary:"Aileron-Regular",sans-serif;

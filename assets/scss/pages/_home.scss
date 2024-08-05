@@ -18,20 +18,15 @@
         color:$clr-white;
     }
     &--home{
-       background-image: linear-gradient(to bottom, #0000 4%, #000) ,
-        url("../assets/images/home/home-banner.webp");
+       background-image: $linear-gradient, url("../assets/images/home/home-banner.webp");
     }
 
     &--about{
-        background-image: linear-gradient(to bottom, #0000 4%, #000) ,
-        url("../assets/images/about/about-banner.webp");
-        height: 80vh;
+        background-image: $linear-gradient, url("../assets/images/about/about-banner.webp");
     }
 
     &--team{
-        background-image: linear-gradient(to bottom, #0000 4%, #000) ,
-        url("../assets/images/team/team-banner.webp");
-        height: 80vh;
+        background-image: $linear-gradient,url("../assets/images/team/team-banner.webp");
     }
 }
 
@@ -143,6 +138,7 @@
             li{
                 font-size: rem(14);
                 line-height: 2;
+                text-transform: capitalize;
             }
         }
     }
@@ -181,16 +177,22 @@
             }
         }
     }
+    &__content{
+        text-transform: lowercase;
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
     &__footer{
         h6{
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.33;
             text-transform: capitalize;
             @include breakpoint-sm{
-                font-size: 22px;
+                font-size: 20px;
             }
             @include breakpoint-md{
-                font-size: 24px;
+                font-size: 22px;
             }
         }
     }
@@ -277,7 +279,7 @@
             width: 100%;
             right: 0;
             bottom: 0;
-            background: $clr-primary;
+            background: $clr-black;
             padding:em(16);
             @include flex-center-vertical;
             flex-wrap: wrap;
@@ -300,6 +302,10 @@
                 }
                 @include breakpoint-md{
                     gap:20px;
+                }
+
+                li{
+                    text-transform: capitalize;
                 }
             }
         }
