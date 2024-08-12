@@ -505,6 +505,34 @@ window.addEventListener("load", (e) =>{
 });
 //========== Banner animtion end =================
 
+// JavaScript for lazy loading background images start
+let lazyBackgrounds = [].slice.call(document.querySelectorAll("[data-bg]"));
+
+if("IntersectionObserver" in window){
+    const lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                let lazyBackground = entry.target;
+                let imgUrl = lazyBackground.getAttribute("data-bg");
+                if(entry.target.classList.contains("banner-container")){
+                    let linearGredient = "linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))";
+                    lazyBackground.style.backgroundImage = `${linearGredient}, url("${imgUrl}")`;
+                }else{
+                    lazyBackground.style.backgroundImage = `url("${imgUrl}")`;
+                }
+                lazyBackground.classList.remove("lazy");
+                lazyBackgroundObserver.unobserve(lazyBackground);
+            }
+        });
+    });
+
+    lazyBackgrounds.forEach((lazyBackground) =>{
+        lazyBackgroundObserver.observe(lazyBackground);
+    });
+}
+// JavaScript for lazy loading background images End
+
+
 
 //=========== Animation Start ==============
 const fadeUp = gsap.utils.toArray(".fade-up");
@@ -610,6 +638,5 @@ window.addEventListener("scroll", handleScroll);
 lenis.on('scroll', (e) => {
     ScrollTrigger.update();
 });
-
 
 gsap.ticker.lagSmoothing(0);

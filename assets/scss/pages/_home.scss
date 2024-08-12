@@ -10,36 +10,16 @@
 .banner-container{
     position: relative;
     overflow: hidden;
+    @include flex-center;
     @include background-cover;
     background-attachment: fixed;
-    @include flex-center;
-    height: 90vh;
+    height: 70vh;
     
     .banner-title, .banner-subTitle{
         color:$clr-white;
     }
     &--home{
-       background-image: $linear-gradient, url("../assets/images/home/home-banner.webp");
-    }
-
-    &--about{
-        background-image: $linear-gradient, url("../assets/images/about/about-banner.webp");
-        height: 70vh;
-    }
-
-    &--team{
-        background-image: $linear-gradient,url("../assets/images/team/team-banner.webp");
-        height: 70vh;
-    }
-
-    &--communities{
-        background-image: $linear-gradient,url("../assets/images/communities/communities-banner.webp");
-        height: 70vh;
-
-        &-1{
-            background-image: $linear-gradient,url("../assets/images/communities/austin-banner.webp"); 
-            height: 70vh;
-        }
+        height: 90vh;
     }
 }
 
@@ -266,7 +246,7 @@
 //========== CTA styles start ============
 .cta{
     position: relative;
-    background-image: url("../assets/images/cta-banner.webp");
+    // background-image: url("../assets/images/cta-banner.webp");
     @include background-cover;
     background-attachment: fixed;
     height: 80vh;
@@ -299,9 +279,9 @@
         max-width: 33rem;
     }
 
-    &--team{
-        background-image: url("../assets/images/home/home-team.webp"); 
-    }
+    // &--team{
+    //     background-image: url("../assets/images/home/home-team.webp"); 
+    // }
 }
 //========== CTA styles end ==============
 
