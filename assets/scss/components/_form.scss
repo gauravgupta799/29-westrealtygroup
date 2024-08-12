@@ -12,7 +12,7 @@
         label{
             position: absolute;
             top: 50%;
-            left: 10px;
+            left: rem(10);
             transform: translateY(-50%);
             pointer-events: none;
             transition: 0.3s ease-out;
@@ -20,14 +20,14 @@
             padding-left: em(16);
             @include border-radius(4px);
             font-family: $ff-primary;
-            font-size: 18px;
+            font-size: rem(18);
             line-height: 3.83;
 
             @include breakpoint-lg{
-                font-size: 20px;
+                font-size: rem(20);
             }
             @include breakpoint-xl{
-                font-size: 24px;
+                font-size: rem(24);
             }
 
         }
@@ -43,14 +43,12 @@
         font-family: $ff-rhd-regular;
         caret-color: $clr-secondary;
         @include border-radius(2px);
-        // outline: 1px solid $clr-primary;
         @include breakpoint-sm{
             font-size: rem(18);
         }
 
         &:focus, &:hover{
-            // outline-color: $clr-secondary;  
-            outline-width: 2px;
+            outline-width: rem(2);
         }
     }
     &__textarea{
@@ -68,7 +66,7 @@
   top: 0;
   color: $clr-dark-1;
   background: $clr-tertiary;
-  padding-inline:6px;
+  padding-inline:em(6);
 }
 
 .form-wrapper {

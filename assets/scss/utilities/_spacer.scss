@@ -3,11 +3,13 @@
 @mixin generate-responsive() {
     // Create a list of sizes and widths
     $sizes: (
-      sm: em(576),
-      md: em(768),
-      lg: em(992),
-      xl: em(1200),
-      xxl: em(1600),
+        xxs:em(348),
+        xs:em(480),
+        sm: em(576),
+        md: em(768),
+        lg: em(992),
+        xl: em(1200),
+        xxl: em(1600),
     );
   
     // Base style, without a suffix

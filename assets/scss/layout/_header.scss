@@ -24,12 +24,12 @@
         box-shadow: 0 2px 5px rgba(255, 255, 255, 0.35);
         padding-block:em(12); 
 
-        &__header--white{
+        &.header--white{
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
         }
     }
     &.hidden{
-        top: -110px;
+        top: rem(-110);
     }
     &__wrapper{
         width: 100%;
@@ -85,9 +85,9 @@
 
 .h-mail-btn{
     align-items: center;
-    gap:10px;
+    gap:rem(10);
     color:$clr-white;
-    font-size: 16px;
+    font-size: rem(16);
     line-height: 1.25;
     text-transform: uppercase;
     display: none;
@@ -109,7 +109,6 @@
     display: none;
     @include breakpoint-lg{
         display: flex;
-        border:1px solid $clr-black;
     }
 }
 

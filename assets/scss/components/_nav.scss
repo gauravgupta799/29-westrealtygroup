@@ -13,17 +13,17 @@
             display: none;
             @include breakpoint-lg{
                 display: flex;
-                gap: 32px;
+                gap: rem(32);
             }
             @include breakpoint-xl{
-                gap: 48px;
+                gap: rem(48);
             }
             @include breakpoint-xxl{
-                gap: 64px;
+                gap: rem(64);
             }
         }
         .nav__link{
-            font-size: 16px;
+            font-size: rem(16);
             line-height: 1.2;
             text-transform: uppercase;
             color:$clr-white;
@@ -79,6 +79,14 @@
 //========== Mobile Menu End ========
 .nav-link{
     text-transform: uppercase;
+    font-size: rem(16);
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $ff-secondary;
+    display: none;
+    @include breakpoint-xl{
+        display: flex;
+    }
 }
 
 .nav__link{
@@ -149,7 +157,7 @@
     }
     &::after {
         right: 0;
-        transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
     }
     &:hover{
         cursor: pointer;

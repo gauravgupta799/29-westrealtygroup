@@ -30,11 +30,12 @@
 
 /* HTML: <div class="loader"></div> */
 .loader {
-    width: 50px;
+    width: rem(50);
     aspect-ratio: 1.154;
     position: relative;
     background: conic-gradient(from 120deg at 50% 64%,#0000, $clr-secondary 1deg 120deg,#0000 121deg);
     animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
+    -webkit-animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
 }
 .loader:before,
 .loader:after {
@@ -59,54 +60,3 @@
      30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
      100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
 }
-
-// .loader-wrapper{
-//     svg {
-//         max-width: 100%;
-//         vertical-align: baseline;
-//     }
-// }
-
-// .site-container {
-//     padding: 2em;
-//     min-height: 100vh;
-//     display: grid;
-//     place-items: center;
-// }
-
-// .drawable-illustration{
-//    width: rem(240);
-//    height:rem(240);
-//    @include breakpoint-sm{
-//         width: rem(280);
-//         height:rem(280);
-//    }
-//    @include breakpoint-md{
-//         width: rem(380);
-//         height:rem(380);
-//    }
-//    @include breakpoint-lg{
-//         width: rem(480);
-//         height:rem(480);
-//    }
-//    @include breakpoint-xl{
-//         width: rem(580);
-//         height:rem(580);
-//    }
-// }
-// .drawable-illustration path {
-//     stroke-width: 0.25;
-//     stroke: #fff;
-//     animation: draw 2s linear infinite;
-// }
-// .drawable-illustration path{
-//     stroke-dasharray: 80;
-//     stroke-dashoffset: 80;
-// }
-
-// @keyframes draw {
-//     to {
-//     stroke-dashoffset: 0;
-//     }
-// }
-    

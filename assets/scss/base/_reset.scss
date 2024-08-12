@@ -161,6 +161,7 @@ sup {
   line-height: 2;
   font-family: $ff-secondary;
   color:$clr-black;
+  padding-right: 4px;
 }
 
 ::placeholder{
@@ -171,6 +172,23 @@ sup {
 ::selection{
   color:$clr-white;
   background-color: $clr-primary;
+}
+
+
+.header, .footer, .cta,
+.overlay-box,
+.bg-colored{
+  ::selection{
+    color:$clr-white;
+    background-color: $clr-secondary;
+  }
+}
+
+.header--white{
+  ::selection{
+    color:$clr-white;
+    background-color: $clr-primary;
+  }
 }
 
 

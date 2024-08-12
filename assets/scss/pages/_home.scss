@@ -7,13 +7,14 @@
 //?--------- Hero Styles Start ---------
 
 //========== Hero styles start ============
-.hero-banner-container{
+.banner-container{
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    @include background-cover;
+    background-attachment: fixed;
     @include flex-center;
+    height: 90vh;
+    
     .banner-title, .banner-subTitle{
         color:$clr-white;
     }
@@ -23,10 +24,22 @@
 
     &--about{
         background-image: $linear-gradient, url("../assets/images/about/about-banner.webp");
+        height: 70vh;
     }
 
     &--team{
         background-image: $linear-gradient,url("../assets/images/team/team-banner.webp");
+        height: 70vh;
+    }
+
+    &--communities{
+        background-image: $linear-gradient,url("../assets/images/communities/communities-banner.webp");
+        height: 70vh;
+
+        &-1{
+            background-image: $linear-gradient,url("../assets/images/communities/austin-banner.webp"); 
+            height: 70vh;
+        }
     }
 }
 
@@ -102,25 +115,21 @@
 //========== Counter styles end ==============
 //========== Featured styles start ============
 .featured{
-    &__card-figure{
+    &__card{
         position: relative;
-        .just-listed-btn{
-            position: absolute;
-            top: 16px;
-            right: -16px;
-            padding-block: em(4);
-        }
     }
     &__card-body{
-        padding-block: em(20);
+        padding-top: em(20);
+        padding-bottom: em(5);
         @include breakpoint-md{
-            padding-block: em(24);
+            padding-top: em(24);
         }
-        @include breakpoint-lg{
-            padding-block: em(28);
+        @include breakpoint-xxl{
+            padding-top: em(28);
         }
         p{
-            margin-top: 6px;
+            margin-top: rem(6);
+            font-size: rem(16);
         }
 
     }
@@ -139,6 +148,9 @@
                 font-size: rem(14);
                 line-height: 2;
                 text-transform: capitalize;
+                @include breakpoint-md{
+                    font-size: rem(16);
+                }
             }
         }
     }
@@ -147,8 +159,22 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 32px;
+        gap: rem(32);
     }
+}
+
+.overlay-box{
+    position: absolute;
+    top: rem(14);
+    right: rem(-6);
+    padding: em(8) em(24);
+    background: $clr-black;
+    border:none;
+    color:$clr-white;
+    font-family: $ff-secondary;
+    font-size: rem(14);
+    line-height: 1.5;
+    text-transform: capitalize;
 }
 
 //========== Featured styles end ==============
@@ -165,11 +191,11 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-top: -40px;
+            margin-top: rem(-40);
             img{
-                max-width: 110px;
+                max-width: rem(110);
                 @include breakpoint-sm{
-                    max-width: 130px;
+                    max-width: rem(130);
                 }
                 @include breakpoint-md{
                     max-width: 100%;
@@ -179,20 +205,22 @@
     }
     &__content{
         text-transform: lowercase;
+        line-height: 1.5;
+        font-weight: 300;
         &::first-letter{
             text-transform: uppercase;
         }
     }
     &__footer{
         h6{
-            font-size: 18px;
+            font-size: rem(18);
             line-height: 1.33;
             text-transform: capitalize;
             @include breakpoint-sm{
-                font-size: 20px;
+                font-size: rem(20);
             }
             @include breakpoint-md{
-                font-size: 22px;
+                font-size: rem(22);
             }
         }
     }
@@ -239,11 +267,11 @@
 .cta{
     position: relative;
     background-image: url("../assets/images/cta-banner.webp");
-    background-position: center;
-    background-size: cover;
-    height: 90vh;
+    @include background-cover;
+    background-attachment: fixed;
+    height: 80vh;
     @include breakpoint-sm{
-        height: 80vh;
+        height: 70vh;
     }
     &__card{
         position: absolute;
@@ -251,20 +279,28 @@
         left: 0;
         background: $clr-black;
         padding-inline:em(16);
-        width: min(80%, 820px);
+        width: 80%;
+        max-width: rem(820);
     
         @include breakpoint-md{
             padding-inline:em(32);
-            width: min(60%, 820px);
+            width: 60%;
         }
         @include breakpoint-lg{
             padding-inline:em(48);
-            width: min(50%, 820px);
+            width: 50%;
         }
         @include breakpoint-xl{
             padding-inline:em(64);
         }
       
+    }
+    &__card-wrapper{
+        max-width: 33rem;
+    }
+
+    &--team{
+        background-image: url("../assets/images/home/home-team.webp"); 
     }
 }
 //========== CTA styles end ==============
@@ -276,44 +312,45 @@
     figure{
         figcaption {
             position: absolute;
+            right: 0;  bottom: 0;
             width: 100%;
-            right: 0;
-            bottom: 0;
             background: $clr-black;
             padding:em(16);
             @include flex-center-vertical;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: space-between;
           
             @include breakpoint-sm{
                 justify-content: space-around;
-                padding-block:em(32);
                 padding-inline:0;
             }
             @include breakpoint-xl{
-                margin-right: -48px;
+                margin-right: rem(-48);
+            }
+            p{
+                text-transform: capitalize;
+                font-size: rem(16); 
             }
             ul{
                 @include flex-center-vertical;
                 justify-content: space-between;
-                gap:10px;
+                gap:rem(10);
                 @include breakpoint-sm{
-                    gap:16px;
+                    gap:rem(16);
                 }
                 @include breakpoint-md{
-                    gap:20px;
+                    gap:rem(20);
                 }
 
                 li{
                     text-transform: capitalize;
+                    font-size: rem(16);
                 }
             }
         }
     }
 }
-
 //========== video-spotlight styles end ==============
-
 
 
 .tabs{
@@ -337,13 +374,20 @@
         overflow: hidden;
     }
     &__item{
-        border: 1.5px solid $clr-secondary;
+        border: 1.5px solid $clr-black;
         padding: em(8) em(16);
-        opacity: 0.67;
-        transition:opacity 0.35s ease-in , border 0.35s ease-in,;
+        transition:all 0.35s ease;
         @include breakpoint-md{
             border:none;
             padding:0;
+        }
+        .tab-btn{
+            font-size: rem(18);
+            text-transform: uppercase;
+            line-height: 1.2;
+            color:$clr-black;
+            cursor: pointer;
+            transition:all 0.35s ease;
         }
         &:hover{
             cursor: pointer;
@@ -354,7 +398,7 @@
             @include breakpoint-md{
                 background: transparent; 
             }
-            h6, sup{
+            .tab-btn, sup{
                 color:$clr-white;
                 @include breakpoint-md{
                     color:$clr-secondary;
@@ -362,14 +406,13 @@
             }  
         }
         &.active{
-            opacity: 1;
             border-color: $clr-secondary;
-            transition:opacity 0.35s ease-in , border 0.35s ease-in;
+            transition:all 0.35s ease;
             background-color: $clr-secondary;
             @include breakpoint-md{
                 background: transparent; 
             }
-            h6, sup{
+            .tab-btn, sup{
                 color:$clr-white;
                 @include breakpoint-md{
                     color:$clr-secondary;

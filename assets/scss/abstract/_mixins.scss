@@ -2,9 +2,9 @@
 @use "./colors" as *;
 
 @mixin background-cover{
+    background-position:center center;
     background-size:cover;
     background-repeat: no-repeat;
-    background-position:center center;
 }
 
 @mixin background-image($img-url, $size:cover, $x-position:center, $y-position:center){

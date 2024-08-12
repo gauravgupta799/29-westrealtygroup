@@ -93,16 +93,73 @@
     }
 }
 
+// ====== Gallery Slider Start ========
+.gallery-top{
+    position: relative;
+}
 
-.gallery-thumbs {
+.gallery-top-figure {
+    @include breakpoint-xl{
+        height:rem(480);
+    }
+    @include breakpoint-xxl{
+        height:rem(640);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.gallery-top .swiper-button{
+    position: absolute;
+    background-color: $clr-black;
+    opacity: 0.8;
+    border: none;
+    @include border-radius("full-round");
+    @include dimensions(rem(48), rem(48));
+    transition:all 0.35s ease;
+    @include breakpoint-sm{
+        @include dimensions(rem(64), rem(64));
+    }
+    @include breakpoint-lg{
+        @include dimensions(rem(80), rem(80));
+    }
+
+    svg {
+        path{
+            fill:$clr-white;
+        }
+    }
+
+    &:hover{
+        background-color: $clr-secondary;
+    }
+}
+
+.gallery-thumbs{
     padding: em(16) 0;
+    max-width: 90% !important;
+    margin-inline:auto !important;
+}
+
+.gallery-thumbs-figure{
+    @include breakpoint-xxl{     
+        height: rem(136);
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
 .gallery-thumbs .swiper-slide {
     position: relative;
     overflow: hidden;
     height: 100%;
-    opacity: 0.5;
+    filter: grayscale(1);
+    @include border-radius(6px);
+    transition:all 0.35s ease;
     img{
         transition:transform 0.35s ease-out;
     }
@@ -113,7 +170,8 @@
         }
     }
 }
-  
-.gallery-thumbs .swiper-slide-thumb-active {
-    opacity: 1;
+
+.gallery-thumbs .swiper-slide-active {
+    filter: none;
 }
+// ====== Gallery Slider ENd ========

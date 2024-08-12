@@ -5,46 +5,51 @@
 @use "../abstract/mixins" as *;
 
 
-$swiper-navigation-size:18px;
+$swiper-navigation-size:rem(18);
 
-.testimonials{
-  // .swiper-pagination{
-  //   position: static !important;
-  //   @include flex-center;
-  //   &__wrapper{
-  //     @include flex-center;
-  //     gap:rem(32);
-  //   }
-  //   &-bullet{
-  //     @include flex-center;
-  //     @include dimensions(rem(28),rem(28));
-  //     font-size: rem(16);
-  //     color: $clr-primary;
-  //     font-family: $ff-secondary;
-  //     opacity: 1;
-  //     background: transparent;
-  //     @include transition(all, 0.25s, ease-out);
-  //     &-active{
-  //       background-color:$clr-secondary !important;
-  //       color:$clr-white !important;
-  //     }
-  //     &:hover{
-  //       cursor: pointer;
-  //       background-color:$clr-secondary;
-  //       color:$clr-white;
-  //     }
-  //   }
-  // }
+// .testimonials{
+//   .swiper-pagination{
+//     position: static !important;
+//     @include flex-center;
+//     &__wrapper{
+//       @include flex-center;
+//       gap:rem(32);
+//     }
+//     &-bullet{
+//       @include flex-center;
+//       @include dimensions(rem(28),rem(28));
+//       font-size: rem(16);
+//       color: $clr-primary;
+//       font-family: $ff-secondary;
+//       opacity: 1;
+//       background: transparent;
+//       @include transition(all, 0.25s, ease-out);
+//       &-active{
+//         background-color:$clr-secondary !important;
+//         color:$clr-white !important;
+//       }
+//       &:hover{
+//         cursor: pointer;
+//         background-color:$clr-secondary;
+//         color:$clr-white;
+//       }
+//     }
+//   }
 
-  // .swiper-pagination-bullets.swiper-pagination-horizontal{
-  //   width: auto !important;
-  // }
+//   .swiper-pagination-bullets.swiper-pagination-horizontal{
+//     width: auto !important;
+//   }
 
+// }
+
+.swiper-button-next::after, 
+.swiper-button-prev::after{
+  content:"";
 }
 
 .swiper-btns-wrapper{
   @include flex-center-vertical;
-  gap:10px;
+  gap:rem(10);
 
   button{
     padding:em(10) em(32);
@@ -54,8 +59,8 @@ $swiper-navigation-size:18px;
 
 .swiper-btn{
   @include flex-center;
-  width: 60px;
-  height: 34px;
+  width: rem(60);
+  height: rem(34);
   border: solid 1px $clr-primary;
   background-color: $clr-white;
   svg path{
@@ -66,4 +71,81 @@ $swiper-navigation-size:18px;
       fill:$clr-white;
     }
   }
+}
+
+.swiper-button-prev{
+  left: rem(10);
+  right: auto;
+}
+.swiper-button-next{
+  left: auto;
+  right: rem(10);
+}
+
+
+
+.swiper-container-wrapper{
+  position: relative;
+}
+
+.swiper-pagination-progressbar.swiper-pagination-horizontal{
+  width: 80%;
+  top: rem(14);
+}
+
+.swiper-pagination-custom {
+  display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  .swiper-pagination-switch {
+    width: 100%;
+      .switch-title{
+          display: inline-block;
+          background: $clr-white;
+          padding-inline: em(10);
+          transition:transform 0.2s ease-out;
+          color:$clr-grey-1;
+      }
+      &:first-child{
+          .switch-title{
+              padding-left: 0;
+          }
+      }
+      &:last-child{
+          .switch-title{
+              padding-right: 0;
+          }
+      }
+  }
+}
+
+.swiper-pagination-progressbar {
+  position: absolute;
+  border-bottom: 2px solid $clr-grey-1;
+  background-color: transparent;
+  width: 80%;
+  left: 0;
+  z-index: 1;
+  &-fill {
+      background-color:$clr-primary !important;
+      height: rem(3);
+      top: rem(2) !important;
+  }
+}
+
+.swiper-pagination-switch{
+  &.active{
+      .switch-title{
+          color:$clr-primary;
+          transform:scale(1.1);
+      }
+  }
+  &:hover{
+      cursor: pointer;
+      .switch-title{
+          color:$clr-primary;
+          transform:scale(1.1);
+      }
+  } 
 }

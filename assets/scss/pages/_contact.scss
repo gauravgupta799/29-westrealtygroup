@@ -21,7 +21,7 @@
         }
     }
     &__wrapper{
-        margin-bottom: 16px;
+        margin-bottom: rem(16);
         &:last-child{
             margin-bottom: 0;
             .socials__list--contact{
@@ -30,7 +30,7 @@
                 flex-wrap: wrap;
                 @include media-query("max", em(768)){
                     gap:rem(32);
-                    margin-top: 6px;
+                    margin-top: rem(6);
                 }
                 @include media-query("max", em(320)){
                     gap:rem(16);
@@ -48,9 +48,6 @@
     &__link{
         font-size: rem(16);
         line-height: 2.5;
-        // &:hover{
-        //     color:$clr-secondary;
-        // }
     }
 }
 
@@ -60,12 +57,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding-block:em(24) em(32);
-    gap:24px;
+    gap:rem(24);
 
     .cta-link{
         display: flex;
         align-items: center;
-        gap:6px;
+        gap:rem(6);
     }
 }
 
@@ -74,16 +71,29 @@
 }
 
 .cta-link{
-    font-size: 16px;
+    font-size: rem(16);
     line-height: 2;
+    transition:all 0.35s ease;
+    svg path{
+        fill:$clr-black;
+        transition:fill 0.35s ease;
+    }
     &:hover{
         color:$clr-secondary;
+        svg path{
+            fill:$clr-secondary;
+        }
     }
 }
 
 .direction-txt{
+    display: inline-flex;
     color:$clr-secondary;
     text-decoration: underline;
+    transition:all 0.35s ease;
+    &:hover{
+        text-decoration-color: $clr-black;
+    }
 }
 
 // ======== Form ========
@@ -99,20 +109,19 @@
             @include transition(all, 0.25s, ease-out);
             color:$clr-black;
             font-family: $ff-primary;
-            font-size: 20px;
+            font-size: rem(20);
             line-height: 3.83;
 
             @include breakpoint-md{
-                font-size: 22px;
+                font-size: rem(22);
             }
             @include breakpoint-xl{
-                font-size: 24px;
+                font-size: rem(24);
             }
         }
     }
     &__control{
         width: 100%;
-        // outline:0.5px solid #000;
         border-bottom: 1px solid $clr-black;
         font-size: rem(16);
         padding-block:em(16);
@@ -124,7 +133,6 @@
         &:focus, &:hover{
             border-color:$clr-secondary;
             border-width: 1.5px;
-
         }
     }
 }
@@ -138,8 +146,8 @@
     font-size: rem(18);
     top: 0;
     color:$clr-secondary;
-    padding-inline:8px;
+    padding-inline:em(8);
     line-height: 1.67;
-    border-radius:0 0 16px 16px;
+    border-radius:0 0 rem(16) rem(16);
     letter-spacing: 0.8px;
 }

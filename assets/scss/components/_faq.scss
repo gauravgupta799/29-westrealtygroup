@@ -60,8 +60,7 @@
 
 .icon{
   position: relative; 
-  width: 30px; 
-  height: 30px;
+  @include dimensions(rem(30), rem(30));
   &__shape{
     &::before, &::after{
       position: absolute;
@@ -69,17 +68,15 @@
       top: 50%;
       left: 50%;
       background: $clr-primary;
-      border-radius: 3px;
+      @include border-radius(3px);
       @include transition(all, 0.3s, ease);
       transform: translate(-50%, -50%);
     }
     &::before{
-      width: 20px;
-      height: 3px;
+      @include dimensions(rem(20), rem(3));
     }
     &::after{
-      width: 3px;
-      height: 20px;
+      @include dimensions(rem(3), rem(20));
     }
     &.is-open{
       &::before, &::after{

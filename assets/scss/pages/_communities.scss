@@ -7,7 +7,6 @@
 .what-to-love{
     &__list{
         li{
-            // border-bottom: 1px solid $clr-grey;
             padding-block: em(32);
             display: flex;
             gap:rem(16);
@@ -19,10 +18,10 @@
                 padding-block: em(48);
             }
             @include breakpoint-lg{
-                gap:rem(48);
+                gap:rem(40);
             }
             @include breakpoint-xl{
-                gap:rem(56);
+                gap:rem(48);
             }
             h2{
                 line-height: 0.9; 
@@ -43,13 +42,13 @@
             }
         }
         p{
-            max-width: 100ch;
+            max-width: 90ch;
         }
     }
 }
 
 .welcome-section{
     .section-subtitle{
-        max-width: 110ch;
+        max-width: 90ch;
     }
 }
