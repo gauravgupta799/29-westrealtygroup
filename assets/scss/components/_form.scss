@@ -4,82 +4,60 @@
 @use '../abstract/functions' as *;
 @use '../abstract/mixins' as *;
 
-
+// ======== Form ========
 .form{
     &__group{
-        margin-bottom: rem(20);
         position: relative;
         label{
             position: absolute;
-            top: 50%;
-            left: rem(10);
+            top:50%;
+            left: 0;   
             transform: translateY(-50%);
             pointer-events: none;
-            transition: 0.3s ease-out;
-            color: $clr-black;
-            padding-left: em(16);
-            @include border-radius(4px);
+            @include transition(all, 0.25s, ease-out);
+            color:$clr-black;
             font-family: $ff-primary;
-            font-size: rem(18);
+            font-size: rem(20);
             line-height: 3.83;
 
-            @include breakpoint-lg{
-                font-size: rem(20);
+            @include breakpoint-md{
+                font-size: rem(22);
             }
             @include breakpoint-xl{
                 font-size: rem(24);
             }
-
         }
     }
     &__control{
+        position: relative;
         width: 100%;
-        background: $clr-tertiary;
         border:none;
-        padding: em(12) em(24);
-        color:$clr-primary;
+        border-bottom: 1px solid $clr-black;
         font-size: rem(16);
-        line-height: 2;
-        font-family: $ff-rhd-regular;
+        padding-block:em(16);
         caret-color: $clr-secondary;
-        @include border-radius(2px);
         @include breakpoint-sm{
             font-size: rem(18);
+            padding-block:em(20);
         }
-
         &:focus, &:hover{
-            outline-width: rem(2);
+            border-color:$clr-secondary;
+            border-width: 1.5px;
         }
-    }
-    &__textarea{
-        min-height: rem(120); 
     }
 }
-.form__textarea + label{
-    position: absolute;
-    top: 25%;
+
+.form-textarea + label{
+    top: 13%;
 }
 
 .form__control:focus + label,
-.form__control:not(:placeholder-shown) + label {
-  font-size: rem(14);
-  top: 0;
-  color: $clr-dark-1;
-  background: $clr-tertiary;
-  padding-inline:em(6);
-}
-
-.form-wrapper {
-    padding: em(24) em(16) em(24);
-    @include border-radius(4px);
-    background-color: $clr-white;
-    @include breakpoint-sm{
-        padding: em(24) em(24) em(28);
-    }
-    @include breakpoint-md{
-        padding: em(24) em(32) em(32);
-    }
-    @include breakpoint-lg{
-        padding: em(24) em(42) em(32);
-    }
+.form__control:not(:placeholder-shown) + label{
+    font-size: rem(18);
+    top: 0;
+    color:$clr-secondary;
+    padding-inline:em(8);
+    line-height: 1.67;
+    border-radius:0 0 rem(16) rem(16);
+    letter-spacing: 0.8px;
 }

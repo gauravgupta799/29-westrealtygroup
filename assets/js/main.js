@@ -119,7 +119,6 @@ hamburgerBtn.addEventListener('click', () => {
 });
 
 closeMenuBtn && closeMenuBtn.addEventListener('click', toggleMenu);
-
 //======= Toggle Menu ENd =============
 
 
@@ -326,36 +325,6 @@ function handleCounter(){
     }
 } 
 //======= Counter End =============
-
-
-//========== Video Play /Pause Button Start ============
-// const playBtn = document.querySelector("#play-btn");
-// if(playBtn) {
-//   const videoContainer = document.querySelector(".video__popup-container");
-//   const closeBtn = document.querySelector(".video__popup-close");
-//   let iframe = document.querySelector(".video__popup-iframe-container > iframe");
-
-//   function togglePopup() {
-//     stopLenisScroll();
-//     videoContainer.classList.toggle("show");
-//     gsap.fromTo(".video__popup-wrapper", 0.5,
-//       { opacity:0, y:50},
-//       { opacity:1, y:0, ease:Power4.easeOut }
-//     );
-//   }
-
-//   playBtn.addEventListener("click", function(){
-//     const videoId = this.dataset.id;
-//     iframe.src = `https://www.youtube.com/embed/${videoId}`;
-//     togglePopup();
-//   })
-
-//   closeBtn && closeBtn.addEventListener("click", ()=>{
-//     iframe.src = "";
-//     togglePopup();
-//   });
-// }
-//========== Video Play /Pause Button End ============
 
 //========== Filter Cards Start =================
 const tabBtns = document.querySelectorAll(".tabs__item");
